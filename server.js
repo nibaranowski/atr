@@ -19,6 +19,8 @@ app.use(bodyParser.json()); //to access req.body
 // DB Config
 const db = require('./config/keys').mongoURI;
 
+console.log(db)
+
 // Connect to mongoDB
 mongoose
     .connect(db, { useUnifiedTopology: true, useNewUrlParser: true })
