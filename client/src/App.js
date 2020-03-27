@@ -19,45 +19,117 @@ import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 //import Dashboard from './components/dashboard/Dashboard';
 
-import CreateTrip from './components/trip/trip-actions/CreateTrip';
-import EditTrip from './components/trip/trip-actions/EditTrip';
-//import AddExperience from './components/trip/trip-actions/AddExperience';
-//import AddEducation from './components/trip/trip-actions/AddEducation';
-import CreateStop from './components/stop/stop-actions/CreateStop';
-import EditStop from './components/stop/stop-actions/EditStop';
-import CreateDay from './components/day/day-actions/CreateDay';
-import EditDay from './components/day/day-actions/EditDay';
-import CreateEvent from './components/event/event-actions/CreateEvent';
-import EditEvent from './components/event/event-actions/EditEvent';
+//import Test actions components
+// import CreateTest from './components/test/test-actions/CreateTest';
+// import EditTest from './components/test/test-actions/EditTest';
+// import DeleteTest from './components/test/test-actions/DeleteTest';
 
-import Trips from './components/trip/trips/Trips';
-import Trip from './components/trip/trip/Trip';
-import Stops from './components/stop/stops/Stops';
-import Stop from './components/stop/stop/Stop';
-import Days from './components/day/days/Days';
-import Day from './components/day/day/Day';
-import Events from './components/event/events/Events';
-import Event from './components/event/event/Event';
-import NotFound from './components/not-found/NotFound';
+//import AdminUser actions components
+import CreateAdminUser from './components/admin-user/admin-user-actions/CreateAdminUser';
+//import EditAdminUser from './components/admin-user/admin-user-actions/EditAdminUser';
+//import DeleteAdminUser from './components/admin-user/admin-user-actions/DeleteAdminUser';
+
+//import Company actions components
+import CreateCompany from './components/company/company-actions/CreateCompany';
+//import EditCompany from './components/company/company-actions/EditCompany';
+//import DeleteCompany from './components/company/company-actions/DeleteCompany';
+
+// //import Department actions components
+// import CreateDepartment from './components/department/department-actions/CreateDepartment';
+// import EditDepartment from './components/department/department-actions/EditDepartment';
+// import DeleteDepartment from './components/department/department-actions/DeleteDepartment';
 //
-// import "./assets/vendors/js/vendor.bundle.base.js"
-// import "./assets/vendors/js/vendor.bundle.addons.js"
-// import "./assets/js/shared/off-canvas.js"
-// import "./assets/js/shared/hoverable-collapse.js"
-// import ".assets/js/shared/misc.js"
-// import "./assets/js/shared/settings.js"
-// import "./assets/js/shared/todolist.js"
-// import "./assets/js/demo_1/dashboard.js"
-// import "./assets/js/shared/chart.js"
-// import "./assets/js/shared/calendar.js"
+// //import Team actions components
+// import CreateTeam from './components/team/team-actions/CreateTeam';
+// import EditTeam from './components/team/team-actions/EditTeam';
+// import DeleteTeam from './components/team/team-actions/DeleteTeam';
+//
+// //import Position actions components
+// import CreatePosition from './components/position/position-actions/CreatePosition';
+// import EditPosition from './components/position/position-actions/EditPosition';
+// import DeletePosition from './components/position/position-actions/DeletePosition';
+//
+// //import User actions components
+// import CreateUser from './components/user/user-actions/CreateUser';
+// import EditUser from './components/user/user-actions/EditUser';
+// import DeleteUser from './components/user/user-actions/DeleteUser';
+//
+// //import Position actions components
+// import CreatePosition from './components/position-hiring-board/position-hiring-board-actions/CreatePosition';
+// import EditPosition from './components/position-hiring-board/position-hiring-board-actions/EditPosition';
+// import DeletePositionHiringBoard from './components/position-hiring-board/position-hiring-board-actions/DeletePositionHiringBoard';
+//
+// //import Position actions components
+// import CreatePositionH from './components/position-hiring-plan/position-hiring-plan-actions/CreatePositionH';
+// import EditPositionH from './components/position-hiring-plan/position-hiring-plan-actions/EditPositionH';
+// import DeletePositionHiringPlan from './components/position-hiring-plan/position-hiring-plan-actions/DeletePositionHiringPlan';
+//
+// //import OnboardChecklist actions components
+// import CreateOnboardChecklist from './components/onboard-checklist/onboard-checklist-actions/CreateOnboardChecklist';
+// import EditOnboardChecklist from './components/onboard-checklist/onboard-checklist-actions/EditOnboardChecklist';
+// import DeleteOnboardChecklist from './components/onboard-checklist/onboard-checklist-actions/DeleteOnboardChecklist';
+//
+//
+// //import TerminateChecklist actions components
+// import CreateTerminateChecklist from './components/terminate-checklist/terminate-checklist-actions/CreateTerminateChecklist';
+// import EditTerminateChecklist from './components/terminate-checklist/terminate-checklist-actions/EditTerminateChecklist';
+// import DeleteTerminateChecklist from './components/terminate-checklist/terminate-checklist-actions/DeleteTerminateChecklist';
 
-//import './App.css';
+//import OneToOne actions sub-components
+import CreateOneToOne from './components/user/one-to-one/one-to-one-actions/CreateOneToOne';
+//import EditOneToOne from './components/user/one-to-one/one-to-one-actions/EditOneToOne';
+//import DeleteOneToOne from './components/user/one-to-one/one-to-one-actions/DeleteOneToOne';
+
+// //import Stage actions sub-components
+// import CreateStage from './components/position-hiring-board/stage/stage-actions/CreateStage';
+// import EditStage from './components/position-hiring-board/stage/stage-actions/EditStage';
+// import DeleteStage from './components/position-hiring-board/stage/stage-actions/DeleteStage';
+//
+// //import Lead actions sub-components
+// import CreateLead from './components/position-hiring-board/lead/lead-actions/CreateLead';
+// import EditLead from './components/position-hiring-board/lead/lead-actions/EditLead';
+// import DeleteLead from './components/position-hiring-board/lead/lead-actions/DeleteLead';
+//
+// //import OnboardTask actions sub-components
+// import CreateOnboardTask from './components/onboard-checklist/onboard-task/onboard-task-actions/CreateOnboardTask';
+// import EditOnboardTask from './components/onboard-checklist/onboard-task/onboard-task-actions/EditOnboardTask';
+// import DeleteOnboardTask from './components/onboard-checklist/onboard-task/onboard-task-actions/DeleteOnboardTask';
+//
+// //import TerminateTask actions sub-components
+// import CreateTerminateTask from './components/terminate-checklist/terminate-task/terminate-task-actions/CreateTerminateTask';
+// import EditTerminateTask from './components/terminate-checklist/terminate-task/terminate-task-actions/EditTerminateTask';
+// import DeleteTerminateTask from './components/terminate-checklist/terminate-task/terminate-task-actions/DeleteTerminateTask';
+
+//import Test components
+// import Tests from './components/test/tests/Tests';
+// import Test from './components/test/test/Test';
+
+//import Company components
+import Companys from './components/company/companys/Companys';
+import Company from './components/company/company/Company';
+
+//import User components
+import Users from './components/user/users/Users';
+import User from './components/user/user/User';
+
+//import OneToOne components
+import OneToOnes from './components/one-to-one/one-to-ones/OneToOnes';
+import OneToOne from './components/one-to-one/one-to-one/OneToOne';
+
+//import Test components
+import Tests from './components/test/tests/Tests';
+import Test from './components/test/test/Test';
+
+// <todo> must still be done for the rest e.g. department etc
+
+import NotFound from './components/not-found/NotFound';
+
 
 // Check for token
 if (localStorage.jwtToken) {
   // Set auth token header auth
   setAuthToken(localStorage.jwtToken);
-  // Decode token and get user info and exp
+  // Decode token and get one-to-one info and exp
   const decoded = jwt_decode(localStorage.jwtToken);
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
@@ -74,167 +146,588 @@ if (localStorage.jwtToken) {
   }
 }
 
-
-
 class App extends Component {
-
-  // componentDidMount () {
-  //   var loadScript = function(src) {
-  //     var tag = document.createElement('script');
-  //     tag.async = false;
-  //     tag.src = src;
-  //     document.getElementsByTagName('body').appendChild(tag);
-  //   }
-  //   loadScript("%PUBLIC_URL%/assets/vendors/js/vendor.bundle.base.js")
-  //   loadScript("%PUBLIC_URL%/assets/vendors/js/vendor.bundle.addons.js")
-  //   loadScript("%PUBLIC_URL%/assets/js/shared/off-canvas.js")
-  //   loadScript("%PUBLIC_URL%/assets/js/shared/hoverable-collapse.js")
-  //   loadScript("%PUBLIC_URL%assets/js/shared/misc.js")
-  //   loadScript("%PUBLIC_URL%/assets/js/shared/settings.js")
-  //   loadScript("%PUBLIC_URL%/assets/js/shared/todolist.js")
-  //   loadScript("%PUBLIC_URL%/assets/js/demo_1/dashboard.js")
-  //   loadScript("%PUBLIC_URL%/assets/js/shared/chart.js")
-  //   loadScript("%PUBLIC_URL%/assets/js/shared/calendar.js")
-  //
-  // }
 
   render() {
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
-
               {/*<Settingsbar />*/}
               <Route exact path="/" component={Landing} />
-                <div className="main-content-app">
+              <Route exact path="/not-found" component={NotFound} />
+              <div className="main-content-app">
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                   <div className="container-fluid page-body-wrapper" style={{marginTop: '63px'}}>
                     <NavBar />
                     <SideBar />
-
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/user/:user_id/create-trip"
-                        component={CreateTrip}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/user/:user_id/edit-trip"
-                        component={EditTrip}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/user/:user_id"
-                        component={Trips}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id"
-                        component={Trip}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/trip/:trip_id/stops"
-                        component={Stops}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/stop/:stop_id"
-                        component={Stop}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/stop/:stop_id/days"
-                        component={Days}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/stop/:stop_id/day/:day_id"
-                        component={Day}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/stop/:stop_id/day/:day_id/events"
-                        component={Events}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/stop/:stop_id/day/:day_id/event/:event_id"
-                        component={Event}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/create-stop"
-                        component={CreateStop}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/edit-stop"
-                        component={EditStop}
-                      />
-                    </Switch>
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/stop/:stop_id/edit-day"
-                        component={EditDay}
-                      />
-                    </Switch>
-
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/stop/:stop_id/day/:day_id/edit-event"
-                        component={EditEvent}
-                      />
-                    </Switch>
-
-
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/stop/:stop_id/create-day"
-                        component={CreateDay}
-                      />
-                    </Switch>
-
-
-                    <Switch>
-                      <PrivateRoute
-                        exact
-                        path="/trip/:trip_id/stop/:stop_id/day/:day_id/create-event"
-                        component={CreateEvent}
-                      />
-                    </Switch>
+                    <div className="child-routes">
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/mother/:mother_id/create-child"
+                          component={CreateChild}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/mother/:mother_id/child/:child_id/edit-child"
+                          component={EditChild}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/mother/:mother_id/child/:child_id/delete-child"
+                          component={DeleteChild}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/mother/:mother_id/child/all"
+                          component={Childs}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/mother/:mother_id/child/:child_id"
+                          component={Child}
+                        />
+                      </Switch>
                     </div>
-                  <Route exact path="/not-found" component={NotFound} />
-
+                    <div className="company-routes">
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="admin-user/:adminUser_id/create-company"
+                          component={CreateCompany}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="admin-user/:adminUser_id/company/:company_id/edit-company"
+                          component={EditCompany}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="admin-user/:adminUser_id/company/:company_id/delete-company"
+                          component={DeleteCompany}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="admin-user/:adminUser_id/company/all"
+                          component={Companys}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="admin-user/:adminUser_id/company/:company_id"
+                          component={Company}
+                        />
+                      </Switch>
+                    </div>
+                    <div className="department-routes">
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/company/:company_id/create-department"
+                          component={CreateDepartment}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/company/:company_id/department/:department_id/edit-department"
+                          component={EditDepartment}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/company/:company_id/department/:department_id/delete-department"
+                          component={DeleteDepartment}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/company/:company_id/department/all"
+                          component={Departments}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/company/:company_id/department/:department_id"
+                          component={Department}
+                        />
+                      </Switch>
+                    </div>
+                    <div className="team-routes">
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/department/:department_id/create-team"
+                          component={CreateTeam}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/department/:department_id/team/:team_id/edit-team"
+                          component={EditTeam}
+                        />
+                      </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/department/:department_id/team/:team_id/delete-team"
+                            component={DeleteTeam}
+                          />
+                        </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/department/:department_id/team/all"
+                          component={Teams}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/department/:department_id/team/:team_id"
+                          component={Team}
+                        />
+                      </Switch>
+                    </div>
+                    <div className="position-routes">
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/team/:team_id/create-position"
+                          component={CreatePosition}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/team/:team_id/position/:position_id/edit-position"
+                          component={EditPosition}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/team/:team_id/position/:position_id/delete-position"
+                          component={DeletePosition}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/team/:team_id/position/all"
+                          component={Positions}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/team/:team_id/position/:position_id"
+                          component={Position}
+                        />
+                      </Switch>
+                    </div>
+                    <div className="user-routes">
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/create-user"
+                          component={CreateUser}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/user/:user_id/edit-user"
+                          component={EditUser}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/user/:user_id/delete-user"
+                          component={DeleteUser}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/user/all"
+                          component={Users}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/user/:user_id"
+                          component={User}
+                        />
+                      </Switch>
+                    </div>
+                    <div className="position-hiring-board-routes">
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/create-positionHiringBoard"
+                          component={CreatePositionHiringBoard}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/position-hiring-board/:positionHiringBoard_id/edit-positionHiringBoard"
+                          component={EditPositionHiringBoard}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/position-hiring-board/:positionHiringBoard_id/delete-positionHiringBoard"
+                          component={DeletePositionHiringBoard}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/position-hiring-board/all"
+                          component={PositionHiringBoards}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/position-hiring-board/:positionHiringBoard_id"
+                          component={PositionHiringBoard}
+                        />
+                      </Switch>
+                    </div>
+                    <div className="position-hiring-plan-routes">
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/create-PositionHiringPlan"
+                          component={CreatePositionHiringPlan}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/position-hiring-plan/:PositionHiringPlan_id/edit-PositionHiringPlan"
+                          component={EditPositionHiringPlan}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/position-hiring-plan/:PositionHiringPlan_id/delete-PositionHiringPlan"
+                          component={DeletePositionHiringPlan}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/position-hiring-plan/all"
+                          component={PositionHiringPlans}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/position-hiring-plan/:PositionHiringPlan_id"
+                          component={PositionHiringPlan}
+                        />
+                      </Switch>
+                    </div>
+                    <div className="onboard-cheklist-routes">
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/create-onboardChecklist"
+                          component={CreateOnboardChecklist}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/onboard-checklist/:onboardChecklist_id/edit-onboardChecklist"
+                          component={EditOnboardChecklist}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/onboard-checklist/:onboardChecklist_id/delete-onboardChecklist"
+                          component={DeleteOnboardChecklist}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/onboard-checklist/all"
+                          component={OnboardChecklists}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/onboard-checklist/:onboardChecklist_id"
+                          component={OnboardChecklist}
+                        />
+                      </Switch>
+                    </div>
+                    <div className="terminate-checklist-routes">
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/create-terminateChecklist"
+                          component={CreateTerminateChecklist}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/terminate-checklist/:terminateChecklist_id/edit-terminateChecklist"
+                          component={EditTerminateChecklist}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/terminate-checklist/:terminateChecklist_id/delete-terminateChecklist"
+                          component={DeleteTerminateChecklist}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/terminate-checklist/all"
+                          component={TerminateChecklists}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="/position/:position_id/terminate-checklist/:terminateChecklist_id"
+                          component={TerminateChecklist}
+                        />
+                      </Switch>
+                    </div>
+                    <div className="user-sub-routes">
+                      <div className="one-to-one-routes">
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/user/:user_id/create-oneToOne"
+                            component={CreateOneToOne}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/user/:user_id/one-to-one/:oneToOne_id/edit-oneToOne"
+                            component={EditOneToOne}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/user/:user_id/one-to-one/:oneToOne_id/delete-oneToOne"
+                            component={DeleteOneToOne}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/user/:user_id/one-to-one/all"
+                            component={OneToOnes}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/user/:user_id/one-to-one/:oneToOne_id"
+                            component={OneToOne}
+                          />
+                        </Switch>
+                      </div>
+                    </div>
+                    <div className="position-hiring-board-sub-routes">
+                      <div className="stage-routes">
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/position-hiring-board/:positionHiringBoard_id/create-stage"
+                            component={CreateStage}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/position-hiring-board/:positionHiringBoard_id/stage/:stage_id/edit-stage"
+                            component={EditStage}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/position-hiring-board/:positionHiringBoard_id/stage/:stage_id/delete-stage"
+                            component={DeleteStage}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/position-hiring-board/:positionHiringBoard_id/stage/all"
+                            component={Stages}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/position-hiring-board/:positionHiringBoard_id/stage/:stage_id"
+                            component={Stage}
+                          />
+                        </Switch>
+                      </div>
+                      <div className="lead-routes">
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/stage/:stage_id/create-lead"
+                            component={CreateLead}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/stage/:stage_id/lead/:lead_id/edit-lead"
+                            component={EditLead}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/stage/:stage_id/lead/:lead_id/delete-lead"
+                            component={DeleteLead}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/stage/:stage_id/lead/all"
+                            component={Leads}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/stage/:stage_id/lead/:lead_id"
+                            component={Lead}
+                          />
+                        </Switch>
+                      </div>
+                    </div>
+                    <div className="onboard-checklist-sub-routes">
+                      <div className="onboard-task-routes">
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/onboard-checklist/:onboardChecklist_id/create-onboardTask"
+                            component={CreateOnboardTask}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/onboard-checklist/:onboardChecklist_id/onboard-task/:onboardTask_id/edit-onboardTask"
+                            component={EditOnboardTask}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/onboard-checklist/:onboardChecklist_id/onboard-task/:onboardTask_id/delete-onboardTask"
+                            component={DeleteOnboardTask}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/onboard-checklist/:onboardChecklist_id/onboard-task/all"
+                            component={OnboardTasks}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/onboard-checklist/:onboardChecklist_id/onboard-task/:onboardTask_id"
+                            component={OnboardTask}
+                          />
+                        </Switch>
+                      </div>
+                    </div>
+                    <div className="terminate-checklist-sub-routes">
+                      <div className="terminate-task-routes">
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/terminate-checklist/:terminateChecklist_id/create-terminateTask"
+                            component={CreateTerminateTask}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/terminate-checklist/:terminateChecklist_id/terminate-task/:terminateTask_id/edit-terminateTask"
+                            component={EditTerminateTask}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/terminate-checklist/:terminateChecklist_id/terminate-task/:terminateTask_id/delete-terminateTask"
+                            component={DeleteTerminateTask}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/terminate-checklist/:terminateChecklist_id/terminate-task/all"
+                            component={TerminateTasks}
+                          />
+                        </Switch>
+                        <Switch>
+                          <PrivateRoute
+                            exact
+                            path="/terminate-checklist/:terminateChecklist_id/terminate-task/:terminateTask_id"
+                            component={TerminateTask}
+                          />
+                        </Switch>
+                      </div>
+                    </div>
+                  </div>
               </div>
-            {/*<Footer />*/}
+              {/*<Footer />*/}
           </div>
         </Router>
       </Provider>

@@ -3,6 +3,13 @@ const Schema = mongoose.Schema;
 
 // create Schema
 const UserSchema = new Schema({
+    //admin_user
+    //company
+    //department
+    position: {
+      type: Schema.Types.ObjectId,
+      ref: 'position'
+    },
     name: {
         type: String,
         required: true
@@ -18,33 +25,47 @@ const UserSchema = new Schema({
     avatar: {
         type: String
     },
+    {
+    manager_ids: {
+        type: Array
+    },
+    {
+    worker_ids: {
+        type: Array
+    },
     date: {
         type: Date,
         default: Date.now
+    },
+    handle: {
+        type: String
     }
 });
 
-module.exports = User = mongoose.model('user', UserSchema);
-
-// UserSchema.pre('remove', function(next) {
-//   console.log('user removed and depedencies')
-//
-//     TripSchema.remove({trip_id: this._id}).exec();
-//     StopSchema.remove({stop_id: this._id}).exec();
-//     DaySchema.remove({day_id: this._id}).exec();
-//     EventSchema.remove({event_id: this._id}).exec();
-//     next();
-// });
+UserSchema.pre('remove', function(doc) {
+  console.log('user depedencies removed')
+  console.log('doc', doc);
+  console.log('this._id', this._id)
 
 
-// // to finish
-//
-// UserSchema.pre('remove', function(next) {
-//     // 'this' is the client being removed. Provide callbacks here if you want
-//     // to be notified of the calls' result.
-//     TripSchema.remove({user_id: this._id}).exec();
-//     StopSchema.remove({user_id: this._id}).exec();
-//     DaySchema.remove({user_id: this._id}).exec();
-//     EventSchema.remove({user_id: this._id}).exec();
-//     next();
-// });
+  //remove oneToOnes
+  User.find({oneToOne: this._id }).lean().then(oneToOnes => {
+    console.log('oneToOnes', oneToOnes)
+    oneToOnes.forEach(function (oneToOne) {
+      console.log('oneToOne', oneToOne)
+
+      User.findOneAndRemove({ _id: oneToOne._id }, function(err, oneToOne){
+          if (err) {
+            console.log(err);
+            return res.status(500).send();
+          } else {
+            oneToOne.remove();
+          }
+      });
+    })
+  })
+
+
+});
+
+module.exports = User = mongoose.model('user', UserSchema)

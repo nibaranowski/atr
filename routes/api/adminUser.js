@@ -11,21 +11,19 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
 // Load Models
-const User = require('../../models/User');
-const Trip = require('../../models/Trip');
-const Stop = require('../../models/Stop');
-const Day = require('../../models/Day');
-const Event = require('../../models/Event');
+const AdminUser = require('../../models/AdminUser');
+// const Trip = require('../../models/Trip');
+// const Stop = require('../../models/Stop');
+// const Day = require('../../models/Day');
+// const Event = require('../../models/Event');
 
-// '/test' is already /api/users/test
-
-// @route   GET api/users/test
-// @desc    Test users routes
+// @route   GET api/admin-users/test
+// @desc    Test adminUsers routes
 // @access  Public
-router.get('/test', (req, res) => res.json({msg: "Users works"}));
+router.get('/test', (req, res) => res.json({msg: "AdminUsers works"}));
 
-// @route   POST api/users/register
-// @desc    Register user
+// @route   POST api/admin-users/register
+// @desc    Register adminUser
 // @access  Public
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -35,31 +33,31 @@ router.post('/register', (req, res) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ email: req.body.email }).then(user => {
-    if (user) {
+  AdminUser.findOne({ email: req.body.email }).then(adminUser => {
+    if (adminUser) {
       errors.email = 'Email already exists';
       return res.status(400).json(errors);
     } else {
-      const avatar = gravatar.url(req.body.email, {
-        s: '200', // Size
-        r: 'pg', // Rating
-        d: 'mm' // Default
-      });
+      // const avatar = gravatar.url(req.body.email, {
+      //   s: '200', // Size
+      //   r: 'pg', // Rating
+      //   d: 'mm' // Default
+      // });
 
-      const newUser = new User({
+      const newAdminUser = new AdminUser({
         name: req.body.name,
         email: req.body.email,
-        avatar,
+        // avatar,
         password: req.body.password
       });
 
       bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newUser.password, salt, (err, hash) => {
+        bcrypt.hash(newAdminUser.password, salt, (err, hash) => {
           if (err) throw err;
-          newUser.password = hash;
-          newUser
+          newAdminUser.password = hash;
+          newAdminUser
             .save()
-            .then(user => res.json(user))
+            .then(adminUser => res.json(adminUser))
             .catch(err => console.log(err));
         });
       });
@@ -67,8 +65,8 @@ router.post('/register', (req, res) => {
   });
 });
 
-// @route   POST api/users/login
-// @desc    Login User / Returning JWT Token
+// @route   POST api/admin-users/login
+// @desc    Login AdminUser / Returning JWT Token
 // @access  Public
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
@@ -81,25 +79,29 @@ router.post('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  // Find user by email
-  User.findOne({ email }).then(user => {
-    // Check for user
-    if (!user) {
-      errors.email = 'User not found';
+  // Find adminUser by email
+  AdminUser.findOne({ email }).then(adminUser => {
+    // Check for adminUser
+    if (!adminUser) {
+      errors.email = 'AdminUser not found';
       return res.status(404).json(errors);
     }
 
     // Check Password
-    bcrypt.compare(password, user.password).then(isMatch => {
+    bcrypt.compare(password, adminUser.password).then(isMatch => {
       if (isMatch) {
-        // User Matched
-        const payload = { id: user.id, name: user.name, avatar: user.avatar }; // Create JWT Payload
+        // AdminUser Matched
+        const payload = {
+          id: adminUser.id,
+          name: adminUser.name,
+          //avatar: adminUser.avatar
+        }; // Create JWT Payload
 
         // Sign Token
         jwt.sign(
           payload,
           keys.secretOrKey,
-          { expiresIn: 3600 },
+          { expiresIn: 604800 }, // 1 week
           (err, token) => {
             res.json({
               success: true,
@@ -115,28 +117,27 @@ router.post('/login', (req, res) => {
   });
 });
 
-// @route   GET api/users/current
-// @desc    Return current user
+// @route   GET api/admin-users/current
+// @desc    Return current adminUser
 // @access  Private
 router.get('/current', passport.authenticate('jwt', { session: false }),
 (req, res) => {
     res.json({
-        id: req.user.id,
-        name: req.user.name,
-        email: req.user.email
+        id: req.adminUser.id,
+        name: req.adminUser.name,
+        email: req.adminUser.email
     })
 });
 
-// @route   DELETE api/user/:user_id
-// @desc    Delete user by user id
+// @route   DELETE api/admin-user/:adminUser_id
+// @desc    Delete adminUser by adminUser id
 // @access  Private
+router.delete('/:adminUser_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+  console.log('Delete adminUser by adminUser id')
 
-router.delete('/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
-  console.log('Delete user by user id')
+  var adminUser_id = req.params.adminUser_id;
 
-  var user_id = req.params.user_id;
-
-  User.findOneAndRemove({ _id: user_id }, function(err){
+  AdminUser.findOneAndRemove({ _id: adminUser_id }, function(err){
       if (err) {
         console.log(err);
         return res.status(500).send();

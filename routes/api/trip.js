@@ -9,7 +9,7 @@ const validateExperienceInput = require('../../validation/experience')
 const validateEducationInput = require('../../validation/education')
 
 
-// Load Trip Model
+// Load Models
 const User = require('../../models/User');
 const Trip = require('../../models/Trip');
 const Stop = require('../../models/Stop');
@@ -216,16 +216,7 @@ router.post(
     if (req.body.instagram) tripFields.social.instagram = req.body.instagram;*/}
 
     Trip.findOne({ user: req.user.id }).then(trip => {
-      {/*if (trip) {
-        // Update
-        Trip.findOneAndUpdate(
-          { user: req.user.id },
-          { $set: tripFields },
-          { new: true }
-        ).then(trip => res.json(trip));
-      } else {*/}
         // Create
-
         // Check if handle exists
         Trip.findOne({ handle: tripFields.handle }).then(trip => {
           if (trip) {
@@ -236,7 +227,6 @@ router.post(
           // Save Trip
           new Trip(tripFields).save().then(trip => res.json(trip));
         });
-      {/*}*/}
     });
   }
 );

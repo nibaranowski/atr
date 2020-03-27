@@ -12,17 +12,20 @@ const validateLoginInput = require('../../validation/login');
 
 // Load Models
 const User = require('../../models/User');
-const Trip = require('../../models/Trip');
-const Stop = require('../../models/Stop');
-const Day = require('../../models/Day');
-const Event = require('../../models/Event');
-
-// '/test' is already /api/users/test
+// const Trip = require('../../models/Trip');
+// const Stop = require('../../models/Stop');
+// const Day = require('../../models/Day');
+// const Event = require('../../models/Event');
 
 // @route   GET api/users/test
 // @desc    Test users routes
 // @access  Public
 router.get('/test', (req, res) => res.json({msg: "Users works"}));
+
+// <Q>how to create user from a position?
+// <Q>how to transform a lead to a user?
+
+// <todo> create POST route to populate data for manager_ids, worker_ids
 
 // @route   POST api/users/register
 // @desc    Register user
@@ -40,16 +43,16 @@ router.post('/register', (req, res) => {
       errors.email = 'Email already exists';
       return res.status(400).json(errors);
     } else {
-      const avatar = gravatar.url(req.body.email, {
-        s: '200', // Size
-        r: 'pg', // Rating
-        d: 'mm' // Default
-      });
+      // const avatar = gravatar.url(req.body.email, {
+      //   s: '200', // Size
+      //   r: 'pg', // Rating
+      //   d: 'mm' // Default
+      // });
 
       const newUser = new User({
         name: req.body.name,
         email: req.body.email,
-        avatar,
+        // avatar,
         password: req.body.password
       });
 
@@ -93,13 +96,17 @@ router.post('/login', (req, res) => {
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
         // User Matched
-        const payload = { id: user.id, name: user.name, avatar: user.avatar }; // Create JWT Payload
+        const payload = {
+          id: user.id,
+          name: user.name,
+          //avatar: user.avatar
+        }; // Create JWT Payload
 
         // Sign Token
         jwt.sign(
           payload,
           keys.secretOrKey,
-          { expiresIn: 3600 },
+          { expiresIn: 604800 }, // 1 week
           (err, token) => {
             res.json({
               success: true,
@@ -130,7 +137,6 @@ router.get('/current', passport.authenticate('jwt', { session: false }),
 // @route   DELETE api/user/:user_id
 // @desc    Delete user by user id
 // @access  Private
-
 router.delete('/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
   console.log('Delete user by user id')
 

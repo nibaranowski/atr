@@ -9,7 +9,7 @@ const validateExperienceInput = require('../../validation/experience')
 const validateEducationInput = require('../../validation/education')
 
 
-// Load Trip Model
+// Load Models
 const User = require('../../models/User');
 const Trip = require('../../models/Trip');
 const Stop = require('../../models/Stop');

@@ -36,11 +36,27 @@ require('./config/passport')(passport);
 // Passport Config
 
 // Use routes
-app.use('/api/users', users);
-app.use('/api/trip', trip);
-app.use('/api/stop', stop);
-app.use('/api/event', event);
-app.use('/api/day', day);
+// app.use('/api/users', users);
+// app.use('/api/trip', trip);
+// app.use('/api/stop', stop);
+// app.use('/api/event', event);
+// app.use('/api/day', day);
+app.use('/api/adminUser', adminUser);
+app.use('/api/company', company);
+app.use('/api/department', department);
+app.use('/api/onboardChecklist', onboardChecklist);
+app.use('/api/position', position);
+app.use('/api/positionHiringBoard', positionHiringBoard);
+app.use('/api/positionHiringPlan', positionHiringPlan);
+app.use('/api/team', team);
+app.use('/api/terminateChecklist', terminateChecklist);
+app.use('/api/user', user);
+
+app.use('/api/onboard-checklist/onboardTask', onboardTask);
+app.use('/api/position-hiring-board/lead', lead);
+app.use('/api/position-hiring-board/stage', stage);
+app.use('/api/terminate-checklist/terminateTask', terminateTask);
+app.use('/api/user/oneToOne', oneToOne);
 
 // Server static assets if in production
 if(process.env.NODE_ENV === 'production') {
