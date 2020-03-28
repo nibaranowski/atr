@@ -22,13 +22,13 @@ class Login extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push('/dashboard');
+      this.props.history.push(`/user-admin/${encodeURIComponent(this.state.email)}/main`);
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push('/dashboard');
+      this.props.history.push(`/user-admin/${encodeURIComponent(this.state.email)}/main`);//push to next page after login
     }
 
     if (nextProps.errors) {

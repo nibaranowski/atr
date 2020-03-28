@@ -4,7 +4,7 @@ import Spinner from '../../common/Spinner';
 //import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 //import isEmpty from '../../../validation/is-empty';
-import CompanyItem from '../../company/companys/CompanyItem';
+// import CompanyItem from '../../company/company-content/CompanyItem';
 
 class CompanyHeader extends Component {
     componentDidMount() {
@@ -17,7 +17,7 @@ class CompanyHeader extends Component {
         if (company == null || loading) {
           companyItem = <Spinner />;
         } else {
-          companyItem = <CompanyItem company={company} headerBool={1}/>
+          // companyItem = <CompanyItem company={company} headerBool={1}/>
         }
 
     return (

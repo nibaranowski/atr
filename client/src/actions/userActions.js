@@ -53,7 +53,7 @@ export const getAllUsersByPositionId = position_id => dispatch => {
 export const getAllUsersByCompanyId = company_id => dispatch => {
   dispatch(setUserLoading());
   axios
-    .get(`/api/company/company/${company_id}`)
+    .get(`/api/company/company-content/${company_id}`)
     .then(res =>
       dispatch({
         type: GET_ALL_USERS_BY_COMPANY_ID,

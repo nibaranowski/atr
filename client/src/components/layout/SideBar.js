@@ -35,7 +35,7 @@ class SideBar extends Component {
                   <ul className="nav">
                     <li className="nav-item nav-profile">
                       <div className="nav-link">
-                        <div className="user-wrapper">
+                        {/* <div className="user-wrapper">
                           <div className="profile-image">
                             <img src="/images/faces/face8.jpg" alt=""/> </div>
                           <div className="text-wrapper">
@@ -45,30 +45,134 @@ class SideBar extends Component {
                               <span className="status-indicator online" />
                             </div>
                           </div>
-                        </div>
-                        <button className="btn btn-success btn-block">New Project
+                        </div> */}
+                        {/* <button className="btn btn-success btn-block">
                           <i className="mdi mdi-plus" />
-                        </button>
+                          Define
+                        </button> */}
+                        <div className="dropdown">
+                          <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i className="mdi mdi-plus" />
+                            Define
+                          </button>
+                          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            {/* <h6 className="dropdown-header">Settings</h6> */}
+                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/define">Define</a>
+                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/hire">Hire</a>
+                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/onboard">Onboard</a>
+                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/coach">Coach</a>
+                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/analyze">Analyze</a>
+                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/terminate">Terminate</a>
+                            {/* <div className="dropdown-divider" />
+                            <a className="dropdown-item" href="#">Separated link</a> */}
+                          </div>
+                        </div>
                       </div>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" data-toggle="collapse" href="#dashboard-dropdown" aria-expanded="false" aria-controls="dashboard-dropdown">
+                      <a className="nav-link" data-toggle="collapse" href="#technology-dropdown" aria-expanded="false" aria-controls="technology-dropdown">
                         <i className="menu-icon mdi mdi-television" />
-                        <span className="menu-title">Dashboard</span>
+                        <span className="menu-title">Technology</span>
                         <i className="menu-arrow" />
                       </a>
-                      <div className="collapse" id="dashboard-dropdown">
+                      <div className="collapse" id="technology-dropdown">
                         <ul className="nav flex-column sub-menu">
                           <li className="nav-item">
-                            <a className="nav-link" href="index.html">Dashboard 1</a>
+                            <a className="nav-link" href="index.html">IOS Team</a>
                           </li>
                           <li className="nav-item">
-                            <a className="nav-link" href="pages/dashboards/dashboard-2.html">Dashboard 2</a>
+                            <a className="nav-link" href="pages/technologys/technology-2.html">Android Team</a>
                           </li>
                         </ul>
                       </div>
                     </li>
                     <li className="nav-item">
+                      <a className="nav-link" data-toggle="collapse" href="#marketing-dropdown" aria-expanded="false" aria-controls="marketing-dropdown">
+                        <i className="menu-icon mdi mdi-television" />
+                        <span className="menu-title">Marketing</span>
+                        <i className="menu-arrow" />
+                      </a>
+                      <div className="collapse" id="marketing-dropdown">
+                        <ul className="nav flex-column sub-menu">
+                          <li className="nav-item">
+                            <a className="nav-link" href="index.html">Team 1</a>
+                          </li>
+                          <li className="nav-item">
+                            <a className="nav-link" href="pages/marketings/dashboard-2.html">Team 2</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" data-toggle="collapse" href="#sales-dropdown" aria-expanded="false" aria-controls="sales-dropdown">
+                        <i className="menu-icon mdi mdi-television" />
+                        <span className="menu-title">Sales</span>
+                        <i className="menu-arrow" />
+                      </a>
+                      <div className="collapse" id="sales-dropdown">
+                        <ul className="nav flex-column sub-menu">
+                          <li className="nav-item">
+                            <a className="nav-link" href="index.html">Team 1</a>
+                          </li>
+                          <li className="nav-item">
+                            <a className="nav-link" href="pages/saless/dashboard-2.html">Team 2</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" data-toggle="collapse" href="#legal-dropdown" aria-expanded="false" aria-controls="legal-dropdown">
+                        <i className="menu-icon mdi mdi-television" />
+                        <span className="menu-title">Legal</span>
+                        <i className="menu-arrow" />
+                      </a>
+                      <div className="collapse" id="legal-dropdown">
+                        <ul className="nav flex-column sub-menu">
+                          <li className="nav-item">
+                            <a className="nav-link" href="index.html">Team 1</a>
+                          </li>
+                          <li className="nav-item">
+                            <a className="nav-link" href="pages/legals/legal-2.html">Team 2</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" data-toggle="collapse" href="#operations-dropdown" aria-expanded="false" aria-controls="operations-dropdown">
+                        <i className="menu-icon mdi mdi-television" />
+                        <span className="menu-title">Operations</span>
+                        <i className="menu-arrow" />
+                      </a>
+                      <div className="collapse" id="operations-dropdown">
+                        <ul className="nav flex-column sub-menu">
+                          <li className="nav-item">
+                            <a className="nav-link" href="index.html">Team 1</a>
+                          </li>
+                          <li className="nav-item">
+                            <a className="nav-link" href="pages/operationss/operations-2.html">Team 2</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" data-toggle="collapse" href="#management-dropdown" aria-expanded="false" aria-controls="management-dropdown">
+                        <i className="menu-icon mdi mdi-television" />
+                        <span className="menu-title">Management</span>
+                        <i className="menu-arrow" />
+                      </a>
+                      <div className="collapse" id="management-dropdown">
+                        <ul className="nav flex-column sub-menu">
+                          <li className="nav-item">
+                            <a className="nav-link" href="index.html">Team 1</a>
+                          </li>
+                          <li className="nav-item">
+                            <a className="nav-link" href="pages/managements/dashboard-2.html">Team 2</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    {/* <li className="nav-item">
                       <a className="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
                         <i className="menu-icon mdi mdi-notification-clear-all" />
                         <span className="menu-title">Page Layouts</span>
@@ -469,7 +573,7 @@ class SideBar extends Component {
                           </li>
                         </ul>
                       </div>
-                    </li>
+                    </li> */}
                   </ul>
                 </nav>
               </div>

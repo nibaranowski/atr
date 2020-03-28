@@ -33,7 +33,7 @@ export const getAllOneToOnes = () => dispatch => {
 export const getAllOneToOnesByUserId = user_id => dispatch => {
   dispatch(setOneToOneLoading());
   axios
-    .get(`/api/one-to-one/one-to-one/${user_id}`)
+    .get(`/api/one-to-one/one-to-one-content/${user_id}`)
     .then(res =>
       dispatch({
         type: GET_ALL_ONETOONES_BY_USER_ID,

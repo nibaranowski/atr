@@ -14,21 +14,13 @@ class CreateCompany extends Component {
     this.state = {
       handle: '',
       name: '',
-      startLocation: '',
-      endLocation: '',
-      startTime: '',
-      endTime: '',
-      startFlight: '',
-      endFlight: '',
-      maxBudget: '',
-      price: '',
-      pctBooked: '',
       errors: {}
     };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
@@ -40,16 +32,8 @@ class CreateCompany extends Component {
     e.preventDefault();
 
     const companyData = {
-        handle: this.state.handle,
+        handle: encodeURIComponent(this.state.name),
         name: this.state.name,
-        startLocation: this.state.startLocation,
-        endLocation: this.state.endLocation,
-        startTime: this.state.startTime,
-        endTime: this.state.endTime,
-        startFlight: this.state.startFlight,
-        endFlight: this.state.endFlight,
-        maxBudget: this.state.maxBudget,
-        pctBooked: this.state.pctBooked,
         errors: this.state.errors
     };
 
@@ -132,35 +116,24 @@ class CreateCompany extends Component {
               <div className="col-md-12 grid-margin stretch-card">
                 <div className="card">
                   <div className="card-body">
+                    {console.log('test3')}
                     <h4 className="card-title">Create your Company</h4>
-                    <p className="card-description mb-1"> Let's get some information to make your company </p>
-                    <small className="text-muted">* required fields</small>
+                    {/* <p className="card-description mb-1"> Let's get some information to make your company </p> */}
+                    {/* <small className="text-muted">* required fields</small> */}
                     <form className="forms-sample mt-3" onSubmit={this.onSubmit}>
                         <TextFieldGroup
-                          name="handle"
-                          placeholder="Company Handle"
-                          value={this.state.handle}
-                          info=""
-                          error={errors.handle}
-                          type="text"
-                          icon=""
-                          title="* Company Handle"
-                          disabled=""
-                          onChange={this.onChange}
-                        />
-                        <TextFieldGroup
                           name="name"
-                          placeholder="* Company Name"
+                          placeholder="* Name *"
                           value={this.state.name}
                           info=""
                           error={errors.name}
                           type="text"
                           icon=""
-                          title="* Company Name"
+                          title="* Name"
                           disabled=""
                           onChange={this.onChange}
                         />
-                        <TextFieldGroup
+                        {/* <TextFieldGroup
                           name="startLocation"
                           placeholder="Start location"
                           value={this.state.startLocation}
@@ -267,7 +240,7 @@ class CreateCompany extends Component {
                           title="Percentage Booked"
                           disabled=""
                           onChange={this.onChange}
-                        />
+                        /> */}
                       <input
                         type="submit"
                         value="Submit"

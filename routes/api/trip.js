@@ -135,10 +135,10 @@ router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (
     );
 });
 
-{/*// @route   GET api/profile/user/user/:user_id
+{/*// @route   GET api/profile/user/user-content/:user_id
 // @desc    Get profile by user ID
 // @access  Private
-router.get('/user/user/:user_id', (req, res) => {
+router.get('/user/user-content/:user_id', (req, res) => {
   const errors = {};
   Profile.findOne({ user: req.params.user_id })
     .populate('user', ['name', 'avatar'])

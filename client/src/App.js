@@ -31,6 +31,15 @@ import Login from './components/auth/Login';
 import CreateCompany from './components/company/company-actions/CreateCompany';
 //import EditCompany from './components/company/company-actions/EditCompany';
 
+//import Company entities components
+import Define from './components/company/company-content/Define';
+import Hire from './components/company/company-content/Hire';
+import Onboard from './components/company/company-content/Onboard';
+import Coach from './components/company/company-content/Coach';
+import Analyze from './components/company/company-content/Analyze';
+import Terminate from './components/company/company-content/Terminate';
+
+
 // //import Department actions components
 // import CreateDepartment from './components/department/department-actions/CreateDepartment';
 // import EditDepartment from './components/department/department-actions/EditDepartment';
@@ -89,16 +98,16 @@ import CreateOneToOne from './components/user/one-to-one/one-to-one-actions/Crea
 // import Test from './components/test/test/Test';
 
 //import Company components
-import Companys from './components/company/companys/Companys';
-import Company from './components/company/company/Company';
+import Companys from './components/company/companys-content/Companys';
+import Company from './components/company/company-content/Company';
 
 //import User components
-import Users from './components/user/users/Users';
-import User from './components/user/user/User';
+import Users from './components/user/users-content/Users';
+import User from './components/user/user-content/User';
 
 //import OneToOne components
-import OneToOnes from './components/user/one-to-one/one-to-ones/OneToOnes';
-import OneToOne from './components/user/one-to-one/one-to-one/OneToOne';
+import OneToOnes from './components/user/one-to-one/one-to-ones-content/OneToOnes';
+import OneToOne from './components/user/one-to-one/one-to-one-content/OneToOne';
 
 //import Test components
 //import Tests from './components/test/tests/Tests';
@@ -146,6 +155,20 @@ class App extends Component {
                   <div className="container-fluid page-body-wrapper" style={{marginTop: '63px'}}>
                     <NavBar />
                     <SideBar />
+                    {console.log('test')}
+                    {/* <h1>hello world</h1> */}
+                    {/* <CreateCompany /> */}
+                    {/* <div className="template-demo">
+                      <button type="button" className="btn btn-success btn-fw">Create Company</button>
+                      <button type="button" className="btn btn-secondary btn-fw">Secondary</button>
+                      <button type="button" className="btn btn-success btn-fw">Success</button>
+                      <button type="button" className="btn btn-danger btn-fw">Danger</button>
+                      <button type="button" className="btn btn-warning btn-fw">Warning</button>
+                      <button type="button" className="btn btn-info btn-fw">Info</button>
+                      <button type="button" className="btn btn-light btn-fw">Light</button>
+                      <button type="button" className="btn btn-dark btn-fw">Dark</button>
+                      <button type="button" className="btn btn-link btn-fw">Link</button>
+                    </div> */}
                     {/* <div className="child-routes">
                       <Switch>
                         <PrivateRoute
@@ -176,14 +199,60 @@ class App extends Component {
                         />
                       </Switch>
                     </div> */}
-                    <div className="company-routes">
+                    {/* <div className="company-routes"> */}
                       <Switch>
+                        {console.log('test2')}
                         <PrivateRoute
                           exact
                           path="admin-user/:adminUser_id/create-company"
                           component={CreateCompany}
                         />
                       </Switch>
+                      <Switch>
+                        {console.log('test4')}
+                        <PrivateRoute
+                          exact
+                          path="admin-user/adminUser_id/company/company_id/define"
+                          component={Define}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="admin-user/:adminUser_id/company/:company_id/hire"
+                          component={Hire}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="admin-user/:adminUser_id/company/:company_id/onboard"
+                          component={Onboard}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="admin-user/:adminUser_id/company/:company_id/coach"
+                          component={Coach}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="admin-user/:adminUser_id/company/:company_id/analyze"
+                          component={Analyze}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact
+                          path="admin-user/:adminUser_id/company/:company_id/terminate"
+                          component={Terminate}
+                        />
+                      </Switch>
+
+
                       {/* <Switch>
                         <PrivateRoute
                           exact
@@ -205,7 +274,7 @@ class App extends Component {
                           component={Company}
                         />
                       </Switch>
-                    </div>
+                    {/* </div> */}
                     {/* <div className="department-routes">
                       <Switch>
                         <PrivateRoute
@@ -296,7 +365,7 @@ class App extends Component {
                         />
                       </Switch>
                     </div> */}
-                    <div className="user-routes">
+                    {/* <div className="user-routes"> */}
                       {/* <Switch>
                         <PrivateRoute
                           exact
@@ -325,7 +394,7 @@ class App extends Component {
                           component={User}
                         />
                       </Switch>
-                    </div>
+                    {/* </div> */}
                     {/* <div className="position-hiring-board-routes">
                       <Switch>
                         <PrivateRoute
@@ -446,8 +515,8 @@ class App extends Component {
                         />
                       </Switch>
                     </div> */}
-                    <div className="user-sub-routes">
-                      <div className="one-to-one-routes">
+                    {/* <div className="user-sub-routes">
+                      <div className="one-to-one-routes"> */}
                         <Switch>
                           <PrivateRoute
                             exact
@@ -476,8 +545,8 @@ class App extends Component {
                             component={OneToOne}
                           />
                         </Switch>
-                      </div>
-                    </div>
+                      {/* </div>
+                    </div> */}
                     {/* <div className="position-hiring-board-sub-routes">
                       <div className="stage-routes">
                         <Switch>

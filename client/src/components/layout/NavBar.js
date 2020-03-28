@@ -41,26 +41,26 @@ class NavBar extends Component {
                     </Link>
                   </div>
                   <div className="navbar-menu-wrapper d-flex align-items-center">
-                    <button className="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    {/* <button className="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                       <span className="mdi mdi-menu" />
-                    </button>
+                    </button> */}
                     <ul className="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                       <li className="nav-item">
-                        <Link className="nav-link" to={`/company/user/${user.id}`}> */}
-                          Companys
+                        <Link className="nav-link" to={`/company/user/${user.id}`}>
+                          Search for employee or team
                         </Link>
                       </li>
-                      <li className="nav-item active">
+                      {/* <li className="nav-item active">
                         <a href="/#" className="nav-link">
                           <i className="mdi mdi-elevation-rise" />Reports</a>
-                      </li>
-                      <li className="nav-item">
+                      </li> */}
+                      {/* <li className="nav-item">
                         <a href="/#" className="nav-link">
                           <i className="mdi mdi-bookmark-plus-outline" />Score</a>
-                      </li>
+                      </li> */}
                     </ul>
                     <ul className="navbar-nav navbar-nav-right">
-                      <li className="nav-item dropdown">
+                      {/* <li className="nav-item dropdown">
                         <a href="/#" className="nav-link count-indicator dropdown-toggle" id="messageDropdown" data-toggle="dropdown" aria-expanded="false">
                           <i className="mdi mdi-file-outline" />
                           <span className="count">7</span>
@@ -96,7 +96,7 @@ class NavBar extends Component {
                             </div>
                           </a>
                         </div>
-                      </li>
+                      </li> */}
                       <li className="nav-item dropdown ml-4">
                         <a className="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="/#" data-toggle="dropdown">
                           <i className="mdi mdi-bell-outline" />
@@ -136,15 +136,16 @@ class NavBar extends Component {
                           </a>
                         </div>
                       </li>
-                      <li className="nav-item d-none d-lg-block color-setting">
+                      {/* <li className="nav-item d-none d-lg-block color-setting">
                         <a href="/#" className="nav-link" >
                           <i className="mdi mdi-tune" />
                         </a>
-                      </li>
+                      </li> */}
                       <li className="nav-item dropdown d-none d-xl-inline-block">
                         <a href="/#" className="nav-link dropdown-toggle" id="UserDropdown" data-toggle="dropdown" aria-expanded="false">
-                          <span className="profile-text">Richard V.Welsh !</span>
-                          <img alt=""  className="img-xs rounded-circle" src="/images/faces/face8.jpg" /> </a>
+                          <img alt=""  className="img-xs rounded-circle" src="/images/faces/face8.jpg" />
+                          <span className="profile-text">Alok</span>
+                        </a>
                         <div className="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                           <a href="/#" className="dropdown-item p-0">
                             <div className="d-flex border-bottom">

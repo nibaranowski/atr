@@ -92,18 +92,20 @@ router.post(
   '/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const { errors, isValid } = validateCompanyInput(req.body);
+    //const { errors, isValid } = validateCompanyInput(req.body);
 
     // Check Validation
-    if (!isValid) {
-      // Return any errors with 400 status
-      return res.status(400).json(errors);
-    }
+    // if (!isValid) {
+    //   // Return any errors with 400 status
+    //   return res.status(400).json(errors);
+    // }
     //console.log('this.props', this.props)
 
     // Get fields
     const companyFields = {};
-    companyFields.adminUser = req.adminUser.id;
+    //console.log(req)
+    const adminUser = req.user;
+    companyFields.adminUser = adminUser.id;
     //companyFields.trip = req.body.trip;
     companyFields.name = req.body.name;
     // if (req.body.order) companyFields.order = req.body.order;
@@ -116,15 +118,16 @@ router.post(
     // if (req.body.price) companyFields.price = req.body.price;
     // if (req.body.pctBooked) companyFields.pctBooked = req.body.pctBooked;
     // if (req.body.budgetAllocation) companyFields.budgetAllocation = req.body.budgetAllocation;
+    console.log(companyFields)
 
-    Company.findOne({ adminUser: req.adminUser.id }).then(company => {
+    Company.findOne({ adminUser: adminUser.id }).then(company => {
         // Create
         // Check if handle exists
         Company.findOne({ handle: companyFields.handle }).then(company => {
-          if (company) {
-            errors.handle = 'That handle already exists';
-            res.status(400).json(errors);
-          }
+          // if (company) {
+          //   errors.handle = 'That handle already exists';
+          //   res.status(400).json(errors);
+          // }
 
           // Save Company
           new Company(companyFields).save().then(company => res.json(company));

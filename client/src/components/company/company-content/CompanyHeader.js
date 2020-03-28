@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Spinner from '../../../common/Spinner';
+import Spinner from '../../common/Spinner';
 //import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 //import isEmpty from '../../../validation/is-empty';
-import OneToOneItem from '../one-to-ones/OneToOneItem';
+import CompanyItem from '../companys-content/CompanyItem';
 
-class OneToOneHeader extends Component {
+class CompanyHeader extends Component {
     componentDidMount() {
     }
 
     render() {
-        const { oneToOne, loading } = this.props.oneToOne;
-        let oneToOneItem;
+        const { company, loading } = this.props.company;
+        let companyItem;
 
-        if (oneToOne == null || loading) {
-          oneToOneItem = <Spinner />;
+        if (company == null || loading) {
+          companyItem = <Spinner />;
         } else {
-          oneToOneItem = <OneToOneItem oneToOne={oneToOne} headerBool={1}/>
+          companyItem = <CompanyItem company={company} headerBool={1}/>
         }
 
     return (
-      <div className="oneToOnes">
+      <div className="companys">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              {oneToOneItem}
+              {companyItem}
             </div>
           </div>
         </div>
@@ -39,10 +39,10 @@ class OneToOneHeader extends Component {
 //     <div className="card card-body bg-light mb-3">
 //       <h3 className="text-center text-info">{firstName}'s Bio</h3>
 //       <p className="lead">
-//         {isEmpty(oneToOne.bio) ? (
+//         {isEmpty(company.bio) ? (
 //           <span>{firstName} does not have a bio</span>
 //         ) : (
-//           <span>{oneToOne.bio}</span>
+//           <span>{company.bio}</span>
 //         )}
 //       </p>
 //       <hr />
@@ -56,12 +56,12 @@ class OneToOneHeader extends Component {
 //   </div>
 // </div>*/}
 
-OneToOneHeader.propTypes = {
-  oneToOne: PropTypes.object.isRequired
+CompanyHeader.propTypes = {
+  company: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-    oneToOne: state.oneToOne
+    company: state.company
 });
 
-export default connect(mapStateToProps)(OneToOneHeader);
+export default connect(mapStateToProps)(CompanyHeader);
