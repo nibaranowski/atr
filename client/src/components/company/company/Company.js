@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 //import CompanyDetails from './CompanyDetails';
 import CompanyHeader from './CompanyHeader';
 import CompanyViewFilter from './CompanyViewFilter';
-import Stops from '../../stop/stops/Stops';
+//import Stops from '../../stop/stops/Stops';
 //import AddBox from './AddBox';
 //import CompanyCreds from './CompanyCreds';
 //import CompanyGithub from './CompanyGithub';
@@ -39,7 +39,7 @@ class Company extends Component {
           <div className="mb-4 ml-2">
             <CompanyViewFilter company={company} />
           </div>
-          <Stops company={company} />
+          {/* <Stops company={company} /> */}
           {/* <AddBox company={company} /> */}
         </div>
       );

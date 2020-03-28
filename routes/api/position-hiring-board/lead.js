@@ -135,8 +135,7 @@ router.post(
           new Lead(leadFields).save().then(lead => res.json(lead));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/lead/:lead_id
 // @desc    Delete lead by lead id
@@ -154,7 +153,6 @@ router.delete('/:lead_id', passport.authenticate('jwt', { session: false }), (re
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

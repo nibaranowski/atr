@@ -3,9 +3,6 @@ const Schema = mongoose.Schema;
 
 // create Schema
 const UserSchema = new Schema({
-    //admin_user
-    //company
-    //department
     position: {
       type: Schema.Types.ObjectId,
       ref: 'position'
@@ -25,11 +22,9 @@ const UserSchema = new Schema({
     avatar: {
         type: String
     },
-    {
     manager_ids: {
         type: Array
     },
-    {
     worker_ids: {
         type: Array
     },
@@ -46,8 +41,6 @@ UserSchema.pre('remove', function(doc) {
   console.log('user depedencies removed')
   console.log('doc', doc);
   console.log('this._id', this._id)
-
-
   //remove oneToOnes
   User.find({oneToOne: this._id }).lean().then(oneToOnes => {
     console.log('oneToOnes', oneToOnes)

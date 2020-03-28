@@ -136,8 +136,7 @@ router.post(
           new OneToOne(oneToOneFields).save().then(oneToOne => res.json(oneToOne));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/one-to-one/:oneToOne_id
 // @desc    Delete oneToOne by oneToOne id
@@ -155,7 +154,6 @@ router.delete('/:oneToOne_id', passport.authenticate('jwt', { session: false }),
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

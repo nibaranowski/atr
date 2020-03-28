@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import { clearCurrentTrip } from '../../actions/tripActions';
+import { clearCurrentCompany } from '../../actions/companyActions';
 
 class NavBar extends Component {
 
@@ -21,7 +21,7 @@ class NavBar extends Component {
 
     onLogoutClick(e) {
         e.preventDefault();
-        this.props.clearCurrentTrip();
+        this.props.clearCurrentCompany();
         this.props.logoutUser();
     }
 
@@ -46,8 +46,8 @@ class NavBar extends Component {
                     </button>
                     <ul className="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                       <li className="nav-item">
-                        <Link className="nav-link" to={`/trip/user/${user.id}`}> */}
-                          Trips
+                        <Link className="nav-link" to={`/company/user/${user.id}`}> */}
+                          Companys
                         </Link>
                       </li>
                       <li className="nav-item active">
@@ -273,8 +273,8 @@ class NavBar extends Component {
                     </button>
                     <ul className="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                       <li className="nav-item">
-                        <Link className="nav-link" to={`/trip/user/${user.id}`}>
-                          Trips
+                        <Link className="nav-link" to={`/company/user/${user.id}`}>
+                          Companys
                         </Link>
                       </li>
                       <li className="nav-item active">
@@ -500,4 +500,4 @@ const mapStateToProps = (state) => ({
     auth: state.auth
 })
 
-export default connect(mapStateToProps, { logoutUser, clearCurrentTrip })(withRouter(NavBar));
+export default connect(mapStateToProps, { logoutUser, clearCurrentCompany })(withRouter(NavBar));

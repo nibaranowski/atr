@@ -2,45 +2,45 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 //import { Link } from 'react-router-dom';
-//import TripDetails from './TripDetails';
-import TripHeader from './TripHeader';
-import TripViewFilter from './TripViewFilter';
-import Stops from '../../stop/stops/Stops';
+//import OneToOneDetails from './OneToOneDetails';
+import OneToOneHeader from './OneToOneHeader';
+import OneToOneViewFilter from './OneToOneViewFilter';
+//import Stops from '../../stop/stops/Stops';
 //import AddBox from './AddBox';
-//import TripCreds from './TripCreds';
-//import TripGithub from './TripGithub';
-import Spinner from '../../common/Spinner';
-import { getTripByTripId } from '../../../actions/tripActions';
-import NavTree from '../../layout/NavTree';
+//import OneToOneCreds from './OneToOneCreds';
+//import OneToOneGithub from './OneToOneGithub';
+import Spinner from '../../../common/Spinner';
+import { getOneToOneByOneToOneId } from '../../../../actions/user/oneToOneActions';
+import NavTree from '../../../layout/NavTree';
 
 
 //import NavHeader from '../../layout/NavHeader';
 
 
-class Trip extends Component {
+class OneToOne extends Component {
   componentDidMount() {
-    if (this.props.match.params.trip_id) {
-      this.props.getTripByTripId(this.props.match.params.trip_id);
+    if (this.props.match.params.oneToOne_id) {
+      this.props.getOneToOneByOneToOneId(this.props.match.params.oneToOne_id);
     }
   }
 
   render() {
-    const { trip, loading } = this.props.trip;
-    let tripContent;
+    const { oneToOne, loading } = this.props.oneToOne;
+    let oneToOneContent;
 
-    if (trip === null || loading) {
-      tripContent = <Spinner />;
+    if (oneToOne === null || loading) {
+      oneToOneContent = <Spinner />;
     } else {
-      tripContent = (
+      oneToOneContent = (
         <div>
           <div className="mb-4">
-            <TripHeader trip={trip} />
+            <OneToOneHeader oneToOne={oneToOne} />
           </div>
           <div className="mb-4 ml-2">
-            <TripViewFilter trip={trip} />
+            <OneToOneViewFilter oneToOne={oneToOne} />
           </div>
-          <Stops trip={trip} />
-          {/* <AddBox trip={trip} /> */}
+          {/* <Stops oneToOne={oneToOne} /> */}
+          {/* <AddBox oneToOne={oneToOne} /> */}
         </div>
       );
     }
@@ -53,7 +53,7 @@ class Trip extends Component {
                 <NavTree />
                 <div className="card">
                   <div className="card-body">
-                    {tripContent}
+                    {oneToOneContent}
                   </div>
                 </div>
               </div>
@@ -64,13 +64,13 @@ class Trip extends Component {
   }
 }
 
-Trip.propTypes = {
-  getTripByTripId: PropTypes.func.isRequired,
-  trip: PropTypes.object.isRequired
+OneToOne.propTypes = {
+  getOneToOneByOneToOneId: PropTypes.func.isRequired,
+  oneToOne: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  trip: state.trip
+  oneToOne: state.oneToOne
 });
 
-export default connect(mapStateToProps, { getTripByTripId })(Trip);
+export default connect(mapStateToProps, { getOneToOneByOneToOneId })(OneToOne);

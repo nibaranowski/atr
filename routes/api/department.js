@@ -132,7 +132,7 @@ router.post(
           new Department(departmentFields).save().then(department => res.json(department));
         });
     });
-);
+});
 
 // @route   DELETE api/department/:department_id
 // @desc    Delete department by department id
@@ -150,7 +150,6 @@ router.delete('/:department_id', passport.authenticate('jwt', { session: false }
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

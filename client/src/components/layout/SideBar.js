@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import { clearCurrentTrip } from '../../actions/tripActions';
+import { clearCurrentCompany } from '../../actions/companyActions';
 
 class SideBar extends Component {
 
@@ -21,7 +21,7 @@ class SideBar extends Component {
 
     onLogoutClick(e) {
         e.preventDefault();
-        this.props.clearCurrentTrip();
+        this.props.clearCurrentCompany();
         this.props.logoutUser();
     }
 
@@ -942,4 +942,4 @@ const mapStateToProps = (state) => ({
     auth: state.auth
 })
 
-export default connect(mapStateToProps, { logoutUser, clearCurrentTrip })(withRouter(SideBar));
+export default connect(mapStateToProps, { logoutUser, clearCurrentCompany })(withRouter(SideBar));

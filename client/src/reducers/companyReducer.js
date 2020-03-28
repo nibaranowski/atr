@@ -1,46 +1,46 @@
 import {
-  GET_ALL_TRIPS,
-  GET_ALL_TRIPS_BY_USER_ID,
-  GET_TRIP_BY_TRIP_ID,
-  TRIP_LOADING,
-  DELETE_TRIP_BY_TRIP_ID
+  GET_ALL_COMPANYS,
+  GET_ALL_COMPANYS_BY_ADMINUSER_ID,
+  GET_COMPANY_BY_COMPANY_ID,
+  COMPANY_LOADING,
+  DELETE_COMPANY_BY_COMPANY_ID
 } from '../actions/types';
 
 const initialState = {
-    trip: null,
-    trips: null,
+    company: null,
+    companys: null,
     loading: false
 }
 
 export default function(state = initialState, action) {
     switch(action.type) {
-      case GET_ALL_TRIPS:
+      case GET_ALL_COMPANYS:
           return {
               ...state,
-              trips: action.payload,
+              companys: action.payload,
               loading: false
           }
-      case GET_ALL_TRIPS_BY_USER_ID:
+      case GET_ALL_COMPANYS_BY_ADMINUSER_ID:
           return {
               ...state,
-              trips: action.payload,
+              companys: action.payload,
               loading: false
           }
-      case GET_TRIP_BY_TRIP_ID:
+      case GET_COMPANY_BY_COMPANY_ID:
           return {
               ...state,
-              trip: action.payload,
+              company: action.payload,
               loading: false
           }
-      case TRIP_LOADING:
+      case COMPANY_LOADING:
           return {
               ...state,
               loading: true
           }
-      case DELETE_TRIP_BY_TRIP_ID:
+      case DELETE_COMPANY_BY_COMPANY_ID:
           return {
               ...state,
-              trip: null
+              company: null
           }
       default:
           return state;

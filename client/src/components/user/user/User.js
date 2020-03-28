@@ -2,45 +2,45 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 //import { Link } from 'react-router-dom';
-//import TripDetails from './TripDetails';
-import TripHeader from './TripHeader';
-import TripViewFilter from './TripViewFilter';
-import Stops from '../../stop/stops/Stops';
+//import UserDetails from './UserDetails';
+import UserHeader from './UserHeader';
+import UserViewFilter from './UserViewFilter';
+//import Stops from '../../stop/stops/Stops';
 //import AddBox from './AddBox';
-//import TripCreds from './TripCreds';
-//import TripGithub from './TripGithub';
+//import UserCreds from './UserCreds';
+//import UserGithub from './UserGithub';
 import Spinner from '../../common/Spinner';
-import { getTripByTripId } from '../../../actions/tripActions';
+import { getUserByUserId } from '../../../actions/userActions';
 import NavTree from '../../layout/NavTree';
 
 
 //import NavHeader from '../../layout/NavHeader';
 
 
-class Trip extends Component {
+class User extends Component {
   componentDidMount() {
-    if (this.props.match.params.trip_id) {
-      this.props.getTripByTripId(this.props.match.params.trip_id);
+    if (this.props.match.params.user_id) {
+      this.props.getUserByUserId(this.props.match.params.user_id);
     }
   }
 
   render() {
-    const { trip, loading } = this.props.trip;
-    let tripContent;
+    const { user, loading } = this.props.user;
+    let userContent;
 
-    if (trip === null || loading) {
-      tripContent = <Spinner />;
+    if (user === null || loading) {
+      userContent = <Spinner />;
     } else {
-      tripContent = (
+      userContent = (
         <div>
           <div className="mb-4">
-            <TripHeader trip={trip} />
+            <UserHeader user={user} />
           </div>
           <div className="mb-4 ml-2">
-            <TripViewFilter trip={trip} />
+            <UserViewFilter user={user} />
           </div>
-          <Stops trip={trip} />
-          {/* <AddBox trip={trip} /> */}
+          {/* <Stops user={user} /> */}
+          {/* <AddBox user={user} /> */}
         </div>
       );
     }
@@ -53,7 +53,7 @@ class Trip extends Component {
                 <NavTree />
                 <div className="card">
                   <div className="card-body">
-                    {tripContent}
+                    {userContent}
                   </div>
                 </div>
               </div>
@@ -64,13 +64,13 @@ class Trip extends Component {
   }
 }
 
-Trip.propTypes = {
-  getTripByTripId: PropTypes.func.isRequired,
-  trip: PropTypes.object.isRequired
+User.propTypes = {
+  getUserByUserId: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  trip: state.trip
+  user: state.user
 });
 
-export default connect(mapStateToProps, { getTripByTripId })(Trip);
+export default connect(mapStateToProps, { getUserByUserId })(User);

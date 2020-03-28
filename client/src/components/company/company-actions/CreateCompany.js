@@ -6,9 +6,9 @@ import TextFieldGroup from '../../common/TextFieldGroup';
 //import TextAreaFieldGroup from '../../common/TextAreaFieldGroup';
 //import InputGroup from '../../common/InputGroup';
 //import SelectListGroup from '../../common/SelectListGroup';
-import { createTrip } from '../../../actions/tripActions';
+import { createCompany } from '../../../actions/companyActions';
 
-class CreateTrip extends Component {
+class CreateCompany extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,7 +39,7 @@ class CreateTrip extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const tripData = {
+    const companyData = {
         handle: this.state.handle,
         name: this.state.name,
         startLocation: this.state.startLocation,
@@ -53,7 +53,7 @@ class CreateTrip extends Component {
         errors: this.state.errors
     };
 
-    this.props.createTrip(tripData, this.props.history);
+    this.props.createCompany(companyData, this.props.history);
   }
 
   onChange(e) {
@@ -69,7 +69,7 @@ class CreateTrip extends Component {
     //   socialInputs = (
     //     <div>
     //       <InputGroup
-    //         placeholder="Twitter Trip URL"
+    //         placeholder="Twitter Company URL"
     //         name="twitter"
     //         icon="fab fa-twitter"
     //         value={this.state.twitter}
@@ -85,7 +85,7 @@ class CreateTrip extends Component {
     //         error={errors.facebook}
     //       />
     //       <InputGroup
-    //         placeholder="Linkedin Trip URL"
+    //         placeholder="Linkedin Company URL"
     //         name="linkedin"
     //         icon="fab fa-linkedin"
     //         value={this.state.linkedin}
@@ -132,31 +132,31 @@ class CreateTrip extends Component {
               <div className="col-md-12 grid-margin stretch-card">
                 <div className="card">
                   <div className="card-body">
-                    <h4 className="card-title">Create your Trip</h4>
-                    <p className="card-description mb-1"> Let's get some information to make your trip </p>
+                    <h4 className="card-title">Create your Company</h4>
+                    <p className="card-description mb-1"> Let's get some information to make your company </p>
                     <small className="text-muted">* required fields</small>
                     <form className="forms-sample mt-3" onSubmit={this.onSubmit}>
                         <TextFieldGroup
                           name="handle"
-                          placeholder="Trip Handle"
+                          placeholder="Company Handle"
                           value={this.state.handle}
                           info=""
                           error={errors.handle}
                           type="text"
                           icon=""
-                          title="* Trip Handle"
+                          title="* Company Handle"
                           disabled=""
                           onChange={this.onChange}
                         />
                         <TextFieldGroup
                           name="name"
-                          placeholder="* Trip Name"
+                          placeholder="* Company Name"
                           value={this.state.name}
                           info=""
                           error={errors.name}
                           type="text"
                           icon=""
-                          title="* Trip Name"
+                          title="* Company Name"
                           disabled=""
                           onChange={this.onChange}
                         />
@@ -284,14 +284,14 @@ class CreateTrip extends Component {
     );
   }
 }
-CreateTrip.propTypes = {
-  trip: PropTypes.object.isRequired,
+CreateCompany.propTypes = {
+  company: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
-  trip: state.trip,
+  company: state.company,
   errors: state.errors
 });
-export default connect(mapStateToProps, { createTrip })(
-  withRouter(CreateTrip)
+export default connect(mapStateToProps, { createCompany })(
+  withRouter(CreateCompany)
 );

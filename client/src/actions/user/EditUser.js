@@ -6,10 +6,10 @@ import TextFieldGroup from '../../common/TextFieldGroup';
 //import TextAreaFieldGroup from '../../common/TextAreaFieldGroup';
 //import InputGroup from '../../common/InputGroup';
 //import SelectListGroup from '../../common/SelectListGroup';
-import { createDay, getDayByDayId } from '../../../actions/dayActions';
+import { createTrip, getTripByTripId } from '../../../actions/tripActions';
 import isEmpty from '../../../validation/is-empty';
 
-class CreateDay extends Component {
+class CreateTrip extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +22,8 @@ class CreateDay extends Component {
       startFlight: '',
       endFlight: '',
       maxBudget: '',
-      // dayProfile: {},
-      // days: {},
+      // tripProfile: {},
+      // stops: {},
       errors: {}
     };
 
@@ -32,7 +32,7 @@ class CreateDay extends Component {
   }
 
   componentDidMount() {
-    this.props.getDayByDayId();
+    this.props.getTripByTripId();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -40,33 +40,33 @@ class CreateDay extends Component {
       this.setState({ errors: nextProps.errors });
     }
 
-    if (nextProps.day.day) {
-      const day = nextProps.day.day;
+    if (nextProps.trip.trip) {
+      const trip = nextProps.trip.trip;
 // {/*
 //       // Bring skills array back to CSV
-//       const skillsCSV = day.skills.join(',');*/}
+//       const skillsCSV = trip.skills.join(',');*/}
 
-      // If day field doesnt exist, make empty string
+      // If trip field doesnt exist, make empty string
 
-      day.startLocation = !isEmpty(day.startLocation) ? day.startLocation : '';
-      day.endLocation = !isEmpty(day.endLocation) ? day.endLocation : '';
-      day.startTime = !isEmpty(day.startTime) ? day.startTime : '';
-      day.endTime = !isEmpty(day.endTime) ? day.endTime : '';
-      day.startFlight = !isEmpty(day.startFlight) ? day.startFlight : '';
-      day.endFlight = !isEmpty(day.endFlight) ? day.endFlight : '';
-      day.maxBudget = !isEmpty(day.maxBudget) ? day.maxBudget : '';
+      trip.startLocation = !isEmpty(trip.startLocation) ? trip.startLocation : '';
+      trip.endLocation = !isEmpty(trip.endLocation) ? trip.endLocation : '';
+      trip.startTime = !isEmpty(trip.startTime) ? trip.startTime : '';
+      trip.endTime = !isEmpty(trip.endTime) ? trip.endTime : '';
+      trip.startFlight = !isEmpty(trip.startFlight) ? trip.startFlight : '';
+      trip.endFlight = !isEmpty(trip.endFlight) ? trip.endFlight : '';
+      trip.maxBudget = !isEmpty(trip.maxBudget) ? trip.maxBudget : '';
 
       // Set component fields state
       this.setState({
-        handle: day.handle,
-        name: day.name,
-        startLocation: day.startLocation,
-        endLocation: day.endLocation,
-        startTime: day.startTime,
-        endTime: day.endTime,
-        startFlight: day.startFlight,
-        endFlight: day.endFlight,
-        maxBudget: day.maxBudget,
+        handle: trip.handle,
+        name: trip.name,
+        startLocation: trip.startLocation,
+        endLocation: trip.endLocation,
+        startTime: trip.startTime,
+        endTime: trip.endTime,
+        startFlight: trip.startFlight,
+        endFlight: trip.endFlight,
+        maxBudget: trip.maxBudget,
       });
     }
   }
@@ -74,7 +74,7 @@ class CreateDay extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const dayData = {
+    const tripData = {
       handle: this.state.handle,
       name: this.state.this.stateName,
       startLocation: this.state.startLocation,
@@ -86,7 +86,7 @@ class CreateDay extends Component {
       maxBudget: this.state.maxBudget,
     };
 
-    this.props.createDay(dayData, this.props.history);
+    this.props.createTrip(tripData, this.props.history);
   }
 
   onChange(e) {
@@ -102,7 +102,7 @@ class CreateDay extends Component {
 //       socialInputs = (
 //         <div>
 //           <InputGroup
-//             placeholder="Twitter Day URL"
+//             placeholder="Twitter Trip URL"
 //             name="twitter"
 //             icon="fab fa-twitter"
 //             value={this.state.twitter}
@@ -120,7 +120,7 @@ class CreateDay extends Component {
 //           />
 //
 //           <InputGroup
-//             placeholder="Linkedin Day URL"
+//             placeholder="Linkedin Trip URL"
 //             name="linkedin"
 //             icon="fab fa-linkedin"
 //             value={this.state.linkedin}
@@ -170,24 +170,24 @@ class CreateDay extends Component {
               <Link to="/dashboard" className="btn btn-light">
                 Go Back
               </Link>
-              <h1 className="display-4 text-center">Edit Day</h1>
+              <h1 className="display-4 text-center">Edit Trip</h1>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="* Day Handle"
+                  placeholder="* Trip Handle"
                   name="handle"
                   value={this.state.handle}
                   onChange={this.onChange}
                   error={errors.handle}
-                  info="A unique handle for your day URL. Typically use your Day name without space"
+                  info="A unique handle for your trip URL. Typically use your Trip name without space"
                 />
                 <TextFieldGroup
-                  placeholder="* Day Name"
+                  placeholder="* Trip Name"
                   name="name"
                   value={this.state.name}
                   onChange={this.onChange}
                   error={errors.name}
-                  info="Write your day name"
+                  info="Write your trip name"
                 />
                 <TextFieldGroup
                   placeholder="Start Location"
@@ -195,7 +195,7 @@ class CreateDay extends Component {
                   value={this.state.startLocation}
                   onChange={this.onChange}
                   error={errors.startLocation}
-                  info="Write your day start location"
+                  info="Write your trip start location"
                 />
                 <TextFieldGroup
                   placeholder="End Location"
@@ -203,7 +203,7 @@ class CreateDay extends Component {
                   value={this.state.endLocation}
                   onChange={this.onChange}
                   error={errors.endLocation}
-                  info="Write your day end location"
+                  info="Write your trip end location"
                 />
                 <TextFieldGroup
                   placeholder="Start Time"
@@ -211,7 +211,7 @@ class CreateDay extends Component {
                   value={this.state.startTime}
                   onChange={this.onChange}
                   error={errors.startTime}
-                  info="Write your day start time"
+                  info="Write your trip start time"
                 />
                 <TextFieldGroup
                   placeholder="End Time"
@@ -219,7 +219,7 @@ class CreateDay extends Component {
                   value={this.state.endTime}
                   onChange={this.onChange}
                   error={errors.endTime}
-                  info="Write your day end time"
+                  info="Write your trip end time"
                 />
                 <TextFieldGroup
                   placeholder="Start Flight"
@@ -227,7 +227,7 @@ class CreateDay extends Component {
                   value={this.state.startFlight}
                   onChange={this.onChange}
                   error={errors.startFlight}
-                  info="Write your day start flight"
+                  info="Write your trip start flight"
                 />
                 <TextFieldGroup
                   placeholder="Max Budget"
@@ -235,7 +235,7 @@ class CreateDay extends Component {
                   value={this.state.maxBudget}
                   onChange={this.onChange}
                   error={errors.maxBudget}
-                  info="Write your day end flight"
+                  info="Write your trip end flight"
                 />
               </form>
             </div>
@@ -246,18 +246,18 @@ class CreateDay extends Component {
   }
 }
 
-CreateDay.propTypes = {
-  createDay: PropTypes.func.isRequired,
-  getDayByDayId: PropTypes.func.isRequired,
-  day: PropTypes.object.isRequired,
+CreateTrip.propTypes = {
+  createTrip: PropTypes.func.isRequired,
+  getTripByTripId: PropTypes.func.isRequired,
+  trip: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  day: state.day,
+  trip: state.trip,
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { createDay, getDayByDayId })(
-  withRouter(CreateDay)
+export default connect(mapStateToProps, { createTrip, getTripByTripId })(
+  withRouter(CreateTrip)
 );

@@ -2,29 +2,29 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Spinner from '../../common/Spinner';
-import { getAllTripsByUserId } from '../../../actions/tripActions';
-import TripItem from './TripItem';
-import NavTree from '../../layout/NavTree';
+import Spinner from '../../../common/Spinner';
+import { getAllOneToOnesByUserId } from '../../../../actions/user/oneToOneActions';
+import OneToOneItem from './OneToOneItem';
+import NavTree from '../../../layout/NavTree';
 
-class Trips extends Component {
+class OneToOnes extends Component {
   componentDidMount() {
     if (this.props.match.params.user_id) {
-      this.props.getAllTripsByUserId(this.props.match.params.user_id);
-      console.log('this props - trips: ', this.props)
+      this.props.getAllOneToOnesByUserId(this.props.match.params.user_id);
+      console.log('this props - oneToOnes: ', this.props)
     }
   }
 
   render() {
-    const { trips } = this.props.trip;
-    //const trips = null
-    let tripItems = <Spinner />
-    if (trips) { // check if there is a trip
-        tripItems = trips.map(trip => (
-            <TripItem key={trip._id} trip={trip} />
+    const { oneToOnes } = this.props.oneToOne;
+    //const oneToOnes = null
+    let oneToOneItems = <Spinner />
+    if (oneToOnes) { // check if there is a oneToOne
+        oneToOneItems = oneToOnes.map(oneToOne => (
+            <OneToOneItem key={oneToOne._id} oneToOne={oneToOne} />
         ))
     } else {
-      tripItems = <p>You haven't created a trip Yet.</p>
+      oneToOneItems = <p>You haven't created a oneToOne Yet.</p>
     }
 
       return (
@@ -37,16 +37,16 @@ class Trips extends Component {
                   <div className="card-body">
                     <div className="row mb-2">
                       <div className="col-6">
-                        <h4 className="card-title">Trips</h4>
-                        <p className="card-description">List of all your trips</p>
+                        <h4 className="card-title">OneToOnes</h4>
+                        <p className="card-description">List of all your oneToOnes</p>
                       </div>
                       <div className="col-6">
-                        <Link to={`/user/${this.props.match.params.user_id}/create-trip`}>
-                          <button type="button" className="btn btn-success btn-fw float-right">Create Trip</button>
+                        <Link to={`/user/${this.props.match.params.user_id}/create-oneToOne`}>
+                          <button type="button" className="btn btn-success btn-fw float-right">Create OneToOne</button>
                         </Link>
                       </div>
                     </div>
-                    {tripItems}
+                    {oneToOneItems}
                   </div>
                 </div>
               </div>
@@ -57,15 +57,15 @@ class Trips extends Component {
   }
 }
 
-Trips.propTypes = {
-  getAllTripsByUserId: PropTypes.func.isRequired,
-  trip: PropTypes.object.isRequired,
+OneToOnes.propTypes = {
+  getAllOneToOnesByUserId: PropTypes.func.isRequired,
+  oneToOne: PropTypes.object.isRequired,
   stop: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({
-  trip: state.trip,
+  oneToOne: state.oneToOne,
   stop: state.stop,
 });
 
-export default connect(mapStateToProps, { getAllTripsByUserId })(Trips);
+export default connect(mapStateToProps, { getAllOneToOnesByUserId })(OneToOnes);

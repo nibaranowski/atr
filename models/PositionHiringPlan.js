@@ -10,7 +10,6 @@ const PositionHiringPlanSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'position'
     },
-    {
     hiringDic: {
         type: Array
     },

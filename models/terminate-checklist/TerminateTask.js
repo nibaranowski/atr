@@ -13,20 +13,16 @@ const TerminateTaskSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'terminateChecklist'
     },
-    {
     name: {
         type: String,
         required: true
     },
-    {
     status: {
         type: Boolean
     },
-    {
     order: {
         type: Number
     },
-    {
     type: {
         type: String
     },

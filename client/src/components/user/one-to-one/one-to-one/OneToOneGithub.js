@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-class TripGithub extends Component {
+class OneToOneGithub extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,8 +68,8 @@ class TripGithub extends Component {
   }
 }
 
-TripGithub.propTypes = {
+OneToOneGithub.propTypes = {
   username: PropTypes.string.isRequired
 };
 
-export default TripGithub;
+export default OneToOneGithub;

@@ -130,8 +130,7 @@ router.post(
           new TerminateChecklist(terminateChecklistFields).save().then(terminateChecklist => res.json(terminateChecklist));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/terminate-checklist/:terminateChecklist_id
 // @desc    Delete terminateChecklist by terminateChecklist id
@@ -149,7 +148,6 @@ router.delete('/:terminateChecklist_id', passport.authenticate('jwt', { session:
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

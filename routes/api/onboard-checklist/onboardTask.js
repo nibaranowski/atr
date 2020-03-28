@@ -10,7 +10,7 @@ const passport = require('passport');
 
 
 // Load Models
-const OnboardTask = require('../../../models/onboard-task/OnboardTask');
+const OnboardTask = require('../../../models/onboard-checklist/OnboardTask');
 const AdminUser = require('../../../models/AdminUser');
 // const Trip = require('../../models/Trip');
 // const Stop = require('../../models/Stop');
@@ -133,8 +133,7 @@ router.post(
           new OnboardTask(onboardTaskFields).save().then(onboardTask => res.json(onboardTask));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/onboard-task/:onboardTask_id
 // @desc    Delete onboardTask by onboardTask id
@@ -152,7 +151,6 @@ router.delete('/:onboardTask_id', passport.authenticate('jwt', { session: false 
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

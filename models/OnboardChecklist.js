@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // create Schema
-const OnboardChecklist = new Schema({
+const OnboardChecklistSchema = new Schema({
     //admin_user
     //company
     //department

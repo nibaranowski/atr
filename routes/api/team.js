@@ -130,8 +130,7 @@ router.post(
           new Team(teamFields).save().then(team => res.json(team));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/team/:team_id
 // @desc    Delete team by team id
@@ -149,7 +148,6 @@ router.delete('/:team_id', passport.authenticate('jwt', { session: false }), (re
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

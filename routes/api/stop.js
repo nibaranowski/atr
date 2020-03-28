@@ -321,7 +321,6 @@ router.delete('/:stop_id', passport.authenticate('jwt', { session: false }), (re
         return res.status(200).send();
       }
   });
-
 })
 
 

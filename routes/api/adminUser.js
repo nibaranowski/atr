@@ -145,7 +145,6 @@ router.delete('/:adminUser_id', passport.authenticate('jwt', { session: false })
         return res.status(200).send();
       }
   });
-
 })
 
 

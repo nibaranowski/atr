@@ -131,8 +131,7 @@ router.post(
           new PositionHiringPlan(positionHiringPlanFields).save().then(positionHiringPlan => res.json(positionHiringPlan));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/position-hiring-plan/:positionHiringPlan_id
 // @desc    Delete positionHiringPlan by positionHiringPlan id
@@ -150,7 +149,6 @@ router.delete('/:positionHiringPlan_id', passport.authenticate('jwt', { session:
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

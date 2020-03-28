@@ -133,8 +133,7 @@ router.post(
           new TerminateTask(terminateTaskFields).save().then(terminateTask => res.json(terminateTask));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/terminate-task/:terminateTask_id
 // @desc    Delete terminateTask by terminateTask id
@@ -152,7 +151,6 @@ router.delete('/:terminateTask_id', passport.authenticate('jwt', { session: fals
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
-import { clearCurrentTrip } from './actions/tripActions';
+import { clearCurrentCompany } from './actions/companyActions';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -22,83 +22,67 @@ import Login from './components/auth/Login';
 //import Test actions components
 // import CreateTest from './components/test/test-actions/CreateTest';
 // import EditTest from './components/test/test-actions/EditTest';
-// import DeleteTest from './components/test/test-actions/DeleteTest';
 
 //import AdminUser actions components
-import CreateAdminUser from './components/admin-user/admin-user-actions/CreateAdminUser';
+//import CreateAdminUser from './components/admin-user/admin-user-actions/CreateAdminUser';
 //import EditAdminUser from './components/admin-user/admin-user-actions/EditAdminUser';
-//import DeleteAdminUser from './components/admin-user/admin-user-actions/DeleteAdminUser';
 
 //import Company actions components
 import CreateCompany from './components/company/company-actions/CreateCompany';
 //import EditCompany from './components/company/company-actions/EditCompany';
-//import DeleteCompany from './components/company/company-actions/DeleteCompany';
 
 // //import Department actions components
 // import CreateDepartment from './components/department/department-actions/CreateDepartment';
 // import EditDepartment from './components/department/department-actions/EditDepartment';
-// import DeleteDepartment from './components/department/department-actions/DeleteDepartment';
 //
 // //import Team actions components
 // import CreateTeam from './components/team/team-actions/CreateTeam';
 // import EditTeam from './components/team/team-actions/EditTeam';
-// import DeleteTeam from './components/team/team-actions/DeleteTeam';
 //
 // //import Position actions components
 // import CreatePosition from './components/position/position-actions/CreatePosition';
 // import EditPosition from './components/position/position-actions/EditPosition';
-// import DeletePosition from './components/position/position-actions/DeletePosition';
 //
 // //import User actions components
 // import CreateUser from './components/user/user-actions/CreateUser';
 // import EditUser from './components/user/user-actions/EditUser';
-// import DeleteUser from './components/user/user-actions/DeleteUser';
 //
 // //import Position actions components
 // import CreatePosition from './components/position-hiring-board/position-hiring-board-actions/CreatePosition';
 // import EditPosition from './components/position-hiring-board/position-hiring-board-actions/EditPosition';
-// import DeletePositionHiringBoard from './components/position-hiring-board/position-hiring-board-actions/DeletePositionHiringBoard';
 //
 // //import Position actions components
 // import CreatePositionH from './components/position-hiring-plan/position-hiring-plan-actions/CreatePositionH';
 // import EditPositionH from './components/position-hiring-plan/position-hiring-plan-actions/EditPositionH';
-// import DeletePositionHiringPlan from './components/position-hiring-plan/position-hiring-plan-actions/DeletePositionHiringPlan';
 //
 // //import OnboardChecklist actions components
 // import CreateOnboardChecklist from './components/onboard-checklist/onboard-checklist-actions/CreateOnboardChecklist';
 // import EditOnboardChecklist from './components/onboard-checklist/onboard-checklist-actions/EditOnboardChecklist';
-// import DeleteOnboardChecklist from './components/onboard-checklist/onboard-checklist-actions/DeleteOnboardChecklist';
 //
 //
 // //import TerminateChecklist actions components
 // import CreateTerminateChecklist from './components/terminate-checklist/terminate-checklist-actions/CreateTerminateChecklist';
 // import EditTerminateChecklist from './components/terminate-checklist/terminate-checklist-actions/EditTerminateChecklist';
-// import DeleteTerminateChecklist from './components/terminate-checklist/terminate-checklist-actions/DeleteTerminateChecklist';
 
 //import OneToOne actions sub-components
 import CreateOneToOne from './components/user/one-to-one/one-to-one-actions/CreateOneToOne';
 //import EditOneToOne from './components/user/one-to-one/one-to-one-actions/EditOneToOne';
-//import DeleteOneToOne from './components/user/one-to-one/one-to-one-actions/DeleteOneToOne';
 
 // //import Stage actions sub-components
 // import CreateStage from './components/position-hiring-board/stage/stage-actions/CreateStage';
 // import EditStage from './components/position-hiring-board/stage/stage-actions/EditStage';
-// import DeleteStage from './components/position-hiring-board/stage/stage-actions/DeleteStage';
 //
 // //import Lead actions sub-components
 // import CreateLead from './components/position-hiring-board/lead/lead-actions/CreateLead';
 // import EditLead from './components/position-hiring-board/lead/lead-actions/EditLead';
-// import DeleteLead from './components/position-hiring-board/lead/lead-actions/DeleteLead';
 //
 // //import OnboardTask actions sub-components
 // import CreateOnboardTask from './components/onboard-checklist/onboard-task/onboard-task-actions/CreateOnboardTask';
 // import EditOnboardTask from './components/onboard-checklist/onboard-task/onboard-task-actions/EditOnboardTask';
-// import DeleteOnboardTask from './components/onboard-checklist/onboard-task/onboard-task-actions/DeleteOnboardTask';
 //
 // //import TerminateTask actions sub-components
 // import CreateTerminateTask from './components/terminate-checklist/terminate-task/terminate-task-actions/CreateTerminateTask';
 // import EditTerminateTask from './components/terminate-checklist/terminate-task/terminate-task-actions/EditTerminateTask';
-// import DeleteTerminateTask from './components/terminate-checklist/terminate-task/terminate-task-actions/DeleteTerminateTask';
 
 //import Test components
 // import Tests from './components/test/tests/Tests';
@@ -113,12 +97,12 @@ import Users from './components/user/users/Users';
 import User from './components/user/user/User';
 
 //import OneToOne components
-import OneToOnes from './components/one-to-one/one-to-ones/OneToOnes';
-import OneToOne from './components/one-to-one/one-to-one/OneToOne';
+import OneToOnes from './components/user/one-to-one/one-to-ones/OneToOnes';
+import OneToOne from './components/user/one-to-one/one-to-one/OneToOne';
 
 //import Test components
-import Tests from './components/test/tests/Tests';
-import Test from './components/test/test/Test';
+//import Tests from './components/test/tests/Tests';
+//import Test from './components/test/test/Test';
 
 // <todo> must still be done for the rest e.g. department etc
 
@@ -139,8 +123,8 @@ if (localStorage.jwtToken) {
   if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
-    // Clear current Trip
-    store.dispatch(clearCurrentTrip());
+    // Clear current Company
+    store.dispatch(clearCurrentCompany());
     // Redirect to login
     window.location.href = '/login';
   }
@@ -162,7 +146,7 @@ class App extends Component {
                   <div className="container-fluid page-body-wrapper" style={{marginTop: '63px'}}>
                     <NavBar />
                     <SideBar />
-                    <div className="child-routes">
+                    {/* <div className="child-routes">
                       <Switch>
                         <PrivateRoute
                           exact
@@ -175,13 +159,6 @@ class App extends Component {
                           exact
                           path="/mother/:mother_id/child/:child_id/edit-child"
                           component={EditChild}
-                        />
-                      </Switch>
-                      <Switch>
-                        <PrivateRoute
-                          exact
-                          path="/mother/:mother_id/child/:child_id/delete-child"
-                          component={DeleteChild}
                         />
                       </Switch>
                       <Switch>
@@ -217,13 +194,6 @@ class App extends Component {
                       <Switch>
                         <PrivateRoute
                           exact
-                          path="admin-user/:adminUser_id/company/:company_id/delete-company"
-                          component={DeleteCompany}
-                        />
-                      </Switch>
-                      <Switch>
-                        <PrivateRoute
-                          exact
                           path="admin-user/:adminUser_id/company/all"
                           component={Companys}
                         />
@@ -249,13 +219,6 @@ class App extends Component {
                           exact
                           path="/company/:company_id/department/:department_id/edit-department"
                           component={EditDepartment}
-                        />
-                      </Switch>
-                      <Switch>
-                        <PrivateRoute
-                          exact
-                          path="/company/:company_id/department/:department_id/delete-department"
-                          component={DeleteDepartment}
                         />
                       </Switch>
                       <Switch>
@@ -288,13 +251,6 @@ class App extends Component {
                           component={EditTeam}
                         />
                       </Switch>
-                        <Switch>
-                          <PrivateRoute
-                            exact
-                            path="/department/:department_id/team/:team_id/delete-team"
-                            component={DeleteTeam}
-                          />
-                        </Switch>
                       <Switch>
                         <PrivateRoute
                           exact
@@ -323,13 +279,6 @@ class App extends Component {
                           exact
                           path="/team/:team_id/position/:position_id/edit-position"
                           component={EditPosition}
-                        />
-                      </Switch>
-                      <Switch>
-                        <PrivateRoute
-                          exact
-                          path="/team/:team_id/position/:position_id/delete-position"
-                          component={DeletePosition}
                         />
                       </Switch>
                       <Switch>
@@ -365,13 +314,6 @@ class App extends Component {
                       <Switch>
                         <PrivateRoute
                           exact
-                          path="/position/:position_id/user/:user_id/delete-user"
-                          component={DeleteUser}
-                        />
-                      </Switch>
-                      <Switch>
-                        <PrivateRoute
-                          exact
                           path="/position/:position_id/user/all"
                           component={Users}
                         />
@@ -397,13 +339,6 @@ class App extends Component {
                           exact
                           path="/position/:position_id/position-hiring-board/:positionHiringBoard_id/edit-positionHiringBoard"
                           component={EditPositionHiringBoard}
-                        />
-                      </Switch>
-                      <Switch>
-                        <PrivateRoute
-                          exact
-                          path="/position/:position_id/position-hiring-board/:positionHiringBoard_id/delete-positionHiringBoard"
-                          component={DeletePositionHiringBoard}
                         />
                       </Switch>
                       <Switch>
@@ -439,13 +374,6 @@ class App extends Component {
                       <Switch>
                         <PrivateRoute
                           exact
-                          path="/position/:position_id/position-hiring-plan/:PositionHiringPlan_id/delete-PositionHiringPlan"
-                          component={DeletePositionHiringPlan}
-                        />
-                      </Switch>
-                      <Switch>
-                        <PrivateRoute
-                          exact
                           path="/position/:position_id/position-hiring-plan/all"
                           component={PositionHiringPlans}
                         />
@@ -471,13 +399,6 @@ class App extends Component {
                           exact
                           path="/position/:position_id/onboard-checklist/:onboardChecklist_id/edit-onboardChecklist"
                           component={EditOnboardChecklist}
-                        />
-                      </Switch>
-                      <Switch>
-                        <PrivateRoute
-                          exact
-                          path="/position/:position_id/onboard-checklist/:onboardChecklist_id/delete-onboardChecklist"
-                          component={DeleteOnboardChecklist}
                         />
                       </Switch>
                       <Switch>
@@ -513,13 +434,6 @@ class App extends Component {
                       <Switch>
                         <PrivateRoute
                           exact
-                          path="/position/:position_id/terminate-checklist/:terminateChecklist_id/delete-terminateChecklist"
-                          component={DeleteTerminateChecklist}
-                        />
-                      </Switch>
-                      <Switch>
-                        <PrivateRoute
-                          exact
                           path="/position/:position_id/terminate-checklist/all"
                           component={TerminateChecklists}
                         />
@@ -546,13 +460,6 @@ class App extends Component {
                             exact
                             path="/user/:user_id/one-to-one/:oneToOne_id/edit-oneToOne"
                             component={EditOneToOne}
-                          />
-                        </Switch>
-                        <Switch>
-                          <PrivateRoute
-                            exact
-                            path="/user/:user_id/one-to-one/:oneToOne_id/delete-oneToOne"
-                            component={DeleteOneToOne}
                           />
                         </Switch>
                         <Switch>
@@ -590,13 +497,6 @@ class App extends Component {
                         <Switch>
                           <PrivateRoute
                             exact
-                            path="/position-hiring-board/:positionHiringBoard_id/stage/:stage_id/delete-stage"
-                            component={DeleteStage}
-                          />
-                        </Switch>
-                        <Switch>
-                          <PrivateRoute
-                            exact
                             path="/position-hiring-board/:positionHiringBoard_id/stage/all"
                             component={Stages}
                           />
@@ -622,13 +522,6 @@ class App extends Component {
                             exact
                             path="/stage/:stage_id/lead/:lead_id/edit-lead"
                             component={EditLead}
-                          />
-                        </Switch>
-                        <Switch>
-                          <PrivateRoute
-                            exact
-                            path="/stage/:stage_id/lead/:lead_id/delete-lead"
-                            component={DeleteLead}
                           />
                         </Switch>
                         <Switch>
@@ -666,13 +559,6 @@ class App extends Component {
                         <Switch>
                           <PrivateRoute
                             exact
-                            path="/onboard-checklist/:onboardChecklist_id/onboard-task/:onboardTask_id/delete-onboardTask"
-                            component={DeleteOnboardTask}
-                          />
-                        </Switch>
-                        <Switch>
-                          <PrivateRoute
-                            exact
                             path="/onboard-checklist/:onboardChecklist_id/onboard-task/all"
                             component={OnboardTasks}
                           />
@@ -705,13 +591,6 @@ class App extends Component {
                         <Switch>
                           <PrivateRoute
                             exact
-                            path="/terminate-checklist/:terminateChecklist_id/terminate-task/:terminateTask_id/delete-terminateTask"
-                            component={DeleteTerminateTask}
-                          />
-                        </Switch>
-                        <Switch>
-                          <PrivateRoute
-                            exact
                             path="/terminate-checklist/:terminateChecklist_id/terminate-task/all"
                             component={TerminateTasks}
                           />
@@ -724,7 +603,7 @@ class App extends Component {
                           />
                         </Switch>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
               </div>
               {/*<Footer />*/}

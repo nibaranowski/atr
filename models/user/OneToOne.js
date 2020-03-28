@@ -13,27 +13,21 @@ const OneToOneSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'user'
     },
-    {
     strengths: {
         type: Array
     },
-    {
     weaknesses: {
         type: Array
     },
-    {
     actions: {
         type: Array
     },
-    {
     hardSkillsDic: {
         type: Array
     },
-    {
     softSkillsDic: {
         type: Array
     },
-    {
     actionsDic: {
         type: Array
     },

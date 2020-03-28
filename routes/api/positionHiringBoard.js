@@ -130,8 +130,7 @@ router.post(
           new PositionHiringBoard(positionHiringBoardFields).save().then(positionHiringBoard => res.json(positionHiringBoard));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/position-hiring-board/:positionHiringBoard_id
 // @desc    Delete positionHiringBoard by positionHiringBoard id
@@ -149,7 +148,6 @@ router.delete('/:positionHiringBoard_id', passport.authenticate('jwt', { session
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

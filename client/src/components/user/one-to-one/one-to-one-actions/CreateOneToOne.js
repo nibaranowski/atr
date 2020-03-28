@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import TextFieldGroup from '../../common/TextFieldGroup';
+import TextFieldGroup from '../../../common/TextFieldGroup';
 //import TextAreaFieldGroup from '../../common/TextAreaFieldGroup';
 //import InputGroup from '../../common/InputGroup';
 //import SelectListGroup from '../../common/SelectListGroup';
-import { createTrip } from '../../../actions/tripActions';
+import { createOneToOne } from '../../../../actions/user/oneToOneActions';
 
-class CreateTrip extends Component {
+class CreateOneToOne extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,7 +39,7 @@ class CreateTrip extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const tripData = {
+    const oneToOneData = {
         handle: this.state.handle,
         name: this.state.name,
         startLocation: this.state.startLocation,
@@ -53,7 +53,7 @@ class CreateTrip extends Component {
         errors: this.state.errors
     };
 
-    this.props.createTrip(tripData, this.props.history);
+    this.props.createOneToOne(oneToOneData, this.props.history);
   }
 
   onChange(e) {
@@ -69,7 +69,7 @@ class CreateTrip extends Component {
     //   socialInputs = (
     //     <div>
     //       <InputGroup
-    //         placeholder="Twitter Trip URL"
+    //         placeholder="Twitter OneToOne URL"
     //         name="twitter"
     //         icon="fab fa-twitter"
     //         value={this.state.twitter}
@@ -85,7 +85,7 @@ class CreateTrip extends Component {
     //         error={errors.facebook}
     //       />
     //       <InputGroup
-    //         placeholder="Linkedin Trip URL"
+    //         placeholder="Linkedin OneToOne URL"
     //         name="linkedin"
     //         icon="fab fa-linkedin"
     //         value={this.state.linkedin}
@@ -132,31 +132,31 @@ class CreateTrip extends Component {
               <div className="col-md-12 grid-margin stretch-card">
                 <div className="card">
                   <div className="card-body">
-                    <h4 className="card-title">Create your Trip</h4>
-                    <p className="card-description mb-1"> Let's get some information to make your trip </p>
+                    <h4 className="card-title">Create your OneToOne</h4>
+                    <p className="card-description mb-1"> Let's get some information to make your oneToOne </p>
                     <small className="text-muted">* required fields</small>
                     <form className="forms-sample mt-3" onSubmit={this.onSubmit}>
                         <TextFieldGroup
                           name="handle"
-                          placeholder="Trip Handle"
+                          placeholder="OneToOne Handle"
                           value={this.state.handle}
                           info=""
                           error={errors.handle}
                           type="text"
                           icon=""
-                          title="* Trip Handle"
+                          title="* OneToOne Handle"
                           disabled=""
                           onChange={this.onChange}
                         />
                         <TextFieldGroup
                           name="name"
-                          placeholder="* Trip Name"
+                          placeholder="* OneToOne Name"
                           value={this.state.name}
                           info=""
                           error={errors.name}
                           type="text"
                           icon=""
-                          title="* Trip Name"
+                          title="* OneToOne Name"
                           disabled=""
                           onChange={this.onChange}
                         />
@@ -284,14 +284,14 @@ class CreateTrip extends Component {
     );
   }
 }
-CreateTrip.propTypes = {
-  trip: PropTypes.object.isRequired,
+CreateOneToOne.propTypes = {
+  oneToOne: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
-  trip: state.trip,
+  oneToOne: state.oneToOne,
   errors: state.errors
 });
-export default connect(mapStateToProps, { createTrip })(
-  withRouter(CreateTrip)
+export default connect(mapStateToProps, { createOneToOne })(
+  withRouter(CreateOneToOne)
 );

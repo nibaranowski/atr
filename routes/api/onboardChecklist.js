@@ -130,8 +130,7 @@ router.post(
           new OnboardChecklist(onboardChecklistFields).save().then(onboardChecklist => res.json(onboardChecklist));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/onboard-checklist/:onboardChecklist_id
 // @desc    Delete onboardChecklist by onboardChecklist id
@@ -149,7 +148,6 @@ router.delete('/:onboardChecklist_id', passport.authenticate('jwt', { session: f
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

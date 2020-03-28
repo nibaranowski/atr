@@ -4,11 +4,27 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
 
-const users = require('./routes/api/users');
-const trip = require('./routes/api/trip');
-const stop = require('./routes/api/stop');
-const day = require('./routes/api/day');
-const event = require('./routes/api/event');
+const adminUser = require('./routes/api/adminUser');
+const company = require('./routes/api/company');
+const department = require('./routes/api/department');
+const onboardChecklist = require('./routes/api/onboardChecklist');
+const position = require('./routes/api/position');
+const positionHiringBoard = require('./routes/api/positionHiringBoard');
+const positionHiringPlan = require('./routes/api/positionHiringPlan');
+const team = require('./routes/api/team');
+const terminateChecklist = require('./routes/api/terminateChecklist');
+const user = require('./routes/api/user');
+
+const onboardTask = require('./routes/api/onboard-checklist/onboardTask');
+const lead = require('./routes/api/position-hiring-board/lead');
+const stage = require('./routes/api/position-hiring-board/stage');
+const terminateTask = require('./routes/api/terminate-checklist/terminateTask');
+const oneToOne = require('./routes/api/user/oneToOne');
+
+// const trip = require('./routes/api/trip');
+// const stop = require('./routes/api/stop');
+// const day = require('./routes/api/day');
+// const event = require('./routes/api/event');
 
 const app = express();
 
@@ -41,22 +57,22 @@ require('./config/passport')(passport);
 // app.use('/api/stop', stop);
 // app.use('/api/event', event);
 // app.use('/api/day', day);
-app.use('/api/adminUser', adminUser);
+app.use('/api/admin-user', adminUser);
 app.use('/api/company', company);
 app.use('/api/department', department);
-app.use('/api/onboardChecklist', onboardChecklist);
+app.use('/api/onboard-checklist', onboardChecklist);
 app.use('/api/position', position);
-app.use('/api/positionHiringBoard', positionHiringBoard);
-app.use('/api/positionHiringPlan', positionHiringPlan);
+app.use('/api/position-hiring-board', positionHiringBoard);
+app.use('/api/position-hiring-plan', positionHiringPlan);
 app.use('/api/team', team);
-app.use('/api/terminateChecklist', terminateChecklist);
+app.use('/api/terminate-checklist', terminateChecklist);
 app.use('/api/user', user);
 
-app.use('/api/onboard-checklist/onboardTask', onboardTask);
+app.use('/api/onboard-checklist/onboard-task', onboardTask);
 app.use('/api/position-hiring-board/lead', lead);
 app.use('/api/position-hiring-board/stage', stage);
-app.use('/api/terminate-checklist/terminateTask', terminateTask);
-app.use('/api/user/oneToOne', oneToOne);
+app.use('/api/terminate-checklist/terminate-task', terminateTask);
+app.use('/api/user/one-to-one', oneToOne);
 
 // Server static assets if in production
 if(process.env.NODE_ENV === 'production') {

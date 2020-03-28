@@ -3,28 +3,28 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Spinner from '../../common/Spinner';
-import { getAllTripsByUserId } from '../../../actions/tripActions';
-import TripItem from './TripItem';
+import { getAllUsersByPositionId } from '../../../actions/userActions';
+import UserItem from './UserItem';
 import NavTree from '../../layout/NavTree';
 
-class Trips extends Component {
+class Users extends Component {
   componentDidMount() {
     if (this.props.match.params.user_id) {
-      this.props.getAllTripsByUserId(this.props.match.params.user_id);
-      console.log('this props - trips: ', this.props)
+      this.props.getAllUsersByUserId(this.props.match.params.user_id);
+      console.log('this props - users: ', this.props)
     }
   }
 
   render() {
-    const { trips } = this.props.trip;
-    //const trips = null
-    let tripItems = <Spinner />
-    if (trips) { // check if there is a trip
-        tripItems = trips.map(trip => (
-            <TripItem key={trip._id} trip={trip} />
+    const { users } = this.props.user;
+    //const users = null
+    let userItems = <Spinner />
+    if (users) { // check if there is a user
+        userItems = users.map(user => (
+            <UserItem key={user._id} user={user} />
         ))
     } else {
-      tripItems = <p>You haven't created a trip Yet.</p>
+      userItems = <p>You haven't created a user Yet.</p>
     }
 
       return (
@@ -37,16 +37,16 @@ class Trips extends Component {
                   <div className="card-body">
                     <div className="row mb-2">
                       <div className="col-6">
-                        <h4 className="card-title">Trips</h4>
-                        <p className="card-description">List of all your trips</p>
+                        <h4 className="card-title">Users</h4>
+                        <p className="card-description">List of all your users</p>
                       </div>
                       <div className="col-6">
-                        <Link to={`/user/${this.props.match.params.user_id}/create-trip`}>
-                          <button type="button" className="btn btn-success btn-fw float-right">Create Trip</button>
+                        <Link to={`/user/${this.props.match.params.user_id}/create-user`}>
+                          <button type="button" className="btn btn-success btn-fw float-right">Create User</button>
                         </Link>
                       </div>
                     </div>
-                    {tripItems}
+                    {userItems}
                   </div>
                 </div>
               </div>
@@ -57,15 +57,15 @@ class Trips extends Component {
   }
 }
 
-Trips.propTypes = {
-  getAllTripsByUserId: PropTypes.func.isRequired,
-  trip: PropTypes.object.isRequired,
+Users.propTypes = {
+  getAllUsersByUserId: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
   stop: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({
-  trip: state.trip,
+  user: state.user,
   stop: state.stop,
 });
 
-export default connect(mapStateToProps, { getAllTripsByUserId })(Trips);
+export default connect(mapStateToProps, { getAllUsersByPositionId })(Users);

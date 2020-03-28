@@ -28,13 +28,13 @@ const LeadSchema = new Schema({
     quality: {
         type: String,
         required: true
-    },,
+    },
     date: {
         type: Date,
         default: Date.now
-    }
+    },
     cv: {
-    type: String, //string will have url address where cv is stored
+        type: String, //string will have url address where cv is stored
         required: true
     },
     order: {

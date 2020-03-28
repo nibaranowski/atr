@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 //import isEmpty from '../../../validation/is-empty';
 import { connect } from 'react-redux';
-import { deleteTripByTripId } from '../../../actions/tripActions';
+import { deleteOneToOneByOneToOneId } from '../../../../actions/user/oneToOneActions';
 
-class TripItem extends Component {
+class OneToOneItem extends Component {
 
     onDeleteClick(e) {
-      console.log('this.props. in delete', this.props.trip._id)
-      this.props.deleteTripByTripId(this.props.trip._id);
+      console.log('this.props. in delete', this.props.oneToOne._id)
+      this.props.deleteOneToOneByOneToOneId(this.props.oneToOne._id);
     }
 
     render() {
         // const noStyle = {
         //   all: 'unset',
         // };
-        const { trip } = this.props;
+        const { oneToOne } = this.props;
         //const headerBool = this.props.headerBool
         return (
         <div>
@@ -26,8 +26,8 @@ class TripItem extends Component {
             </div>
             <div className="col-4">
               <div className="row">
-                <p className="text-dark font-weight-semibold mr-2 mb-0 no-wrap">{trip.name}</p>
-                <small className="text-muted mb-0">A beautiful trip awaits you in 4 stops</small>
+                <p className="text-dark font-weight-semibold mr-2 mb-0 no-wrap">{oneToOne.name}</p>
+                <small className="text-muted mb-0">A beautiful oneToOne awaits you in 4 stops</small>
               </div>
               <div className="row">
                 <div className="event py-3">
@@ -51,7 +51,7 @@ class TripItem extends Component {
             </div>
             <div className="col-2">
               <div className="btn-group float-right mr-2">
-                <Link to={`/trip/${trip._id}`} className="btn btn-primary">
+                <Link to={`/oneToOne/${oneToOne._id}`} className="btn btn-primary">
                   View
                 </Link>
                 <button type="button" className="btn btn-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,7 +59,7 @@ class TripItem extends Component {
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
                 {/*<h6 className="dropdown-header">Settings</h6>*/}
-                  <Link className="dropdown-item" to={`/trip/${this.props.trip._id}/edit-trip`}>Edit</Link>
+                  <Link className="dropdown-item" to={`/oneToOne/${this.props.oneToOne._id}/edit-oneToOne`}>Edit</Link>
                   <a className="dropdown-item" onClick={this.onDeleteClick.bind(this)} href="/#">Delete</a>
                   <a className="dropdown-item" href="/#" disabled="disabled">Invite</a>
                 </div>
@@ -72,9 +72,9 @@ class TripItem extends Component {
 }
 
 
-TripItem.propTypes = {
-  deleteTripByTripId: PropTypes.func.isRequired,
-  trip: PropTypes.object.isRequired
+OneToOneItem.propTypes = {
+  deleteOneToOneByOneToOneId: PropTypes.func.isRequired,
+  oneToOne: PropTypes.object.isRequired
 }
 
-export default connect(null, { deleteTripByTripId })(TripItem);
+export default connect(null, { deleteOneToOneByOneToOneId })(OneToOneItem);

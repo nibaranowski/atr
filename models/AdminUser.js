@@ -27,4 +27,4 @@ const AdminUserSchema = new Schema({
     }
 });
 
-module.exports = User = mongoose.model('user', AdminUserSchema);
+module.exports = User = mongoose.model('adminUser', AdminUserSchema);

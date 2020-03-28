@@ -130,8 +130,7 @@ router.post(
           new Company(companyFields).save().then(company => res.json(company));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/company/:company_id
 // @desc    Delete company by company id
@@ -149,7 +148,6 @@ router.delete('/:company_id', passport.authenticate('jwt', { session: false }), 
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

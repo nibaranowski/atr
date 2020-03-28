@@ -131,8 +131,7 @@ router.post(
           new Stage(stageFields).save().then(stage => res.json(stage));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/stage/:stage_id
 // @desc    Delete stage by stage id
@@ -150,7 +149,6 @@ router.delete('/:stage_id', passport.authenticate('jwt', { session: false }), (r
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;

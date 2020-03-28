@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 //import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 //import isEmpty from '../../../validation/is-empty';
-//import TripItem from '../trips/TripItem';
+//import OneToOneItem from '../one-to-ones/OneToOneItem';
 
-class TripViewFilter extends Component {
+class OneToOneViewFilter extends Component {
     render() {
-      //const { trip } = this.props;
+      //const { oneToOne } = this.props;
       return (
         <div className="dropdown">
           <button className="btn btn-outline-primary-no-border dropdown-toggle" type="button" id="dropdownMenuOutlineButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> List </button>
@@ -21,12 +21,12 @@ class TripViewFilter extends Component {
 }
 
 
-TripViewFilter.propTypes = {
-  trip: PropTypes.object.isRequired
+OneToOneViewFilter.propTypes = {
+  oneToOne: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-    trip: state.trip
+    oneToOne: state.oneToOne
 });
 
-export default connect(mapStateToProps)(TripViewFilter);
+export default connect(mapStateToProps)(OneToOneViewFilter);

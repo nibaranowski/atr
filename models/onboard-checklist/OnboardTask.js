@@ -13,20 +13,16 @@ const OnboardTaskSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'onboardChecklist'
     },
-    {
     name: {
         type: String,
         required: true
     },
-    {
     status: {
         type: Boolean
     },
-    {
     order: {
         type: Number
     },
-    {
     type: {
         type: String
     },

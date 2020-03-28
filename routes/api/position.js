@@ -133,8 +133,7 @@ router.post(
           new Position(positionFields).save().then(position => res.json(position));
         });
     });
-  }
-);
+  });
 
 // @route   DELETE api/position/:position_id
 // @desc    Delete position by position id
@@ -152,7 +151,6 @@ router.delete('/:position_id', passport.authenticate('jwt', { session: false }),
         return res.status(200).send();
       }
   });
-
 })
 
 module.exports = router;
