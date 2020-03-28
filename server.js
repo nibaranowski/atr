@@ -52,7 +52,7 @@ require('./config/passport')(passport);
 // Passport Config
 
 // Use routes
-// app.use('/api/users', users);
+// app.use('/api/user', users);
 // app.use('/api/trip', trip);
 // app.use('/api/stop', stop);
 // app.use('/api/event', event);

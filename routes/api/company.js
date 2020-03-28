@@ -61,26 +61,26 @@ router.get('/:company_id', passport.authenticate('jwt', { session: false }), (re
     );
 });
 
-// @route   GET api/company/department/:department_id
-// @desc    Get companys by department ID
+// @route   GET api/company/admin-user/:adminUser_id
+// @desc    Get companys by adminUser ID
 // @access  Private
-router.get('/department/:department_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+router.get('/admin-user/:adminUser_id', passport.authenticate('jwt', { session: false }), (req, res) => {
   const errors = {};
-  console.log('Fetching all companys by department ID')
+  console.log('Fetching all companys by adminUser ID')
 
-  Company.find({ department: {
-      _id: req.params.department_id
+  Company.find({ adminUser: {
+      _id: req.params.adminUser_id
       }
     })
     .then(companys => {
       if (!companys) {
-        errors.nocompanys = 'There is no companys for this department';
+        errors.nocompanys = 'There is no companys for this adminUser';
         res.status(404).json(errors);
       }
       res.json(companys);
     })
     .catch(err =>
-      res.status(404).json({ company: 'There is no companys for this department' })
+      res.status(404).json({ company: 'There is no companys for this adminUser' })
     );
 });
 

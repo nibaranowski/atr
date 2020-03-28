@@ -9,7 +9,7 @@ import {
 export const deleteUserByuser_id = () => dispatch => {
   if (window.confirm('Are you sure? This cannot be undone')) {
     axios
-    .delete(`/api/users/user/${user_id}`)
+    .delete(`/api/user/user/${user_id}`)
       .then(res =>
         dispatch({
           type: SET_CURRENT_USER,

@@ -175,7 +175,7 @@ class App extends Component {
                           component={Child}
                         />
                       </Switch>
-                    </div>
+                    </div> */}
                     <div className="company-routes">
                       <Switch>
                         <PrivateRoute
@@ -184,13 +184,13 @@ class App extends Component {
                           component={CreateCompany}
                         />
                       </Switch>
-                      <Switch>
+                      {/* <Switch>
                         <PrivateRoute
                           exact
                           path="admin-user/:adminUser_id/company/:company_id/edit-company"
                           component={EditCompany}
                         />
-                      </Switch>
+                      </Switch> */}
                       <Switch>
                         <PrivateRoute
                           exact
@@ -206,7 +206,7 @@ class App extends Component {
                         />
                       </Switch>
                     </div>
-                    <div className="department-routes">
+                    {/* <div className="department-routes">
                       <Switch>
                         <PrivateRoute
                           exact
@@ -235,8 +235,8 @@ class App extends Component {
                           component={Department}
                         />
                       </Switch>
-                    </div>
-                    <div className="team-routes">
+                    </div> */}
+                    {/* <div className="team-routes">
                       <Switch>
                         <PrivateRoute
                           exact
@@ -265,8 +265,8 @@ class App extends Component {
                           component={Team}
                         />
                       </Switch>
-                    </div>
-                    <div className="position-routes">
+                    </div> */}
+                    {/* <div className="position-routes">
                       <Switch>
                         <PrivateRoute
                           exact
@@ -295,22 +295,22 @@ class App extends Component {
                           component={Position}
                         />
                       </Switch>
-                    </div>
+                    </div> */}
                     <div className="user-routes">
-                      <Switch>
+                      {/* <Switch>
                         <PrivateRoute
                           exact
                           path="/position/:position_id/create-user"
                           component={CreateUser}
                         />
-                      </Switch>
-                      <Switch>
+                      </Switch> */}
+                      {/* <Switch>
                         <PrivateRoute
                           exact
                           path="/position/:position_id/user/:user_id/edit-user"
                           component={EditUser}
                         />
-                      </Switch>
+                      </Switch> */}
                       <Switch>
                         <PrivateRoute
                           exact
@@ -326,7 +326,7 @@ class App extends Component {
                         />
                       </Switch>
                     </div>
-                    <div className="position-hiring-board-routes">
+                    {/* <div className="position-hiring-board-routes">
                       <Switch>
                         <PrivateRoute
                           exact
@@ -355,8 +355,8 @@ class App extends Component {
                           component={PositionHiringBoard}
                         />
                       </Switch>
-                    </div>
-                    <div className="position-hiring-plan-routes">
+                    </div> */}
+                    {/* <div className="position-hiring-plan-routes">
                       <Switch>
                         <PrivateRoute
                           exact
@@ -385,8 +385,8 @@ class App extends Component {
                           component={PositionHiringPlan}
                         />
                       </Switch>
-                    </div>
-                    <div className="onboard-cheklist-routes">
+                    </div> */}
+                    {/* <div className="onboard-cheklist-routes">
                       <Switch>
                         <PrivateRoute
                           exact
@@ -415,8 +415,8 @@ class App extends Component {
                           component={OnboardChecklist}
                         />
                       </Switch>
-                    </div>
-                    <div className="terminate-checklist-routes">
+                    </div> */}
+                    {/* <div className="terminate-checklist-routes">
                       <Switch>
                         <PrivateRoute
                           exact
@@ -445,7 +445,7 @@ class App extends Component {
                           component={TerminateChecklist}
                         />
                       </Switch>
-                    </div>
+                    </div> */}
                     <div className="user-sub-routes">
                       <div className="one-to-one-routes">
                         <Switch>
@@ -455,13 +455,13 @@ class App extends Component {
                             component={CreateOneToOne}
                           />
                         </Switch>
-                        <Switch>
+                        {/* <Switch>
                           <PrivateRoute
                             exact
                             path="/user/:user_id/one-to-one/:oneToOne_id/edit-oneToOne"
                             component={EditOneToOne}
                           />
-                        </Switch>
+                        </Switch> */}
                         <Switch>
                           <PrivateRoute
                             exact
@@ -478,7 +478,7 @@ class App extends Component {
                         </Switch>
                       </div>
                     </div>
-                    <div className="position-hiring-board-sub-routes">
+                    {/* <div className="position-hiring-board-sub-routes">
                       <div className="stage-routes">
                         <Switch>
                           <PrivateRoute

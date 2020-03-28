@@ -8,7 +8,7 @@ import { GET_ERRORS, SET_CURRENT_USER } from './types';
 // Register User
 export const registerUser = (userData, history) => dispatch => {
     axios
-        .post('/api/users/register', userData) //this gives a Promise ; we don't have to add localhost:5000 because we added a Proxy in package.json (client)
+        .post('/api/user/register', userData) //this gives a Promise ; we don't have to add localhost:5000 because we added a Proxy in package.json (client)
         .then(res => history.push('/login'))
         .catch(err =>
             dispatch({
@@ -20,7 +20,7 @@ export const registerUser = (userData, history) => dispatch => {
 
 // Login User - Get User Token
 export const loginUser = (userData) => dispatch => {
-    axios.post('/api/users/login', userData)
+    axios.post('/api/user/login', userData)
         .then(res => {
             // Save to localStorage
             const { token } = res.data;

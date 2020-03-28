@@ -17,8 +17,8 @@ const User = require('../../models/User');
 // const Day = require('../../models/Day');
 // const Event = require('../../models/Event');
 
-// @route   GET api/users/test
-// @desc    Test users routes
+// @route   GET api/user/test
+// @desc    Test user routes
 // @access  Public
 router.get('/test', (req, res) => res.json({msg: "Users works"}));
 
@@ -27,7 +27,7 @@ router.get('/test', (req, res) => res.json({msg: "Users works"}));
 
 // <todo> create POST route to populate data for manager_ids, worker_ids
 
-// @route   POST api/users/register
+// @route   POST api/user/register
 // @desc    Register user
 // @access  Public
 router.post('/register', (req, res) => {
@@ -70,7 +70,7 @@ router.post('/register', (req, res) => {
   });
 });
 
-// @route   POST api/users/login
+// @route   POST api/user/login
 // @desc    Login User / Returning JWT Token
 // @access  Public
 router.post('/login', (req, res) => {
@@ -122,7 +122,7 @@ router.post('/login', (req, res) => {
   });
 });
 
-// @route   GET api/users/current
+// @route   GET api/user/current
 // @desc    Return current user
 // @access  Private
 router.get('/current', passport.authenticate('jwt', { session: false }),
@@ -151,6 +151,52 @@ router.delete('/:user_id', passport.authenticate('jwt', { session: false }), (re
       }
   });
 })
+
+// @route   GET api/user/position/:position_id
+// @desc    Get users by position ID
+// @access  Private
+router.get('/position/:position_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+  const errors = {};
+  console.log('Fetching all users by position ID')
+
+  User.find({ position: {
+      _id: req.params.position
+      }
+    })
+    .then(users => {
+      if (!users) {
+        errors.nousers = 'There is no users for this position';
+        res.status(404).json(errors);
+      }
+      res.json(users);
+    })
+    .catch(err =>
+      res.status(404).json({ user: 'There is no users for this position' })
+    );
+});
+
+// @route   GET api/user/company/:company_id
+// @desc    Get users by company ID
+// @access  Private
+router.get('/company/:company_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+  const errors = {};
+  console.log('Fetching all users by company ID')
+
+  User.find({ company: {
+      _id: req.params.company_id
+      }
+    })
+    .then(users => {
+      if (!users) {
+        errors.nousers = 'There is no users for this company';
+        res.status(404).json(errors);
+      }
+      res.json(users);
+    })
+    .catch(err =>
+      res.status(404).json({ user: 'There is no users for this company' })
+    );
+});
 
 
 module.exports = router;

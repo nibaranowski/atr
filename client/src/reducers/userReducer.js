@@ -1,6 +1,7 @@
 import {
   GET_ALL_USERS,
   GET_ALL_USERS_BY_POSITION_ID,
+  GET_ALL_USERS_BY_COMPANY_ID,
   GET_USER_BY_USER_ID,
   USER_LOADING,
   DELETE_USER_BY_USER_ID
@@ -21,6 +22,12 @@ export default function(state = initialState, action) {
               loading: false
           }
       case GET_ALL_USERS_BY_POSITION_ID:
+          return {
+              ...state,
+              users: action.payload,
+              loading: false
+          }
+      case GET_ALL_USERS_BY_COMPANY_ID:
           return {
               ...state,
               users: action.payload,

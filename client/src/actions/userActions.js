@@ -3,6 +3,7 @@ import axios from 'axios';
 import {
   GET_ALL_USERS,
   GET_ALL_USERS_BY_POSITION_ID,
+  GET_ALL_USERS_BY_COMPANY_ID,
   GET_USER_BY_USER_ID,
   USER_LOADING,
   CLEAR_CURRENT_USER,
@@ -29,11 +30,11 @@ export const getAllUsers = () => dispatch => {
     );
 };
 
-//Get all users by user id
+//Get all users by position id
 export const getAllUsersByPositionId = position_id => dispatch => {
   dispatch(setUserLoading());
   axios
-    .get(`/api/user/user/${position_id}`)
+    .get(`/api/position/position/${position_id}`)
     .then(res =>
       dispatch({
         type: GET_ALL_USERS_BY_POSITION_ID,
@@ -43,6 +44,25 @@ export const getAllUsersByPositionId = position_id => dispatch => {
     .catch(err =>
       dispatch({
         type: GET_ALL_USERS_BY_POSITION_ID,
+        payload: null
+      })
+    );
+};
+
+//Get all users by company id
+export const getAllUsersByCompanyId = company_id => dispatch => {
+  dispatch(setUserLoading());
+  axios
+    .get(`/api/company/company/${company_id}`)
+    .then(res =>
+      dispatch({
+        type: GET_ALL_USERS_BY_COMPANY_ID,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ALL_USERS_BY_COMPANY_ID,
         payload: null
       })
     );

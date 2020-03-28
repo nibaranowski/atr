@@ -7,6 +7,10 @@ const UserSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'position'
     },
+    company: {
+      type: Schema.Types.ObjectId,
+      ref: 'company'
+    },
     name: {
         type: String,
         required: true

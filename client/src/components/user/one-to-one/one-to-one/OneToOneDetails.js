@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import isEmpty from '../../../validation/is-empty';
 
-class TripDetails extends Component {
+class OneToOneDetails extends Component {
   render() {
-    const { trip } = this.props;
+    const { oneToOne } = this.props;
 
     return (
       <div className="row">
@@ -13,25 +13,25 @@ class TripDetails extends Component {
               <div className="col-4 col-md-3 m-auto">
                 {/*<img
                   className="rounded-circle"
-                  src={trip.user.avatar}
+                  src={oneToOne.user.avatar}
                   alt=""
                 />*/}
               </div>
             </div>
             <div className="text-center">
-              <h1 className="display-4 text-center">{trip.user.name}</h1>
+              <h1 className="display-4 text-center">{oneToOne.user.name}</h1>
               <p className="lead text-center">
-                {trip.status}{' '}
-                {isEmpty(trip.company) ? null : (
-                  <span>at {trip.company}</span>
+                {oneToOne.status}{' '}
+                {isEmpty(oneToOne.company) ? null : (
+                  <span>at {oneToOne.company}</span>
                 )}
               </p>
-              {isEmpty(trip.location) ? null : <p>{trip.location}</p>}
+              {isEmpty(oneToOne.location) ? null : <p>{oneToOne.location}</p>}
               <p>
-                {isEmpty(trip.website) ? null : (
+                {isEmpty(oneToOne.website) ? null : (
                   <a
                     className="text-white p-2"
-                    href={trip.website}
+                    href={oneToOne.website}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -39,10 +39,10 @@ class TripDetails extends Component {
                   </a>
                 )}
 
-                {isEmpty(trip.social && trip.social.twitter) ? null : (
+                {isEmpty(oneToOne.social && oneToOne.social.twitter) ? null : (
                   <a
                     className="text-white p-2"
-                    href={trip.social.twitter}
+                    href={oneToOne.social.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -50,10 +50,10 @@ class TripDetails extends Component {
                   </a>
                 )}
 
-                {isEmpty(trip.social && trip.social.facebook) ? null : (
+                {isEmpty(oneToOne.social && oneToOne.social.facebook) ? null : (
                   <a
                     className="text-white p-2"
-                    href={trip.social.facebook}
+                    href={oneToOne.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -61,10 +61,10 @@ class TripDetails extends Component {
                   </a>
                 )}
 
-                {isEmpty(trip.social && trip.social.linkedin) ? null : (
+                {isEmpty(oneToOne.social && oneToOne.social.linkedin) ? null : (
                   <a
                     className="text-white p-2"
-                    href={trip.social.linkedin}
+                    href={oneToOne.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -72,10 +72,10 @@ class TripDetails extends Component {
                   </a>
                 )}
 
-                {isEmpty(trip.social && trip.social.youtube) ? null : (
+                {isEmpty(oneToOne.social && oneToOne.social.youtube) ? null : (
                   <a
                     className="text-white p-2"
-                    href={trip.social.youtube}
+                    href={oneToOne.social.youtube}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -83,12 +83,12 @@ class TripDetails extends Component {
                   </a>
                 )}
 
-                {isEmpty(trip.social && trip.social.instagram) ? null : (
+                {isEmpty(oneToOne.social && oneToOne.social.instagram) ? null : (
                   <a
                     className="text-white p-2"
-                    href={trip.social.instagram}
+                    href={oneToOne.social.instagram}
                     target="_blank"
-                    rel="noopener noreferrer" 
+                    rel="noopener noreferrer"
                   >
                     <i className="fab fa-instagram fa-2x" />
                   </a>
@@ -102,4 +102,4 @@ class TripDetails extends Component {
   }
 }
 
-export default TripDetails;
+export default OneToOneDetails;

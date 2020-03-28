@@ -17,14 +17,14 @@ const Stop = require('../../models/Stop');
 const Day = require('../../models/Day');
 const Event = require('../../models/Event');
 
-// '/test' is already /api/users/test
+// '/test' is already /api/user/test
 
-// @route   GET api/users/test
+// @route   GET api/user/test
 // @desc    Test users routes
 // @access  Public
 router.get('/test', (req, res) => res.json({msg: "Users works"}));
 
-// @route   POST api/users/register
+// @route   POST api/user/register
 // @desc    Register user
 // @access  Public
 router.post('/register', (req, res) => {
@@ -67,7 +67,7 @@ router.post('/register', (req, res) => {
   });
 });
 
-// @route   POST api/users/login
+// @route   POST api/user/login
 // @desc    Login User / Returning JWT Token
 // @access  Public
 router.post('/login', (req, res) => {
@@ -115,7 +115,7 @@ router.post('/login', (req, res) => {
   });
 });
 
-// @route   GET api/users/current
+// @route   GET api/user/current
 // @desc    Return current user
 // @access  Private
 router.get('/current', passport.authenticate('jwt', { session: false }),
