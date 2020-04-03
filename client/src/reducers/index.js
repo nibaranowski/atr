@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import authReducer from './authReducer';
 import errorReducer from './errorReducer';
-import companyReducer from './companyReducer';
+//import companyReducer from './companyReducer';
 import userReducer from './userReducer';
 import oneToOneReducer from './user/oneToOneReducer';
 // import stopReducer from './stopReducer';

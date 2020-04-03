@@ -10175,7 +10175,7 @@ define(
        * @param {String} name Name of new element.
        * @param {Object} attrs Optional object name/value collection with element attributes.
        * @param {String} html Optional HTML string to set as inner HTML of the element.
-       * @return {String} String with new HTML element, for example: <a href="#">test</a>.
+       * @return {String} String with new HTML element, for example: <a href="/">test</a>.
        * @example
        * // Creates a html chunk and inserts it at the current selection/caret location
        * tinymce.activeEditor.selection.setContent(tinymce.activeEditor.dom.createHTML('a', {href: 'test.html'}, 'some line'));
@@ -43635,10 +43635,10 @@ define(
        * no way to move the caret behind the link. This fix adds a bogus br element after the link.
        *
        * For example this:
-       * <p><b><a href="#">x</a></b></p>
+       * <p><b><a href="/">x</a></b></p>
        *
        * Becomes this:
-       * <p><b><a href="#">x</a></b><br></p>
+       * <p><b><a href="/">x</a></b><br></p>
        */
       function addBrAfterLastLinks() {
         function fixLinks() {

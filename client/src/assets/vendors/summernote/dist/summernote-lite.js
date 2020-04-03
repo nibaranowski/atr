@@ -2182,7 +2182,7 @@
     var markup = $.isArray(options.items) ? options.items.map(function (item) {
       var value = (typeof item === 'string') ? item : (item.value || '');
       var content = options.template ? options.template(item) : item;
-      var $temp = $('<a class="note-dropdown-item" href="#" data-value="' + value + '"></a>');
+      var $temp = $('<a class="note-dropdown-item" href="/" data-value="' + value + '"></a>');
 
       $temp.html(content).data('item', item); 
 
@@ -2211,7 +2211,7 @@
       var value = (typeof item === 'string') ? item : (item.value || '');
       var content = options.template ? options.template(item) : item;
 
-      var $temp = $('<a class="note-dropdown-item" href="#" data-value="' + value + '"></a>');
+      var $temp = $('<a class="note-dropdown-item" href="/" data-value="' + value + '"></a>');
       $temp.html([icon(options.checkClassName), ' ', content]).data('item', item);
       return $temp;
     }) : options.items;
@@ -2534,7 +2534,7 @@
       '<input class="note-video-url note-input" type="text" />' +
       '</div>';
     var footer = [
-      '<button type="button" href="#" class="note-btn note-btn-primary note-video-btn disabled" disabled>',
+      '<button type="button" href="/" class="note-btn note-btn-primary note-video-btn disabled" disabled>',
       opt.lang.video.insert,
       '</button>'
     ].join('');
@@ -2558,7 +2558,7 @@
       '<input class="note-image-url note-input" type="text" />' +
       '</div>';
     var footer = [
-      '<button href="#" type="button" class="note-btn note-btn-primary note-btn-large note-image-btn disabled" disabled>',
+      '<button href="/" type="button" class="note-btn note-btn-primary note-btn-large note-image-btn disabled" disabled>',
       opt.lang.image.insert,
       '</button>'
     ].join('');
@@ -2586,7 +2586,7 @@
         '</div>' : ''
       );
     var footer = [
-      '<button href="#" type="button" class="note-btn note-btn-primary note-link-btn disabled" disabled>',
+      '<button href="/" type="button" class="note-btn note-btn-primary note-link-btn disabled" disabled>',
       opt.lang.link.insert,
       '</button>'
     ].join('');
@@ -7336,7 +7336,7 @@
           $('<div/>').append(ui.checkbox({ id: 'sn-checkbox-open-in-new-window', text: lang.link.openInNewWindow, checked: true }).render())
               .html()
           : '');
-      var footer = '<button href="#" class="btn btn-primary note-btn note-btn-primary ' +
+      var footer = '<button href="/" class="btn btn-primary note-btn note-btn-primary ' +
       'note-link-btn disabled" disabled>' + lang.link.insert + '</button>';
 
       this.$dialog = ui.dialog({
@@ -7564,7 +7564,7 @@
                    '<input class="note-image-url form-control note-form-control note-input ' +
                    ' col-md-12" type="text" />' +
                  '</div>';
-      var footer = '<button href="#" class="btn btn-primary note-btn note-btn-primary ' +
+      var footer = '<button href="/" class="btn btn-primary note-btn note-btn-primary ' +
       'note-image-btn disabled" disabled>' + lang.image.insert + '</button>';
 
       this.$dialog = ui.dialog({
@@ -7795,7 +7795,7 @@
           '<input class="note-video-url form-control  note-form-control note-input span12" ' + 
           ' type="text" />' +
           '</div>';
-      var footer = '<button href="#" class="btn btn-primary note-btn note-btn-primary ' + 
+      var footer = '<button href="/" class="btn btn-primary note-btn note-btn-primary ' + 
       ' note-video-btn disabled" disabled>' + lang.video.insert + '</button>';
 
       this.$dialog = ui.dialog({

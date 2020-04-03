@@ -1,7 +1,7 @@
 /* NavBar */
 .page-body-wrapper {
   min-height: calc(100vh - 63px);
-  background: #f3f4fa;
+  background: #f5f5fb;
   padding-left: 0;
   padding-right: 0; }
   .page-body-wrapper.full-page-wrapper {
@@ -44,7 +44,7 @@
     transform: translate3d(0, 0px, 0); } }
 
 .navbar.horizontal-layout {
-  font-family: "Poppins", sans-serif;
+  font-family: "Cabin", sans-serif;
   background: #ffffff;
   -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08); }
@@ -144,7 +144,7 @@
             z-index: 99;
             font-size: 24px;
             padding: 10px;
-            color: #2196f3; }
+            color: #6672FB; }
       .navbar.horizontal-layout .nav-top .navbar-menu-wrapper .navbar-nav {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
@@ -168,7 +168,7 @@
           font-weight: 500;
           font-size: 14px; }
         .navbar.horizontal-layout .nav-top .navbar-menu-wrapper .navbar-nav.quick-link .nav-item.active .nav-link {
-          color: #2196f3; }
+          color: #6672FB; }
       .navbar.horizontal-layout .nav-top .navbar-menu-wrapper .navbar-toggler {
         display: none; }
         @media (max-width: 768px) {
@@ -379,7 +379,7 @@
             font-size: 14px;
             font-weight: 500;
             text-align: left;
-            color: #2196f3;
+            color: #6672FB;
             padding-bottom: 15px;
             border-bottom: 1px solid rgba(242, 242, 242, 0.6); }
           @media (max-width: 768px) {

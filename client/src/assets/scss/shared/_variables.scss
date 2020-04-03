@@ -1,7 +1,11 @@
 ////////// COLOR SYSTEM //////////
-$blue: #00aeef;
+$blue: #71E9F0;
 $indigo: #6610f2;
-$purple: #ab8ce4;
+$purple: #656DFF;
+$dark-purple: #0E134B;
+$dark-purple-selected: #1F2158;
+$light-purple-font: #8688A6;
+$light-purple-icon: #6E7193;
 $pink: #E91E63;
 $red: #ff0017;
 $orange: #fb9678;
@@ -16,28 +20,28 @@ $ghost-white: #f7fafc;
 $violet: #41478a;
 $darkslategray: #2e383e;
 $dodger-blue: #3498db;
-$blue-teal-gradient: linear-gradient(120deg, #556cdc, #128bfc, #18bef1);
+$blue-teal-gradient: linear-gradient(120deg, #556cdc, #556cdc, #556cdc);
 $blue-teal-gradient-light: linear-gradient(120deg, rgba(0, 228, 208, 0.7), rgba(89, 131, 232, 0.7));
-$theme-colors: (primary: #2196f3, secondary: #e6eef2, success:#19d895, info: #8862e0, warning: #ffaf00, danger: #ff6258, light: #fbfbfb, dark: #252C46);
+$theme-colors: (primary: #6672fb, secondary: #e6eef2, success:#19d895, info: #8862e0, warning: #ffaf00, danger: #ff6258, light: #fbfbfb, dark: #252C46);
 $colors: (blue: $blue, indigo: $indigo, purple: $purple, pink: $pink, red: $red, orange: $orange, yellow: $yellow, green: $green, teal: $teal, cyan: $cyan, white: $white, white-smoke: #f3f5f6, gray: $gray-600, gray-light: #8ba2b5, gray-lightest: #f7f7f9, gray-dark: #32373b);
 ////////// COLOR SYSTEM //////////
 ////////// COLOR VARIABLES //////////
-$content-bg:#f3f4fa;
+$content-bg:#f5f5fb;
 $footer-bg: $content-bg;
 $footer-color: color(dark);
 $border-color: #dbdbdb;
 $footer-height: 60px;
 ////////// COLOR VARIABLES //////////
 ////////// SOCIAL COLORS //////////
-$social-colors: (twitter: #4DBFF5, facebook: #648ACA, google: #E55F4B, linkedin: #0177b4, pinterest: #cc2127, youtube: #e52d27, github: #333333, behance: #1769ff, dribbble: #ea4c89, reddit: #ff4500);
+$social-colors: (twitter: #6672FB, facebook: #648ACA, google: #E55F4B, linkedin: #0177b4, pinterest: #cc2127, youtube: #e52d27, github: #333333, behance: #1769ff, dribbble: #ea4c89, reddit: #ff4500);
 ////////// SOCIAL COLORS //////////
 ////////// FONTS //////////
-$type-1: 'Poppins',
+$type-1: 'Cabin',
 sans-serif;
 $type-2: $type-1;
 $default-font-size: 0.875rem; //14px
 $text-muted: #858585;
-$body-color: #212529;
+$body-color: #3c3f54;
 ////////// FONT VARIABLES //////////
 ////////// BOOTSTRAP BREAKPOINTS //////////
 $grid-breakpoints-xs: 0px;
@@ -47,12 +51,12 @@ $grid-breakpoints-lg: 992px;
 $grid-breakpoints-xl: 1200px;
 ////////// BOOTSTRAP BREAKPOINTS //////////
 ////////// SIDEBAR ////////
-$sidebar-width-lg: 255px;
+$sidebar-width-lg: 250px;
 $sidebar-width-mini: 185px;
 $sidebar-width-icon: 70px;
 $sidebar-light-bg: $white;
 $sidebar-light-menu-color: #4a4a4a;
-$sidebar-light-menu-active-bg: #fafbfc;
+$sidebar-light-menu-active-bg: $dark-purple-selected;
 $sidebar-light-menu-active-color: theme-color(primary);
 $sidebar-light-menu-hover-bg: $sidebar-light-menu-active-bg;
 $sidebar-light-menu-hover-color: $sidebar-light-menu-color;
@@ -79,7 +83,7 @@ $sidebar-dark-profile-title-color: #8d9498;
 $sidebar-menu-font-size: 12px;
 $sidebar-icon-size: 16px;
 $sidebar-menu-padding: 16px 35px;
-$nav-link-height: 52px;
+$nav-link-height: 46px;
 $sidebar-submenu-padding: 0 0 0 4rem;
 $sidebar-submenu-font-size: $sidebar-menu-font-size;
 $sidebar-submenu-item-padding: .75rem 1rem;

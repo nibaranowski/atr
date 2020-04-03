@@ -49,7 +49,7 @@
         datasets: [{
             label: 'Product',
             data: [3, 3, 8, 5, 7, 4, 6, 4, 6, 3],
-            backgroundColor: '#2196f3',
+            backgroundColor: '#6672FB',
             borderColor: '#0c83e2',
             borderWidth: 1,
             fill: true

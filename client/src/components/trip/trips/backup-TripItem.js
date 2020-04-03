@@ -19,7 +19,7 @@ class TripItem extends Component {
         <div>
           <div className="row pt-3 pb-3 border-bottom">
             <div className="col-2 pr-0">
-              <img src="/images/faces/face11.jpg" className="img-lg rounded ml-2" alt="profile image" />
+              <img src="/images/faces/face11.jpg" className="img-lg rounded ml-2" alt="profile figure" />
             </div>
             <div className="col-4">
               <div className="row">
@@ -31,9 +31,9 @@ class TripItem extends Component {
                   <div className="d-flex align-items-center">
                     <small className="text-muted">3 Travellers</small>
                     <div className="image-grouped ml-2">
-                      <img src="/assets/images/faces/face20.jpg" alt="profile image"/>
-                      <img src="/assets/images/faces/face17.jpg" alt="profile image"/>
-                      <img src="/assets/images/faces/face14.jpg" alt="profile image"/>
+                      <img src="/assets/images/faces/face20.jpg" alt="profile figure"/>
+                      <img src="/assets/images/faces/face17.jpg" alt="profile figure"/>
+                      <img src="/assets/images/faces/face14.jpg" alt="profile figure"/>
                     </div>
                   </div>
                 </div>
@@ -54,16 +54,16 @@ class TripItem extends Component {
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
                 {/*<h6 className="dropdown-header">Settings</h6>*/}
-                  <a className="dropdown-item" href="#">Edit</a>
-                  <a className="dropdown-item" href="#">Delete</a>
-                  <a className="dropdown-item" href="#">Share</a>
+                  <a className="dropdown-item" href="/">Edit</a>
+                  <a className="dropdown-item" href="/">Delete</a>
+                  <a className="dropdown-item" href="/">Share</a>
                 </div>
               </div>
             </div>
           </div>
           <div className="row pt-3 pb-3 border-bottom">
             <div className="col-2 pr-0">
-              <img src="/images/faces/face11.jpg" className="img-lg rounded ml-2" alt="profile image" />
+              <img src="/images/faces/face11.jpg" className="img-lg rounded ml-2" alt="profile figure" />
             </div>
             <div className="col-4">
               <div className="row">
@@ -75,9 +75,9 @@ class TripItem extends Component {
                   <div className="d-flex align-items-center">
                     <small className="text-muted">3 Travellers</small>
                     <div className="image-grouped ml-2">
-                      <img src="/assets/images/faces/face20.jpg" alt="profile image"/>
-                      <img src="/assets/images/faces/face17.jpg" alt="profile image"/>
-                      <img src="/assets/images/faces/face14.jpg" alt="profile image"/>
+                      <img src="/assets/images/faces/face20.jpg" alt="profile figure"/>
+                      <img src="/assets/images/faces/face17.jpg" alt="profile figure"/>
+                      <img src="/assets/images/faces/face14.jpg" alt="profile figure"/>
                     </div>
                   </div>
                 </div>
@@ -98,15 +98,15 @@ class TripItem extends Component {
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
                 {/*<h6 className="dropdown-header">Settings</h6>*/}
-                  <a className="dropdown-item" href="#">Edit</a>
-                  <a className="dropdown-item" href="#">Delete</a>
+                  <a className="dropdown-item" href="/">Edit</a>
+                  <a className="dropdown-item" href="/">Delete</a>
                 </div>
               </div>
             </div>
           </div>
           <div className="row pt-3 pb-3">
             <div className="col-2 pr-0">
-              <img src="/images/faces/face11.jpg" className="img-lg rounded ml-2" alt="profile image" />
+              <img src="/images/faces/face11.jpg" className="img-lg rounded ml-2" alt="profile figure" />
             </div>
             <div className="col-4">
               <div className="row">
@@ -118,9 +118,9 @@ class TripItem extends Component {
                   <div className="d-flex align-items-center">
                     <small className="text-muted">3 Travellers</small>
                     <div className="image-grouped ml-2">
-                      <img src="/assets/images/faces/face20.jpg" alt="profile image"/>
-                      <img src="/assets/images/faces/face17.jpg" alt="profile image"/>
-                      <img src="/assets/images/faces/face14.jpg" alt="profile image"/>
+                      <img src="/assets/images/faces/face20.jpg" alt="profile figure"/>
+                      <img src="/assets/images/faces/face17.jpg" alt="profile figure"/>
+                      <img src="/assets/images/faces/face14.jpg" alt="profile figure"/>
                     </div>
                   </div>
                 </div>
@@ -141,8 +141,8 @@ class TripItem extends Component {
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
                 {/*<h6 className="dropdown-header">Settings</h6>*/}
-                  <a className="dropdown-item" href="#">Edit</a>
-                  <a className="dropdown-item" href="#">Delete</a>
+                  <a className="dropdown-item" href="/">Edit</a>
+                  <a className="dropdown-item" href="/">Delete</a>
                 </div>
               </div>
             </div>

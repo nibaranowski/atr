@@ -3,9 +3,9 @@
 .sidebar {
   min-height: calc(100vh - 63px);
   background: #ffffff;
-  font-family: "Poppins", sans-serif;
+  font-family: "Cabin", sans-serif;
   padding: 0;
-  width: 255px;
+  width: 250px;
   z-index: 11;
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -79,7 +79,7 @@
       .sidebar .nav .nav-item .nav-link:hover {
         color: #3d3d3d; }
     .sidebar .nav .nav-item.active > .nav-link {
-      color: #2196f3; }
+      color: #6672FB; }
       .sidebar .nav .nav-item.active > .nav-link .menu-title,
       .sidebar .nav .nav-item.active > .nav-link i {
         color: inherit; }
@@ -126,10 +126,10 @@
         line-height: 1;
         height: auto; }
         .sidebar .nav.sub-menu .nav-item .nav-link.active {
-          color: #2196f3;
+          color: #6672FB;
           background: transparent; }
           .sidebar .nav.sub-menu .nav-item .nav-link.active:before {
-            background: #2196f3; }
+            background: #6672FB; }
       .sidebar .nav.sub-menu .nav-item:hover > .nav-link {
         background: initial;
         color: #000; }
@@ -188,7 +188,7 @@
     top: 63px;
     bottom: 0;
     overflow: auto;
-    right: -255px;
+    right: -250px;
     -webkit-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out; }
     .sidebar-offcanvas.active {
@@ -411,7 +411,7 @@
       .sidebar-fixed .sidebar .nav.sub-menu {
         max-height: none; }
   .sidebar-fixed .main-panel {
-    margin-left: 255px; }
+    margin-left: 250px; }
   .sidebar-fixed.sidebar-icon-only .main-panel {
     margin-left: 70px; } }
 

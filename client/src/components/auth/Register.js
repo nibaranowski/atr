@@ -27,7 +27,7 @@ class Register extends Component {
       }
   }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if(nextProps.errors) {
             this.setState({errors: nextProps.errors});
         }
@@ -119,7 +119,7 @@ class Register extends Component {
                                 <input type="submit" value="SIGN UP" className="btn btn-primary submit-btn" />
                               </div>
                               <div className="wrapper mt-5 text-gray">
-                                <p className="footer-text">Copyright © 2018 ZipTrip, inc. All rights reserved.</p>
+                                <p className="footer-text">Copyright © 2018 ATSx, inc. All rights reserved.</p>
                                 <ul className="auth-footer text-gray">
                                   <li>
                                     <a href="/#" disabled="disabled">Terms &amp; Conditions</a>

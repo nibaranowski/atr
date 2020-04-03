@@ -13,7 +13,7 @@ class Settingsbar extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!nextProps.auth.isAuthenticated) {
       this.props.history.push('/');
     }

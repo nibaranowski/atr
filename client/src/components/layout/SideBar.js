@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
@@ -13,7 +13,7 @@ class SideBar extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!nextProps.auth.isAuthenticated) {
       this.props.history.push('/');
     }
@@ -34,7 +34,9 @@ class SideBar extends Component {
           <nav className="sidebar sidebar-offcanvas" id="sidebar">
                   <ul className="nav">
                     <li className="nav-item nav-profile">
-                      <div className="nav-link">
+                      <div className="nav-link" style={{
+                          background: '#0E134B'
+                      }}>
                         {/* <div className="user-wrapper">
                           <div className="profile-image">
                             <img src="/images/faces/face8.jpg" alt=""/> </div>
@@ -51,124 +53,464 @@ class SideBar extends Component {
                           Define
                         </button> */}
                         <div className="dropdown">
-                          <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i className="mdi mdi-plus" />
-                            Define
+                          <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              border: 'solid 0.8px #8689A5',
+                              background: 'none'
+                          }}>
+                            <img alt=""  className="img-xs rounded-circle" src={require("../../assets/images/side-bar/define.png")} style={{
+                              width: '16px',
+                              height: '16px',
+                              marginRight: '9px'
+                            }}/>
+                            <span style ={{
+                              fontSize: '15px',
+                              fontWeight: 'normal',
+                              fontStretch: 'normal',
+                              fontStyle: 'normal',
+                              lineHeight: 'normal',
+                              letterSpacing: 'normal',
+                              // color: '#ffffff'
+                            }}>
+                              Define
+                          </span>
                           </button>
-                          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          {/* {console.log('this.props', this.props)} */}
+                          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1" style={{
+                            width: '210px'
+                          }}>
                             {/* <h6 className="dropdown-header">Settings</h6> */}
-                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/define">Define</a>
-                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/hire">Hire</a>
-                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/onboard">Onboard</a>
-                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/coach">Coach</a>
-                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/analyze">Analyze</a>
-                            <a className="dropdown-item" href="admin-user/adminUser_id/company/company_id/terminate">Terminate</a>
+                            <Link className="dropdown-item" to={`/admin-user/${this.props.auth.user.id}/company/company_id/define`} style={{
+                              width: '210px'
+                            }}>Define</Link>
+                            <Link className="dropdown-item" to={`/admin-user/${this.props.auth.user.id}/company/company_id/hire`}>Hire</Link>
+                            <Link className="dropdown-item" to={`/admin-user/${this.props.auth.user.id}/company/company_id/onboard`}>Onboard</Link>
+                            <Link className="dropdown-item" to={`/admin-user/${this.props.auth.user.id}/company/company_id/coach`}>Coach</Link>
+                            <Link className="dropdown-item" to={`/admin-user/${this.props.auth.user.id}/company/company_id/analyze`}>Analyze</Link>
+                            <Link className="dropdown-item" to={`/admin-user/${this.props.auth.user.id}/company/company_id/terminate`}>Terminate</Link>
                             {/* <div className="dropdown-divider" />
-                            <a className="dropdown-item" href="#">Separated link</a> */}
+                            <a className="dropdown-item" href="/">Separated link</a> */}
                           </div>
                         </div>
                       </div>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link" data-toggle="collapse" href="#technology-dropdown" aria-expanded="false" aria-controls="technology-dropdown">
-                        <i className="menu-icon mdi mdi-television" />
-                        <span className="menu-title">Technology</span>
-                        <i className="menu-arrow" />
+                    <li className="nav-item" style={{
+                      // width: '210px',
+                      // margin: 'auto'
+                    }}>
+                      <a className="nav-link" data-toggle="collapse" href="#technology-dropdown" aria-expanded="false" aria-controls="technology-dropdown" style= {{
+                        // paddingLeft: '14px',
+                        // paddingRight: '14px',
+                        // width: '210px',
+                        // height: '46px',
+                        // borderRadius: '6px'
+                      }}>
+                        <i className="menu-icon mdi mdi-laptop-chromebook" style={{
+                          color: '#6E7193',
+                          marginRight: '15px'
+                        }}/>
+                        <span className="menu-title" style={{
+                          color: 'white'
+                        }}>
+                          Technology
+                        </span>
+                        <i className="menu-arrow"/>
                       </a>
                       <div className="collapse" id="technology-dropdown">
-                        <ul className="nav flex-column sub-menu">
+                        <ul className="nav flex-column sub-menu" style={{
+                          // paddingLeft: '0px',
+                          // fontSize: '15px',
+                          // fontWeight: 'normal',
+                          // fontStretch: 'normal',
+                          // fontStyle: 'normal',
+                          // lineHeight: 'normal',
+                          // letterSpacing: 'normal',
+                          // color: '#ffffff'
+                        }}>
                           <li className="nav-item">
-                            <a className="nav-link" href="index.html">IOS Team</a>
+                            <a className="nav-link" href="pages/technologys/technology-1.html" style= {{
+                              // paddingLeft: '48px',
+                              // paddingRight: '14px',
+                              // width: '210px',
+                              // height: '46px',
+                              // borderRadius: '6px',
+                              // backgroundColor: '#6672fb',
+                              // marginTop: '10px'
+                            }}>
+                              Team 1
+                            </a>
                           </li>
                           <li className="nav-item">
-                            <a className="nav-link" href="pages/technologys/technology-2.html">Android Team</a>
+                            <a className="nav-link" href="pages/technologys/technology-2.html" style= {{
+                              // paddingLeft: '48px',
+                              // paddingRight: '14px',
+                              // width: '210px',
+                              // height: '46px',
+                              // borderRadius: '6px',
+                              // background: 'none',
+                              // marginTop: '10px'
+                            }}>
+                            Team 2
+                          </a>
                           </li>
                         </ul>
+                        <button type="button" className="btn btn-add">
+                          <img alt=""  className="img-xs" src={require("../../assets/images/side-bar/add-button.png")} style={{
+                            width: '20px',
+                            height: '20px',
+                            marginRight: '8px'
+                          }}/>
+                          Add Position
+                        </button>
+                        <button type="button" className="btn btn-add btn-fw">
+                          <i className="mdi mdi-plus" />Add Team
+                        </button>
                       </div>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link" data-toggle="collapse" href="#marketing-dropdown" aria-expanded="false" aria-controls="marketing-dropdown">
-                        <i className="menu-icon mdi mdi-television" />
-                        <span className="menu-title">Marketing</span>
-                        <i className="menu-arrow" />
+                    <li className="nav-item" style={{
+                      width: '210px',
+                      margin: 'auto'
+                    }}>
+                      <a className="nav-link" data-toggle="collapse" href="#marketing-dropdown" aria-expanded="false" aria-controls="marketing-dropdown" style= {{
+                        paddingLeft: '14px',
+                        paddingRight: '14px',
+                        width: '210px',
+                        height: '46px',
+                        borderRadius: '6px'
+                      }}>
+                        <i className="menu-icon mdi mdi-tag-multiple" style={{
+                          color: '#6E7193',
+                          marginRight: '15px'
+                        }}/>
+                        <span className="menu-title" style={{
+                          color: 'white'
+                        }}>
+                          Marketing
+                        </span>
+                        <i className="menu-arrow"/>
                       </a>
                       <div className="collapse" id="marketing-dropdown">
-                        <ul className="nav flex-column sub-menu">
+                        <ul className="nav flex-column sub-menu" style={{
+                          paddingLeft: '0px',
+                          fontSize: '15px',
+                          fontWeight: 'normal',
+                          fontStretch: 'normal',
+                          fontStyle: 'normal',
+                          lineHeight: 'normal',
+                          letterSpacing: 'normal',
+                          color: '#ffffff'
+                        }}>
                           <li className="nav-item">
-                            <a className="nav-link" href="index.html">Team 1</a>
+                            <a className="nav-link" href="index.html" style= {{
+                              paddingLeft: '48px',
+                              paddingRight: '14px',
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              backgroundColor: '#6672fb',
+                              marginTop: '10px'
+                            }}>
+                              Team 1
+                            </a>
                           </li>
                           <li className="nav-item">
-                            <a className="nav-link" href="pages/marketings/dashboard-2.html">Team 2</a>
+                            <a className="nav-link" href="pages/marketings/marketing-2.html" style= {{
+                              paddingLeft: '48px',
+                              paddingRight: '14px',
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              background: 'none',
+                              marginTop: '10px'
+                            }}>
+                            Team 2
+                          </a>
                           </li>
                         </ul>
+                        <button type="button" className="btn btn-success btn-fw">
+                          <i className="mdi mdi-plus" />Add Position
+                        </button>
+                        <button type="button" className="btn btn-success btn-fw">
+                          <i className="mdi mdi-plus" />Add Team
+                        </button>
                       </div>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link" data-toggle="collapse" href="#sales-dropdown" aria-expanded="false" aria-controls="sales-dropdown">
-                        <i className="menu-icon mdi mdi-television" />
-                        <span className="menu-title">Sales</span>
-                        <i className="menu-arrow" />
+                    <li className="nav-item" style={{
+                      width: '210px',
+                      margin: 'auto'
+                    }}>
+                      <a className="nav-link" data-toggle="collapse" href="#sales-dropdown" aria-expanded="false" aria-controls="sales-dropdown" style= {{
+                        paddingLeft: '14px',
+                        paddingRight: '14px',
+                        width: '210px',
+                        height: '46px',
+                        borderRadius: '6px'
+                      }}>
+                        <i className="menu-icon mdi mdi-chart-pie" style={{
+                          color: '#6E7193',
+                          marginRight: '15px'
+                        }}/>
+                        <span className="menu-title" style={{
+                          color: 'white'
+                        }}>
+                          Sales
+                        </span>
+                        <i className="menu-arrow"/>
                       </a>
                       <div className="collapse" id="sales-dropdown">
-                        <ul className="nav flex-column sub-menu">
+                        <ul className="nav flex-column sub-menu" style={{
+                          paddingLeft: '0px',
+                          fontSize: '15px',
+                          fontWeight: 'normal',
+                          fontStretch: 'normal',
+                          fontStyle: 'normal',
+                          lineHeight: 'normal',
+                          letterSpacing: 'normal',
+                          color: '#ffffff'
+                        }}>
                           <li className="nav-item">
-                            <a className="nav-link" href="index.html">Team 1</a>
+                            <a className="nav-link" href="index.html" style= {{
+                              paddingLeft: '48px',
+                              paddingRight: '14px',
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              backgroundColor: '#6672fb',
+                              marginTop: '10px'
+                            }}>
+                              Team 1
+                            </a>
                           </li>
                           <li className="nav-item">
-                            <a className="nav-link" href="pages/saless/dashboard-2.html">Team 2</a>
+                            <a className="nav-link" href="pages/saless/sales-2.html" style= {{
+                              paddingLeft: '48px',
+                              paddingRight: '14px',
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              background: 'none',
+                              marginTop: '10px'
+                            }}>
+                            Team 2
+                          </a>
                           </li>
                         </ul>
+                        <button type="button" className="btn btn-success btn-fw">
+                          <i className="mdi mdi-plus" />Add Position
+                        </button>
+                        <button type="button" className="btn btn-success btn-fw">
+                          <i className="mdi mdi-plus" />Add Team
+                        </button>
                       </div>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link" data-toggle="collapse" href="#legal-dropdown" aria-expanded="false" aria-controls="legal-dropdown">
-                        <i className="menu-icon mdi mdi-television" />
-                        <span className="menu-title">Legal</span>
-                        <i className="menu-arrow" />
+                    <li className="nav-item" style={{
+                      width: '210px',
+                      margin: 'auto'
+                    }}>
+                      <a className="nav-link" data-toggle="collapse" href="#leagal-dropdown" aria-expanded="false" aria-controls="leagal-dropdown" style= {{
+                        paddingLeft: '14px',
+                        paddingRight: '14px',
+                        width: '210px',
+                        height: '46px',
+                        borderRadius: '6px'
+                      }}>
+                        <i className="menu-icon mdi mdi-file-document" style={{
+                          color: '#6E7193',
+                          marginRight: '15px'
+                        }}/>
+                        <span className="menu-title" style={{
+                          color: 'white'
+                        }}>
+                          Legal
+                        </span>
+                        <i className="menu-arrow"/>
                       </a>
-                      <div className="collapse" id="legal-dropdown">
-                        <ul className="nav flex-column sub-menu">
+                      <div className="collapse" id="leagal-dropdown">
+                        <ul className="nav flex-column sub-menu" style={{
+                          paddingLeft: '0px',
+                          fontSize: '15px',
+                          fontWeight: 'normal',
+                          fontStretch: 'normal',
+                          fontStyle: 'normal',
+                          lineHeight: 'normal',
+                          letterSpacing: 'normal',
+                          color: '#ffffff'
+                        }}>
                           <li className="nav-item">
-                            <a className="nav-link" href="index.html">Team 1</a>
+                            <a className="nav-link" href="index.html" style= {{
+                              paddingLeft: '48px',
+                              paddingRight: '14px',
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              backgroundColor: '#6672fb',
+                              marginTop: '10px',
+                              fontSize: '14px',
+                              color: '#ffffff'
+                            }}>
+                              Team 1
+                            </a>
                           </li>
                           <li className="nav-item">
-                            <a className="nav-link" href="pages/legals/legal-2.html">Team 2</a>
+                            <a className="nav-link" href="pages/leagals/leagal-2.html" style= {{
+                              paddingLeft: '48px',
+                              paddingRight: '14px',
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              background: 'none',
+                              marginTop: '10px',
+                              fontSize: '14px',
+                              color: 'red'
+                            }}>
+                            Team 2
+                          </a>
                           </li>
                         </ul>
+                        <button type="button" className="btn btn-success btn-fw">
+                          <i className="mdi mdi-plus" />Add Position
+                        </button>
+                        <button type="button" className="btn btn-success btn-fw">
+                          <i className="mdi mdi-plus" />Add Team
+                        </button>
                       </div>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link" data-toggle="collapse" href="#operations-dropdown" aria-expanded="false" aria-controls="operations-dropdown">
-                        <i className="menu-icon mdi mdi-television" />
-                        <span className="menu-title">Operations</span>
-                        <i className="menu-arrow" />
+                    <li className="nav-item" style={{
+                      width: '210px',
+                      margin: 'auto'
+                    }}>
+                      <a className="nav-link" data-toggle="collapse" href="#operations-dropdown" aria-expanded="false" aria-controls="operation-dropdown" style= {{
+                        paddingLeft: '14px',
+                        paddingRight: '14px',
+                        width: '210px',
+                        height: '46px',
+                        borderRadius: '6px'
+                      }}>
+                        <i className="menu-icon mdi mdi-settings" style={{
+                          color: '#6E7193',
+                          marginRight: '15px'
+                        }}/>
+                        <span className="menu-title" style={{
+                          color: 'white'
+                        }}>
+                          Operations
+                        </span>
+                        <i className="menu-arrow"/>
                       </a>
                       <div className="collapse" id="operations-dropdown">
-                        <ul className="nav flex-column sub-menu">
+                        <ul className="nav flex-column sub-menu" style={{
+                          paddingLeft: '0px',
+                          fontSize: '15px',
+                          fontWeight: 'normal',
+                          fontStretch: 'normal',
+                          fontStyle: 'normal',
+                          lineHeight: 'normal',
+                          letterSpacing: 'normal',
+                          color: '#ffffff'
+                        }}>
                           <li className="nav-item">
-                            <a className="nav-link" href="index.html">Team 1</a>
+                            <a className="nav-link" href="index.html" style= {{
+                              paddingLeft: '48px',
+                              paddingRight: '14px',
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              backgroundColor: '#6672fb',
+                              marginTop: '10px'
+                            }}>
+                              Team 1
+                            </a>
                           </li>
                           <li className="nav-item">
-                            <a className="nav-link" href="pages/operationss/operations-2.html">Team 2</a>
+                            <a className="nav-link" href="pages/operationss/operations-2.html" style= {{
+                              paddingLeft: '48px',
+                              paddingRight: '14px',
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              background: 'none',
+                              marginTop: '10px'
+                            }}>
+                            Team 2
+                          </a>
                           </li>
                         </ul>
+                        <button type="button" className="btn btn-success btn-fw">
+                          <i className="mdi mdi-plus" />Add Position
+                        </button>
+                        <button type="button" className="btn btn-success btn-fw">
+                          <i className="mdi mdi-plus" />Add Team
+                        </button>
                       </div>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link" data-toggle="collapse" href="#management-dropdown" aria-expanded="false" aria-controls="management-dropdown">
-                        <i className="menu-icon mdi mdi-television" />
-                        <span className="menu-title">Management</span>
-                        <i className="menu-arrow" />
+                    <li className="nav-item" style={{
+                      width: '210px',
+                      margin: 'auto'
+                    }}>
+                      <a className="nav-link" data-toggle="collapse" href="#management-dropdown" aria-expanded="false" aria-controls="management-dropdown" style= {{
+                        paddingLeft: '14px',
+                        paddingRight: '14px',
+                        width: '210px',
+                        height: '46px',
+                        borderRadius: '6px'
+                      }}>
+                        <i className="menu-icon mdi mdi-briefcase" style={{
+                          color: '#6E7193',
+                          marginRight: '15px'
+                        }}/>
+                        <span className="menu-title" style={{
+                          color: 'white'
+                        }}>
+                          Management
+                        </span>
+                        <i className="menu-arrow"/>
                       </a>
                       <div className="collapse" id="management-dropdown">
-                        <ul className="nav flex-column sub-menu">
+                        <ul className="nav flex-column sub-menu" style={{
+                          paddingLeft: '0px',
+                          fontSize: '15px',
+                          fontWeight: 'normal',
+                          fontStretch: 'normal',
+                          fontStyle: 'normal',
+                          lineHeight: 'normal',
+                          letterSpacing: 'normal',
+                          color: '#ffffff'
+                        }}>
                           <li className="nav-item">
-                            <a className="nav-link" href="index.html">Team 1</a>
+                            <a className="nav-link" href="index.html" style= {{
+                              paddingLeft: '48px',
+                              paddingRight: '14px',
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              backgroundColor: '#6672fb',
+                              marginTop: '10px'
+                            }}>
+                              Team 1
+                            </a>
                           </li>
                           <li className="nav-item">
-                            <a className="nav-link" href="pages/managements/dashboard-2.html">Team 2</a>
+                            <a className="nav-link" href="pages/managements/management-2.html" style= {{
+                              paddingLeft: '48px',
+                              paddingRight: '14px',
+                              width: '210px',
+                              height: '46px',
+                              borderRadius: '6px',
+                              background: 'none',
+                              marginTop: '10px'
+                            }}>
+                            Team 2
+                          </a>
                           </li>
                         </ul>
+                        <button type="button" className="btn btn-success btn-fw">
+                          <i className="mdi mdi-plus" />Add Position
+                        </button>
+                        <button type="button" className="btn btn-success btn-fw">
+                          <i className="mdi mdi-plus" />Add Team
+                        </button>
                       </div>
                     </li>
 

@@ -87,7 +87,7 @@ export const createCompany = (companyData, history) => dispatch => {
   console.log('companyData',companyData )
   axios
     .post('/api/company', companyData)
-    // .then(res => history.push('/companyiscreatedTEST')) // this is where we push to new page after action
+    .then(res => history.push('/admin-user/adminUserId/company/companyId/invite-users')) // this is where we push to new page after action
     .catch(err =>
       dispatch({
         type: GET_ERRORS,

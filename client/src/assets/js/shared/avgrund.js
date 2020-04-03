@@ -13,8 +13,8 @@
         '<a href="http://dribbble.com/voronianski" target="_blank" class="dribble btn btn-dribbble btn-block">Dribbble</a>' +
         '</div>' +
         '<div class="text-center mt-4">' +
-        '<a href="#" target="_blank" class="btn btn-success mr-2">Great!</a>' +
-        '<a href="#" target="_blank" class="btn btn-light">Cancel</a>' +
+        '<a href="/" target="_blank" class="btn btn-success mr-2">Great!</a>' +
+        '<a href="/" target="_blank" class="btn btn-light">Cancel</a>' +
         '</div>'
     });
   })

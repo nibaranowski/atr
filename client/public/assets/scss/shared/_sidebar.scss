@@ -2,7 +2,7 @@
 
 .sidebar {
   min-height: calc(100vh - #{$navbar-height});
-  background: $sidebar-light-bg;
+  background: $dark-purple;
   font-family: $type-2;
   padding: 0;
   width: $sidebar-width-lg;
@@ -97,11 +97,11 @@
 
       &.active {
         >.nav-link {
-          color: $sidebar-light-menu-active-color;
+          color: $white;
 
           .menu-title,
           i {
-            color: inherit;
+            color: $white;
           }
         }
       }

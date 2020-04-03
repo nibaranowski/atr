@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 //import { Link } from 'react-router-dom';
 //import CompanyDetails from './CompanyDetails';
-import CompanyHeader from './CompanyHeader';
-import CompanyViewFilter from './CompanyViewFilter';
+// import CompanyHeader from './CompanyHeader';
+// import CompanyViewFilter from './CompanyViewFilter';
 //import Stops from '../../stop/stops/Stops';
 //import AddBox from './AddBox';
 //import CompanyCreds from './CompanyCreds';
 //import CompanyGithub from './CompanyGithub';
-import Spinner from '../../common/Spinner';
-import { getCompanyByCompanyId } from '../../../actions/company/onboardActions';
-import NavTree from '../../layout/NavTree';
+// import Spinner from '../../common/Spinner';
+// import { getCompanyByCompanyId } from '../../../actions/company/onboardActions';
+// import NavTree from '../../layout/NavTree';
 
 
 //import NavHeader from '../../layout/NavHeader';
@@ -20,30 +20,30 @@ import NavTree from '../../layout/NavTree';
 class Onboard extends Component {
   componentDidMount() {
     if (this.props.match.params.onboard_id) {
-      this.props.getCompanyByCompanyId(this.props.match.params.onboard_id);
+      // this.props.getCompanyByCompanyId(this.props.match.params.onboard_id);
     }
   }
 
   render() {
-    const { onboard, loading } = this.props.onboard;
-    let onboardContent;
+    // const { onboard, loading } = this.props.onboard;
+    // let onboardContent;
 
-    if (onboard === null || loading) {
-      onboardContent = <Spinner />;
-    } else {
-      onboardContent = (
-        <div>
-          <div className="mb-4">
-            {/* <CompanyHeader onboard={onboard} /> */}
-          </div>
-          <div className="mb-4 ml-2">
-            {/* <CompanyViewFilter onboard={onboard} /> */}
-          </div>
-          {/* <Stops onboard={onboard} /> */}
-          {/* <AddBox onboard={onboard} /> */}
-        </div>
-      );
-    }
+    // if (onboard === null || loading) {
+    //   onboardContent = <Spinner />;
+    // } else {
+      // onboardContent = (
+      //   <div>
+      //     <div className="mb-4">
+      //       {/* <CompanyHeader onboard={onboard} /> */}
+      //     </div>
+      //     <div className="mb-4 ml-2">
+      //       {/* <CompanyViewFilter onboard={onboard} /> */}
+      //     </div>
+      //     {/* <Stops onboard={onboard} /> */}
+      //     {/* <AddBox onboard={onboard} /> */}
+      //   </div>
+      // );
+    // }
 
     return (
         <div className="main-panel">
@@ -53,8 +53,8 @@ class Onboard extends Component {
                 {/* <NavTree /> */}
                 <div className="card">
                   <div className="card-body">
-                    This is Onboard page
-                    {onboardContent}
+                    <h4>This is Onboard page</h4>
+                    {/* {onboardContent} */}
                   </div>
                 </div>
               </div>
@@ -66,7 +66,7 @@ class Onboard extends Component {
 }
 
 Onboard.propTypes = {
-  getCompanyByCompanyId: PropTypes.func.isRequired,
+  // getCompanyByCompanyId: PropTypes.func.isRequired,
   onboard: PropTypes.object.isRequired
 };
 
@@ -74,4 +74,6 @@ const mapStateToProps = state => ({
   onboard: state.onboard
 });
 
-export default connect(mapStateToProps, { getCompanyByCompanyId })(Onboard);
+export default connect(mapStateToProps, {
+  // getCompanyByCompanyId
+})(Onboard);

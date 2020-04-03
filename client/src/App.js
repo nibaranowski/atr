@@ -17,6 +17,9 @@ import SideBar from './components/layout/SideBar';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import CreateOrJoin from './components/signup-flow/CreateOrJoin';
+import InviteUsers from './components/signup-flow/InviteUsers';
+import NewCompany from './components/signup-flow/NewCompany';
 //import Dashboard from './components/dashboard/Dashboard';
 
 //import Test actions components
@@ -155,7 +158,7 @@ class App extends Component {
                   <div className="container-fluid page-body-wrapper" style={{marginTop: '63px'}}>
                     <NavBar />
                     <SideBar />
-                    {console.log('test')}
+                    {/* <h3>hello world</h3> */}
                     {/* <h1>hello world</h1> */}
                     {/* <CreateCompany /> */}
                     {/* <div className="template-demo">
@@ -172,82 +175,87 @@ class App extends Component {
                     {/* <div className="child-routes">
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/mother/:mother_id/create-child"
+                          exact path="/mother/:mother_id/create-child"
                           component={CreateChild}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/mother/:mother_id/child/:child_id/edit-child"
+                          exact path="/mother/:mother_id/child/:child_id/edit-child"
                           component={EditChild}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/mother/:mother_id/child/all"
+                          exact path="/mother/:mother_id/child/all"
                           component={Childs}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/mother/:mother_id/child/:child_id"
+                          exact path="/mother/:mother_id/child/:child_id"
                           component={Child}
                         />
                       </Switch>
                     </div> */}
                     {/* <div className="company-routes"> */}
                       <Switch>
-                        {console.log('test2')}
                         <PrivateRoute
-                          exact
-                          path="admin-user/:adminUser_id/create-company"
+                          exact path="/admin-user/AdminUserId/create-company"
                           component={CreateCompany}
                         />
                       </Switch>
                       <Switch>
-                        {console.log('test4')}
                         <PrivateRoute
-                          exact
-                          path="admin-user/adminUser_id/company/company_id/define"
+                          exact path="/admin-user/:email/create-or-join"
+                          component={CreateOrJoin}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact path="/admin-user/adminUserId/company/companyId/invite-users"
+                          component={InviteUsers}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact path="/admin-user/adminUserId/company/companyId/new-company"
+                          component={NewCompany}
+                        />
+                      </Switch>
+                      <Switch>
+                        <PrivateRoute
+                          exact path="/admin-user/:adminUser_id/company/:company_id/define"
                           component={Define}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="admin-user/:adminUser_id/company/:company_id/hire"
+                          exact path="/admin-user/:adminUser_id/company/:company_id/hire"
                           component={Hire}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="admin-user/:adminUser_id/company/:company_id/onboard"
+                          exact path="/admin-user/:adminUser_id/company/:company_id/onboard"
                           component={Onboard}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="admin-user/:adminUser_id/company/:company_id/coach"
+                          exact path="/admin-user/:adminUser_id/company/:company_id/coach"
                           component={Coach}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="admin-user/:adminUser_id/company/:company_id/analyze"
+                          exact path="/admin-user/:adminUser_id/company/:company_id/analyze"
                           component={Analyze}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="admin-user/:adminUser_id/company/:company_id/terminate"
+                          exact path="/admin-user/:adminUser_id/company/:company_id/terminate"
                           component={Terminate}
                         />
                       </Switch>
@@ -255,22 +263,19 @@ class App extends Component {
 
                       {/* <Switch>
                         <PrivateRoute
-                          exact
-                          path="admin-user/:adminUser_id/company/:company_id/edit-company"
+                          exact path="/admin-user/:adminUser_id/company/:company_id/edit-company"
                           component={EditCompany}
                         />
                       </Switch> */}
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="admin-user/:adminUser_id/company/all"
+                          exact path="/admin-user/:adminUser_id/company/all"
                           component={Companys}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="admin-user/:adminUser_id/company/:company_id"
+                          exact path="/admin-user/:adminUser_id/company/:company_id"
                           component={Company}
                         />
                       </Switch>
@@ -278,29 +283,25 @@ class App extends Component {
                     {/* <div className="department-routes">
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/company/:company_id/create-department"
+                          exact path="/company/:company_id/create-department"
                           component={CreateDepartment}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/company/:company_id/department/:department_id/edit-department"
+                          exact path="/company/:company_id/department/:department_id/edit-department"
                           component={EditDepartment}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/company/:company_id/department/all"
+                          exact path="/company/:company_id/department/all"
                           component={Departments}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/company/:company_id/department/:department_id"
+                          exact path="/company/:company_id/department/:department_id"
                           component={Department}
                         />
                       </Switch>
@@ -308,29 +309,25 @@ class App extends Component {
                     {/* <div className="team-routes">
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/department/:department_id/create-team"
+                          exact path="/department/:department_id/create-team"
                           component={CreateTeam}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/department/:department_id/team/:team_id/edit-team"
+                          exact path="/department/:department_id/team/:team_id/edit-team"
                           component={EditTeam}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/department/:department_id/team/all"
+                          exact path="/department/:department_id/team/all"
                           component={Teams}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/department/:department_id/team/:team_id"
+                          exact path="/department/:department_id/team/:team_id"
                           component={Team}
                         />
                       </Switch>
@@ -338,29 +335,25 @@ class App extends Component {
                     {/* <div className="position-routes">
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/team/:team_id/create-position"
+                          exact path="/team/:team_id/create-position"
                           component={CreatePosition}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/team/:team_id/position/:position_id/edit-position"
+                          exact path="/team/:team_id/position/:position_id/edit-position"
                           component={EditPosition}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/team/:team_id/position/all"
+                          exact path="/team/:team_id/position/all"
                           component={Positions}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/team/:team_id/position/:position_id"
+                          exact path="/team/:team_id/position/:position_id"
                           component={Position}
                         />
                       </Switch>
@@ -368,29 +361,25 @@ class App extends Component {
                     {/* <div className="user-routes"> */}
                       {/* <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/create-user"
+                          exact path="/position/:position_id/create-user"
                           component={CreateUser}
                         />
                       </Switch> */}
                       {/* <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/user/:user_id/edit-user"
+                          exact path="/position/:position_id/user/:user_id/edit-user"
                           component={EditUser}
                         />
                       </Switch> */}
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/user/all"
+                          exact path="/position/:position_id/user/all"
                           component={Users}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/user/:user_id"
+                          exact path="/position/:position_id/user/:user_id"
                           component={User}
                         />
                       </Switch>
@@ -398,29 +387,25 @@ class App extends Component {
                     {/* <div className="position-hiring-board-routes">
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/create-positionHiringBoard"
+                          exact path="/position/:position_id/create-positionHiringBoard"
                           component={CreatePositionHiringBoard}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/position-hiring-board/:positionHiringBoard_id/edit-positionHiringBoard"
+                          exact path="/position/:position_id/position-hiring-board/:positionHiringBoard_id/edit-positionHiringBoard"
                           component={EditPositionHiringBoard}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/position-hiring-board/all"
+                          exact path="/position/:position_id/position-hiring-board/all"
                           component={PositionHiringBoards}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/position-hiring-board/:positionHiringBoard_id"
+                          exact path="/position/:position_id/position-hiring-board/:positionHiringBoard_id"
                           component={PositionHiringBoard}
                         />
                       </Switch>
@@ -428,29 +413,25 @@ class App extends Component {
                     {/* <div className="position-hiring-plan-routes">
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/create-PositionHiringPlan"
+                          exact path="/position/:position_id/create-PositionHiringPlan"
                           component={CreatePositionHiringPlan}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/position-hiring-plan/:PositionHiringPlan_id/edit-PositionHiringPlan"
+                          exact path="/position/:position_id/position-hiring-plan/:PositionHiringPlan_id/edit-PositionHiringPlan"
                           component={EditPositionHiringPlan}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/position-hiring-plan/all"
+                          exact path="/position/:position_id/position-hiring-plan/all"
                           component={PositionHiringPlans}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/position-hiring-plan/:PositionHiringPlan_id"
+                          exact path="/position/:position_id/position-hiring-plan/:PositionHiringPlan_id"
                           component={PositionHiringPlan}
                         />
                       </Switch>
@@ -458,29 +439,25 @@ class App extends Component {
                     {/* <div className="onboard-cheklist-routes">
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/create-onboardChecklist"
+                          exact path="/position/:position_id/create-onboardChecklist"
                           component={CreateOnboardChecklist}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/onboard-checklist/:onboardChecklist_id/edit-onboardChecklist"
+                          exact path="/position/:position_id/onboard-checklist/:onboardChecklist_id/edit-onboardChecklist"
                           component={EditOnboardChecklist}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/onboard-checklist/all"
+                          exact path="/position/:position_id/onboard-checklist/all"
                           component={OnboardChecklists}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/onboard-checklist/:onboardChecklist_id"
+                          exact path="/position/:position_id/onboard-checklist/:onboardChecklist_id"
                           component={OnboardChecklist}
                         />
                       </Switch>
@@ -488,29 +465,25 @@ class App extends Component {
                     {/* <div className="terminate-checklist-routes">
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/create-terminateChecklist"
+                          exact path="/position/:position_id/create-terminateChecklist"
                           component={CreateTerminateChecklist}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/terminate-checklist/:terminateChecklist_id/edit-terminateChecklist"
+                          exact path="/position/:position_id/terminate-checklist/:terminateChecklist_id/edit-terminateChecklist"
                           component={EditTerminateChecklist}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/terminate-checklist/all"
+                          exact path="/position/:position_id/terminate-checklist/all"
                           component={TerminateChecklists}
                         />
                       </Switch>
                       <Switch>
                         <PrivateRoute
-                          exact
-                          path="/position/:position_id/terminate-checklist/:terminateChecklist_id"
+                          exact path="/position/:position_id/terminate-checklist/:terminateChecklist_id"
                           component={TerminateChecklist}
                         />
                       </Switch>

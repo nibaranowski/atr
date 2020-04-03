@@ -13,7 +13,7 @@ class NavBar extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!nextProps.auth.isAuthenticated) {
       this.props.history.push('/');
     }
@@ -30,24 +30,43 @@ class NavBar extends Component {
         const { isAuthenticated, user } = this.props.auth;
 
         const navloggedIn = (
-          <div>
-          <nav className="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-                  <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                    <Link className="navbar-brand brand-logo" to="/">
-                      <img src="/images/logo.svg" alt="logo" />
+        <div>
+          <nav className="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style={{
+            //backgroundColor: 'red',
+            color: '#3c3f54'
+          }}>
+                  <div className="text-center navbar-brand-wrapper d-flex align-items-left justify-content-left">
+                    <Link className="navbar-brand brand-logo ml-4" to="/">
+                      <img src="/images/logo.svg" alt="logo" style={{
+                        width: '100%',
+                        height: '100%'
+                      }}/>
                     </Link>
                     <Link className="navbar-brand brand-logo-mini" to="/">
                       <img src="/images/logo-mini.svg" alt="logo" />
                     </Link>
                   </div>
-                  <div className="navbar-menu-wrapper d-flex align-items-center">
+                  <div className="navbar-menu-wrapper d-flex align-items-center" style={{
+                    color: '#3c3f54'
+                  }}>
                     {/* <button className="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                       <span className="mdi mdi-menu" />
                     </button> */}
                     <ul className="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-                      <li className="nav-item">
+                      <li className="nav-item" style={{
+                        wdith: '182px',
+                        color: '#878787'
+                      }}>
                         <Link className="nav-link" to={`/company/user/${user.id}`}>
-                          Search for employee or team
+                          <i className="mdi mdi-magnify" style={{
+                            color: '#B8B8B8'
+                          }}/>
+                          <span style={{
+                            width: '182px',
+                          }}>
+                            Search for employee or team
+                          </span>
+
                         </Link>
                       </li>
                       {/* <li className="nav-item active">
@@ -59,7 +78,9 @@ class NavBar extends Component {
                           <i className="mdi mdi-bookmark-plus-outline" />Score</a>
                       </li> */}
                     </ul>
-                    <ul className="navbar-nav navbar-nav-right">
+                    <ul className="navbar-nav navbar-nav-right" style={{
+                      marginLeft: '555px'
+                    }}>
                       {/* <li className="nav-item dropdown">
                         <a href="/#" className="nav-link count-indicator dropdown-toggle" id="messageDropdown" data-toggle="dropdown" aria-expanded="false">
                           <i className="mdi mdi-file-outline" />
@@ -97,10 +118,23 @@ class NavBar extends Component {
                           </a>
                         </div>
                       </li> */}
-                      <li className="nav-item dropdown ml-4">
+                      <li className="nav-item dropdown ml-1 mr-1">
                         <a className="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="/#" data-toggle="dropdown">
-                          <i className="mdi mdi-bell-outline" />
-                          <span className="count bg-success">4</span>
+                          <i className="mdi mdi-bell-outline" style={{
+                            color: '#3C3F54',
+
+                          }}/>
+                          <span className="count" style={{
+                            backgroundColor: '#656DFF',
+                            marginTop: '6px',
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '100%',
+                            borderStyle: 'solid',
+                            borderWidth: '1px',
+                            borderColor: 'white',
+                            zIndex: '1'
+                          }}></span>
                         </a>
                         <div className="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
                           <a href="/#" className="dropdown-item py-3 border-bottom">
@@ -141,13 +175,29 @@ class NavBar extends Component {
                           <i className="mdi mdi-tune" />
                         </a>
                       </li> */}
-                      <li className="nav-item dropdown d-none d-xl-inline-block">
-                        <a href="/#" className="nav-link dropdown-toggle" id="UserDropdown" data-toggle="dropdown" aria-expanded="false">
-                          <img alt=""  className="img-xs rounded-circle" src="/images/faces/face8.jpg" />
-                          <span className="profile-text">Alok</span>
+                      <li className="nav-item dropdown d-none d-xl-inline-block ml-3 mr-0">
+                        <a href="/#" className="nav-link dropdown-toggle" id="UserDropdown" data-toggle="dropdown" aria-expanded="false" style={{
+                          alignItems: 'left'
+                        }}>
+                          <img alt=""  className="img-xs rounded-circle" src={require("../../assets/images/faces/face8.png")}  style={{
+                            width: '36px',
+                            height: '36px'
+                          }}/>
+                          <span className="profile-text mr-0" style={{
+                            marginLeft: '5px',
+                            fontFamily: 'Avenir',
+                            fontSize: '15px',
+                            fontWeight: '500',
+                            fontStretch: 'normal',
+                            fontStyle: 'normal',
+                            lineHeight: 'normal',
+                            letterSpacing: 'normal',
+                            color: '#3c3f54'
+                          }}>
+                          Alok</span>
                         </a>
                         <div className="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-                          <a href="/#" className="dropdown-item p-0">
+                          {/* <a href="/#" className="dropdown-item p-0">
                             <div className="d-flex border-bottom">
                               <div className="py-3 px-4 d-flex align-items-center justify-content-center">
                                 <i className="mdi mdi-bookmark-plus-outline mr-0 text-gray" />
@@ -159,7 +209,7 @@ class NavBar extends Component {
                                 <i className="mdi mdi-alarm-check mr-0 text-gray" />
                               </div>
                             </div>
-                          </a>
+                          </a> */}
                           <a href="/#" className="dropdown-item mt-2"> Manage Accounts </a>
                           <a href="/#" className="dropdown-item"> Change Password </a>
                           <a href="/#" className="dropdown-item"> Check Inbox </a>
@@ -374,7 +424,7 @@ class NavBar extends Component {
                           <span className="profile-text">Richard V.Welsh !</span>
                           <img alt="" className="img-xs rounded-circle" src="/images/faces/face8.jpg" /> </a>
                         <div className="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-                          <a className="dropdown-item p-0" href="/#" >
+                          {/* <a className="dropdown-item p-0" href="/#" >
                             <div className="d-flex border-bottom">
                               <div className="py-3 px-4 d-flex align-items-center justify-content-center">
                                 <i className="mdi mdi-bookmark-plus-outline mr-0 text-gray" />
@@ -386,7 +436,7 @@ class NavBar extends Component {
                                 <i className="mdi mdi-alarm-check mr-0 text-gray" />
                               </div>
                             </div>
-                          </a>
+                          </a>*/}
                           <a className="dropdown-item mt-2" href="/#" > Manage Accounts </a>
                           <a className="dropdown-item" href="/#" > Change Password </a>
                           <a className="dropdown-item" href="/#" > Check Inbox </a>

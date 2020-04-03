@@ -4,7 +4,31 @@
 @import "../../../../../node_modules/bootstrap/scss/variables";
 @import "../shared/variables";
 @import "../shared/mixins/misc";
+
+//@import "mixins/buttons";
+
+// @import "../shared/style";
+
+// @import "../shared/dashboard";
+// @import "../shared/demo";
+// @import "../shared/fonts";
+// @import "../shared/footer";
+// @import "../shared/functions";
+
+@import "../shared/misc";
+@import "../shared/navbar";
+// @import "../shared/reset";
 @import "../shared/sidebar";
+
+// @import "../shared/components/buttons";
+
+// @import "../shared/typography";
+// @import "../shared/utilities";
+// @import "../shared/variables";
+// @import "../shared/widget-grid";
+
+
+
 .navbar {
   &.fixed-top {
     +.page-body-wrapper {
@@ -241,12 +265,12 @@
           .nav-item {
             .nav-link {
               text-align: left;
-              color: $sidebar-light-menu-color;
+              color: white;
               &:hover {
-                color: darken($white, 20%);
+                color: white;
               }
               @at-root #{selector-append(".sidebar-dark", &)} {
-                color: $sidebar-dark-menu-color;
+                color: white;
               }
               @at-root #{selector-append(".rtl", &)} {
                 text-align: right;

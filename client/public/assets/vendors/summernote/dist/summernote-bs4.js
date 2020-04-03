@@ -1936,7 +1936,7 @@
 
       var dataValue = 'data-value="' + value + '"';
       var dataOption = (option !== undefined) ? ' data-option="' + option + '"' : '';
-      return '<a class="dropdown-item" href="#" ' + (dataValue + dataOption) + '>' + content + '</a>';
+      return '<a class="dropdown-item" href="/" ' + (dataValue + dataOption) + '>' + content + '</a>';
     }).join('') : options.items;
 
     $node.html(markup);
@@ -1950,7 +1950,7 @@
     var markup = $.isArray(options.items) ? options.items.map(function (item) {
       var value = (typeof item === 'string') ? item : (item.value || '');
       var content = options.template ? options.template(item) : item;
-      return '<a class="dropdown-item" href="#" data-value="' + value + '">' + icon(options.checkClassName) + ' ' + content + '</a>';
+      return '<a class="dropdown-item" href="/" data-value="' + value + '">' + icon(options.checkClassName) + ' ' + content + '</a>';
     }).join('') : options.items;
     $node.html(markup);
   });
@@ -6727,7 +6727,7 @@
           $('<div/>').append(ui.checkbox({ id: 'sn-checkbox-open-in-new-window', text: lang.link.openInNewWindow, checked: true }).render())
               .html()
           : '');
-      var footer = '<button href="#" class="btn btn-primary note-btn note-btn-primary ' +
+      var footer = '<button href="/" class="btn btn-primary note-btn note-btn-primary ' +
       'note-link-btn disabled" disabled>' + lang.link.insert + '</button>';
 
       this.$dialog = ui.dialog({
@@ -6955,7 +6955,7 @@
                    '<input class="note-image-url form-control note-form-control note-input ' +
                    ' col-md-12" type="text" />' +
                  '</div>';
-      var footer = '<button href="#" class="btn btn-primary note-btn note-btn-primary ' +
+      var footer = '<button href="/" class="btn btn-primary note-btn note-btn-primary ' +
       'note-image-btn disabled" disabled>' + lang.image.insert + '</button>';
 
       this.$dialog = ui.dialog({
@@ -7186,7 +7186,7 @@
           '<input class="note-video-url form-control  note-form-control note-input span12" ' + 
           ' type="text" />' +
           '</div>';
-      var footer = '<button href="#" class="btn btn-primary note-btn note-btn-primary ' + 
+      var footer = '<button href="/" class="btn btn-primary note-btn note-btn-primary ' + 
       ' note-video-btn disabled" disabled>' + lang.video.insert + '</button>';
 
       this.$dialog = ui.dialog({

@@ -2,7 +2,7 @@
 
 .sidebar {
   min-height: calc(100vh - #{$navbar-height});
-  background: $sidebar-light-bg;
+  background: $dark-purple;
   font-family: $type-2;
   padding: 0;
   width: $sidebar-width-lg;
@@ -18,13 +18,15 @@
     flex-direction: column;
 
     .nav-item {
+      width: 210px;
+      margin: auto;
       .collapse {
         z-index: 999;
       }
 
       .collapse.show,
       .collapsing {
-        background: $sidebar-light-menu-active-bg;
+        background: $dark-purple;
       }
 
       .nav-link {
@@ -33,7 +35,12 @@
         padding: $sidebar-menu-padding;
         white-space: nowrap;
         height: $nav-link-height;
-        color: $sidebar-light-menu-color;
+        color: $white;
+        padding-left: 14px;
+        padding-right: 14px;
+        width: 210px;
+        height: 46px;
+        border-radius: 6px;
 
         i {
           &.menu-arrow {
@@ -44,13 +51,13 @@
             transition-timing-function: ease-in;
 
             &:before {
-              content: "\F142";
+              content: "\F140";
               font-family: "Material Design Icons";
               font-size: 18px;
               line-height: 1;
               font-style: normal;
               vertical-align: middle;
-              color: rgba($sidebar-light-menu-color, 0.5);
+              color: rgba($white, 0.5);
             }
           }
         }
@@ -60,7 +67,7 @@
 
           i {
             &.menu-arrow {
-              transform: rotate(90deg);
+              transform: rotate(-180deg);
             }
           }
         }
@@ -84,6 +91,13 @@
           font-size: $sidebar-menu-font-size;
           line-height: 1;
           vertical-align: middle;
+          font-size: 15px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #ffffff;
         }
 
         .badge {
@@ -91,17 +105,17 @@
         }
 
         &:hover {
-          color: darken($sidebar-light-menu-color, 5%);
+          color: darken($white, 5%);
         }
       }
 
       &.active {
         >.nav-link {
-          color: $sidebar-light-menu-active-color;
+          color: white;
 
           .menu-title,
           i {
-            color: inherit;
+            color: white;
           }
         }
       }
@@ -154,7 +168,7 @@
           &:not(.nav-profile) {
             >.nav-link {
               background: $sidebar-light-menu-hover-bg;
-              color: $sidebar-light-menu-hover-color;
+              color: white;
             }
           }
         }
@@ -163,19 +177,38 @@
 
     &.sub-menu {
       margin-bottom: 0;
-      padding: $sidebar-submenu-padding;
+      padding: 0px;
 
       .nav-item {
+        //padding-left: 30px;
+        //padding-right: 14px;
+        width: 210px;
+        height: 46px;
+        border-radius: 6px;
+        //background-color: #6672fb;
+        margin-top: 10px;
         .nav-link {
-          color: $sidebar-light-submenu-color;
-          padding: $sidebar-submenu-item-padding;
-          font-size: $sidebar-submenu-font-size;
-          line-height: 1;
-          height: auto;
-
+          padding-left: 48px;
+          //padding-right: 14px;
+          color: white;
+          // padding: $sidebar-submenu-item-padding;
+          // font-size: $sidebar-submenu-font-size;
+          height: inherit;
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #ffffff;
+          background: none !important;
+          padding-top: auto;
+          padding-bottom: auto;
+          width: auto;
           &.active {
-            color: $sidebar-light-menu-active-color;
-            background: transparent;
+            color: white;
+            border-radius: 6px;
+            background-color: #6672fb !important;
 
             &:before {
               background: $sidebar-light-menu-active-color;
@@ -186,7 +219,7 @@
         &:hover {
           >.nav-link {
             background: $sidebar-light-submenu-hover-bg;
-            color: $sidebar-light-submenu-hover-color;
+            color: white;
 
             &:before {
               background: $sidebar-light-submenu-hover-color;
@@ -198,137 +231,144 @@
   }
 }
 
-//sidebar color variation
-.sidebar-dark {
-  .sidebar {
-    background: $sidebar-dark-bg;
-
-    .nav {
-      .nav-item {
-
-        .collapse.show,
-        .collapsing {
-          background: $sidebar-dark-menu-active-bg;
-        }
-
-        .nav-link {
-          color: $sidebar-dark-menu-color;
-
-          &[aria-expanded="true"] {
-            background: $sidebar-dark-menu-active-bg;
-          }
-
-          i:not(.btn i) {
-            color: $sidebar-dark-menu-icon-color;
-
-            &.menu-arrow {
-              &:before {
-                color: rgba($sidebar-dark-menu-color, 0.5);
-              }
-            }
-          }
-
-          &:hover {
-            color: darken($sidebar-dark-menu-color, 5%);
-          }
-        }
-
-        &.nav-profile {
-          .profile-name {
-            .name {
-              color: $sidebar-dark-profile-name-color;
-            }
-
-            .designation {
-              color: $sidebar-dark-profile-title-color;
-            }
-          }
-
-          .notification-panel {
-            &:before {
-              background: $sidebar-dark-profile-name-color;
-            }
-
-            >span {
-              background: $sidebar-dark-menu-active-bg;
-
-              i {
-                color: color(gray-light);
-              }
-            }
-          }
-        }
-
-        &.active {
-          >.nav-link {
-            color: $sidebar-dark-menu-active-color;
-          }
-        }
-
-        .sidebar-sticker {
-          background: $sidebar-dark-menu-active-bg;
-        }
-      }
-
-      &:not(.sub-menu) {
-        >.nav-item {
-          &:hover {
-            &:not(.nav-profile) {
-              >.nav-link {
-                background: $sidebar-dark-menu-hover-bg;
-                color: $sidebar-dark-menu-hover-color;
-              }
-            }
-          }
-        }
-      }
-
-      &.sub-menu {
-        .nav-item {
-          .nav-link {
-            color: $sidebar-dark-submenu-color;
-
-            &.active {
-              color: $sidebar-dark-menu-active-color;
-
-              &:before {
-                background: $sidebar-dark-menu-active-color;
-              }
-            }
-          }
-
-          &:hover {
-            >.nav-link {
-              background: $sidebar-dark-submenu-hover-bg;
-              color: $sidebar-dark-submenu-hover-color;
-
-              &:before {
-                background: $sidebar-dark-submenu-hover-color;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-/* style for off-canvas menu*/
-
-@media screen and (max-width: 991px) {
-  .sidebar-offcanvas {
-    position: fixed;
-    max-height: calc(100vh - #{$navbar-height});
-    top: $navbar-height;
-    bottom: 0;
-    overflow: auto;
-    right: -$sidebar-width-lg;
-    -webkit-transition: all 0.25s ease-out;
-    -o-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-
-    &.active {
-      right: 0;
-    }
-  }
-}
+// //sidebar color variation
+// .sidebar-dark {
+//   .sidebar {
+//     background: $sidebar-dark-bg;
+//
+//     .nav {
+//       .nav-item {
+//
+//         .collapse.show,
+//         .collapsing {
+//           background: $sidebar-dark-menu-active-bg;
+//         }
+//
+//         .nav-link {
+//           color: $sidebar-dark-menu-color;
+//
+//           &[aria-expanded="true"] {
+//             background: $sidebar-dark-menu-active-bg;
+//           }
+//
+//           i:not(.btn i) {
+//             color: $sidebar-dark-menu-icon-color;
+//
+//             &.menu-arrow {
+//               &:before {
+//                 color: rgba($sidebar-dark-menu-color, 0.5);
+//               }
+//             }
+//           }
+//
+//           &:hover {
+//             color: white;
+//           }
+//         }
+//
+//         &.nav-profile {
+//           .profile-name {
+//             .name {
+//               color: $sidebar-dark-profile-name-color;
+//             }
+//
+//             .designation {
+//               color: $sidebar-dark-profile-title-color;
+//             }
+//           }
+//
+//           .notification-panel {
+//             &:before {
+//               background: $sidebar-dark-profile-name-color;
+//             }
+//
+//             >span {
+//               background: $sidebar-dark-menu-active-bg;
+//
+//               i {
+//                 color: color(gray-light);
+//               }
+//             }
+//           }
+//         }
+//
+//         &.active {
+//           >.nav-link {
+//             color: white;
+//           }
+//         }
+//
+//         .sidebar-sticker {
+//           background: $sidebar-dark-menu-active-bg;
+//         }
+//       }
+//
+//       &:not(.sub-menu) {
+//         >.nav-item {
+//           &:hover {
+//             &:not(.nav-profile) {
+//               >.nav-link {
+//                 background: $sidebar-dark-menu-hover-bg;
+//                 color: $white;
+//               }
+//             }
+//           }
+//         }
+//       }
+//
+//       &.sub-menu {
+//         .nav-item {
+//           .nav-link {
+//             font-size: 14px !important;
+//             font-weight: normal;
+//             font-stretch: normal;
+//             font-style: normal;
+//             line-height: normal;
+//             letter-spacing: normal;
+//             color: #ffffff;
+//             color: $white;
+//
+//             &.active {
+//               color: $white;
+//
+//               &:before {
+//                 background: $sidebar-dark-menu-active-color;
+//               }
+//             }
+//           }
+//
+//           &:hover {
+//             >.nav-link {
+//               background: $sidebar-dark-submenu-hover-bg;
+//               color: $sidebar-dark-submenu-hover-color;
+//
+//               &:before {
+//                 background: $sidebar-dark-submenu-hover-color;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+//
+// /* style for off-canvas menu*/
+//
+// @media screen and (max-width: 991px) {
+//   .sidebar-offcanvas {
+//     position: fixed;
+//     max-height: calc(100vh - #{$navbar-height});
+//     top: $navbar-height;
+//     bottom: 0;
+//     overflow: auto;
+//     right: -$sidebar-width-lg;
+//     -webkit-transition: all 0.25s ease-out;
+//     -o-transition: all 0.25s ease-out;
+//     transition: all 0.25s ease-out;
+//
+//     &.active {
+//       right: 0;
+//     }
+//   }
+// }

@@ -43,8 +43,8 @@ class Landing extends Component {
                    <div className="col-md-8 mx-auto">
                      <div className="row">
                        <div className="col-lg-7">
-                         <h1 className="mr-2 text-white"> Make vacation planning exceptionally fast and simple. </h1>
-                         <h3 className="font-weight-light text-white"> Plan and book your holidays in few clicks </h3>
+                         <h1 className="mr-2 text-white"> Manage employees from application to separation. </h1>
+                         <h3 className="font-weight-light text-white"> Manage employees end-to-end in one app. </h3>
                          <div className="mt-5">
                            {/*<button className="btn btn-primary btn-lg mr-2">LEARN MORE</button>*/}
                            <Link to="/register" >
@@ -330,22 +330,22 @@ class Landing extends Component {
                           </button>
                           <ul className="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                             <li className="nav-item">
-                              <a href="#" className="nav-link">Schedule
+                              <a href="/" className="nav-link">Schedule
                                 <span className="badge badge-primary ml-1">New</span>
                               </a>
                             </li>
                             <li className="nav-item active">
-                              <a href="#" className="nav-link">
+                              <a href="/" className="nav-link">
                                 <i className="mdi mdi-elevation-rise" />Reports</a>
                             </li>
                             <li className="nav-item">
-                              <a href="#" className="nav-link">
+                              <a href="/" className="nav-link">
                                 <i className="mdi mdi-bookmark-plus-outline" />Score</a>
                             </li>
                           </ul>
                           <ul className="navbar-nav navbar-nav-right">
                             <li className="nav-item dropdown">
-                              <a className="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                              <a className="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="/" data-toggle="dropdown" aria-expanded="false">
                                 <i className="mdi mdi-file-outline" />
                                 <span className="count">7</span>
                               </a>
@@ -357,7 +357,7 @@ class Landing extends Component {
                                 <div className="dropdown-divider" />
                                 <a className="dropdown-item preview-item">
                                   <div className="preview-thumbnail">
-                                    <img src="../../../assets/images/faces/face10.jpg" alt="image" className="img-sm profile-pic" /> </div>
+                                    <img src="../../../assets/images/faces/face10.jpg" alt="figure" className="img-sm profile-pic" /> </div>
                                   <div className="preview-item-content flex-grow py-2">
                                     <p className="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
                                     <p className="font-weight-light small-text"> The meeting is cancelled </p>
@@ -365,7 +365,7 @@ class Landing extends Component {
                                 </a>
                                 <a className="dropdown-item preview-item">
                                   <div className="preview-thumbnail">
-                                    <img src="../../../assets/images/faces/face12.jpg" alt="image" className="img-sm profile-pic" /> </div>
+                                    <img src="../../../assets/images/faces/face12.jpg" alt="figure" className="img-sm profile-pic" /> </div>
                                   <div className="preview-item-content flex-grow py-2">
                                     <p className="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
                                     <p className="font-weight-light small-text"> The meeting is cancelled </p>
@@ -373,7 +373,7 @@ class Landing extends Component {
                                 </a>
                                 <a className="dropdown-item preview-item">
                                   <div className="preview-thumbnail">
-                                    <img src="../../../assets/images/faces/face1.jpg" alt="image" className="img-sm profile-pic" /> </div>
+                                    <img src="../../../assets/images/faces/face1.jpg" alt="figure" className="img-sm profile-pic" /> </div>
                                   <div className="preview-item-content flex-grow py-2">
                                     <p className="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
                                     <p className="font-weight-light small-text"> The meeting is cancelled </p>
@@ -382,7 +382,7 @@ class Landing extends Component {
                               </div>
                             </li>
                             <li className="nav-item dropdown ml-4">
-                              <a className="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                              <a className="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="/" data-toggle="dropdown">
                                 <i className="mdi mdi-bell-outline" />
                                 <span className="count bg-success">4</span>
                               </a>
@@ -421,12 +421,12 @@ class Landing extends Component {
                               </div>
                             </li>
                             <li className="nav-item d-none d-lg-block color-setting">
-                              <a className="nav-link" href="#">
+                              <a className="nav-link" href="/">
                                 <i className="mdi mdi-tune" />
                               </a>
                             </li>
                             <li className="nav-item dropdown d-none d-xl-inline-block">
-                              <a className="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                              <a className="nav-link dropdown-toggle" id="UserDropdown" href="/" data-toggle="dropdown" aria-expanded="false">
                                 <span className="profile-text">Richard V.Welsh !</span>
                                 <img className="img-xs rounded-circle" src="../../../assets/images/faces/face8.jpg" alt="Profile image" /> </a>
                               <div className="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
@@ -489,7 +489,7 @@ class Landing extends Component {
                           <ul className="chat-list">
                             <li className="list active">
                               <div className="profile">
-                                <img src="../../../assets/images/faces/face1.jpg" alt="image" />
+                                <img src="../../../assets/images/faces/face1.jpg" alt="figure" />
                                 <span className="online" />
                               </div>
                               <div className="info">
@@ -500,7 +500,7 @@ class Landing extends Component {
                             </li>
                             <li className="list">
                               <div className="profile">
-                                <img src="../../../assets/images/faces/face2.jpg" alt="image" />
+                                <img src="../../../assets/images/faces/face2.jpg" alt="figure" />
                                 <span className="offline" />
                               </div>
                               <div className="info">
@@ -514,7 +514,7 @@ class Landing extends Component {
                             </li>
                             <li className="list">
                               <div className="profile">
-                                <img src="../../../assets/images/faces/face3.jpg" alt="image" />
+                                <img src="../../../assets/images/faces/face3.jpg" alt="figure" />
                                 <span className="online" />
                               </div>
                               <div className="info">
@@ -525,7 +525,7 @@ class Landing extends Component {
                             </li>
                             <li className="list">
                               <div className="profile">
-                                <img src="../../../assets/images/faces/face4.jpg" alt="image" />
+                                <img src="../../../assets/images/faces/face4.jpg" alt="figure" />
                                 <span className="offline" />
                               </div>
                               <div className="info">
@@ -536,7 +536,7 @@ class Landing extends Component {
                             </li>
                             <li className="list">
                               <div className="profile">
-                                <img src="../../../assets/images/faces/face5.jpg" alt="image" />
+                                <img src="../../../assets/images/faces/face5.jpg" alt="figure" />
                                 <span className="online" />
                               </div>
                               <div className="info">
@@ -547,7 +547,7 @@ class Landing extends Component {
                             </li>
                             <li className="list">
                               <div className="profile">
-                                <img src="../../../assets/images/faces/face6.jpg" alt="image" />
+                                <img src="../../../assets/images/faces/face6.jpg" alt="figure" />
                                 <span className="online" />
                               </div>
                               <div className="info">
@@ -566,7 +566,7 @@ class Landing extends Component {
                               <div className="nav-link">
                                 <div className="user-wrapper">
                                   <div className="profile-image">
-                                    <img src="../../../assets/images/faces/face8.jpg" alt="profile image" /> </div>
+                                    <img src="../../../assets/images/faces/face8.jpg" alt="profile figure" /> </div>
                                   <div className="text-wrapper">
                                     <p className="profile-name">Richard V.Welsh</p>
                                     <div>
@@ -1015,66 +1015,66 @@ class Landing extends Component {
                                         <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton4">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton5">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton6">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                     </div>
@@ -1087,66 +1087,66 @@ class Landing extends Component {
                                         <button className="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuOutlineButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuOutlineButton1">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuOutlineButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuOutlineButton2">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuOutlineButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuOutlineButton3">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-outline-warning dropdown-toggle" type="button" id="dropdownMenuOutlineButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuOutlineButton4">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuOutlineButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuOutlineButton5">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuOutlineButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuOutlineButton6">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                     </div>
@@ -1166,11 +1166,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="btn-group">
@@ -1180,11 +1180,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuSplitButton2">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="btn-group">
@@ -1194,11 +1194,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuSplitButton3">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="btn-group">
@@ -1208,11 +1208,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuSplitButton4">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="btn-group">
@@ -1222,11 +1222,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuSplitButton5">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="btn-group">
@@ -1236,11 +1236,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuSplitButton6">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                     </div>
@@ -1261,11 +1261,11 @@ class Landing extends Component {
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuIconButton1">
                                               <h6 className="dropdown-header">Settings</h6>
-                                              <a className="dropdown-item" href="#">Action</a>
-                                              <a className="dropdown-item" href="#">Another action</a>
-                                              <a className="dropdown-item" href="#">Something else here</a>
+                                              <a className="dropdown-item" href="/">Action</a>
+                                              <a className="dropdown-item" href="/">Another action</a>
+                                              <a className="dropdown-item" href="/">Something else here</a>
                                               <div className="dropdown-divider" />
-                                              <a className="dropdown-item" href="#">Separated link</a>
+                                              <a className="dropdown-item" href="/">Separated link</a>
                                             </div>
                                           </div>
                                           <div className="dropdown">
@@ -1274,11 +1274,11 @@ class Landing extends Component {
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuIconButton2">
                                               <h6 className="dropdown-header">Settings</h6>
-                                              <a className="dropdown-item" href="#">Action</a>
-                                              <a className="dropdown-item" href="#">Another action</a>
-                                              <a className="dropdown-item" href="#">Something else here</a>
+                                              <a className="dropdown-item" href="/">Action</a>
+                                              <a className="dropdown-item" href="/">Another action</a>
+                                              <a className="dropdown-item" href="/">Something else here</a>
                                               <div className="dropdown-divider" />
-                                              <a className="dropdown-item" href="#">Separated link</a>
+                                              <a className="dropdown-item" href="/">Separated link</a>
                                             </div>
                                           </div>
                                           <div className="dropdown">
@@ -1287,11 +1287,11 @@ class Landing extends Component {
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
                                               <h6 className="dropdown-header">Settings</h6>
-                                              <a className="dropdown-item" href="#">Action</a>
-                                              <a className="dropdown-item" href="#">Another action</a>
-                                              <a className="dropdown-item" href="#">Something else here</a>
+                                              <a className="dropdown-item" href="/">Action</a>
+                                              <a className="dropdown-item" href="/">Another action</a>
+                                              <a className="dropdown-item" href="/">Something else here</a>
                                               <div className="dropdown-divider" />
-                                              <a className="dropdown-item" href="#">Separated link</a>
+                                              <a className="dropdown-item" href="/">Separated link</a>
                                             </div>
                                           </div>
                                         </div>
@@ -1304,11 +1304,11 @@ class Landing extends Component {
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuIconButton4">
                                               <h6 className="dropdown-header">Settings</h6>
-                                              <a className="dropdown-item" href="#">Action</a>
-                                              <a className="dropdown-item" href="#">Another action</a>
-                                              <a className="dropdown-item" href="#">Something else here</a>
+                                              <a className="dropdown-item" href="/">Action</a>
+                                              <a className="dropdown-item" href="/">Another action</a>
+                                              <a className="dropdown-item" href="/">Something else here</a>
                                               <div className="dropdown-divider" />
-                                              <a className="dropdown-item" href="#">Separated link</a>
+                                              <a className="dropdown-item" href="/">Separated link</a>
                                             </div>
                                           </div>
                                           <div className="dropdown">
@@ -1317,11 +1317,11 @@ class Landing extends Component {
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuIconButton5">
                                               <h6 className="dropdown-header">Settings</h6>
-                                              <a className="dropdown-item" href="#">Action</a>
-                                              <a className="dropdown-item" href="#">Another action</a>
-                                              <a className="dropdown-item" href="#">Something else here</a>
+                                              <a className="dropdown-item" href="/">Action</a>
+                                              <a className="dropdown-item" href="/">Another action</a>
+                                              <a className="dropdown-item" href="/">Something else here</a>
                                               <div className="dropdown-divider" />
-                                              <a className="dropdown-item" href="#">Separated link</a>
+                                              <a className="dropdown-item" href="/">Separated link</a>
                                             </div>
                                           </div>
                                           <div className="dropdown">
@@ -1330,11 +1330,11 @@ class Landing extends Component {
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
                                               <h6 className="dropdown-header">Settings</h6>
-                                              <a className="dropdown-item" href="#">Action</a>
-                                              <a className="dropdown-item" href="#">Another action</a>
-                                              <a className="dropdown-item" href="#">Something else here</a>
+                                              <a className="dropdown-item" href="/">Action</a>
+                                              <a className="dropdown-item" href="/">Another action</a>
+                                              <a className="dropdown-item" href="/">Something else here</a>
                                               <div className="dropdown-divider" />
-                                              <a className="dropdown-item" href="#">Separated link</a>
+                                              <a className="dropdown-item" href="/">Separated link</a>
                                             </div>
                                           </div>
                                         </div>
@@ -1347,11 +1347,11 @@ class Landing extends Component {
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuIconButton7">
                                               <h6 className="dropdown-header">Settings</h6>
-                                              <a className="dropdown-item" href="#">Action</a>
-                                              <a className="dropdown-item" href="#">Another action</a>
-                                              <a className="dropdown-item" href="#">Something else here</a>
+                                              <a className="dropdown-item" href="/">Action</a>
+                                              <a className="dropdown-item" href="/">Another action</a>
+                                              <a className="dropdown-item" href="/">Something else here</a>
                                               <div className="dropdown-divider" />
-                                              <a className="dropdown-item" href="#">Separated link</a>
+                                              <a className="dropdown-item" href="/">Separated link</a>
                                             </div>
                                           </div>
                                           <div className="dropdown">
@@ -1360,11 +1360,11 @@ class Landing extends Component {
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuIconButton8">
                                               <h6 className="dropdown-header">Settings</h6>
-                                              <a className="dropdown-item" href="#">Action</a>
-                                              <a className="dropdown-item" href="#">Another action</a>
-                                              <a className="dropdown-item" href="#">Something else here</a>
+                                              <a className="dropdown-item" href="/">Action</a>
+                                              <a className="dropdown-item" href="/">Another action</a>
+                                              <a className="dropdown-item" href="/">Something else here</a>
                                               <div className="dropdown-divider" />
-                                              <a className="dropdown-item" href="#">Separated link</a>
+                                              <a className="dropdown-item" href="/">Separated link</a>
                                             </div>
                                           </div>
                                         </div>
@@ -1386,11 +1386,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropupMenuSplitButton1">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="btn-group dropup">
@@ -1400,11 +1400,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropupMenuSplitButton2">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="btn-group dropup">
@@ -1414,11 +1414,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropupMenuSplitButton3">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="btn-group dropup">
@@ -1428,11 +1428,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropupMenuSplitButton4">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="btn-group dropup">
@@ -1442,11 +1442,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropupMenuSplitButton5">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="btn-group dropup">
@@ -1456,11 +1456,11 @@ class Landing extends Component {
                                         </button>
                                         <div className="dropdown-menu" aria-labelledby="dropupMenuSplitButton6">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                     </div>
@@ -1477,33 +1477,33 @@ class Landing extends Component {
                                         <button className="btn btn-danger btn-lg dropdown-toggle" type="button" id="dropdownMenuSizeButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuSizeButton1">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuSizeButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuSizeButton2">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                       <div className="dropdown">
                                         <button className="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </button>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3">
                                           <h6 className="dropdown-header">Settings</h6>
-                                          <a className="dropdown-item" href="#">Action</a>
-                                          <a className="dropdown-item" href="#">Another action</a>
-                                          <a className="dropdown-item" href="#">Something else here</a>
+                                          <a className="dropdown-item" href="/">Action</a>
+                                          <a className="dropdown-item" href="/">Another action</a>
+                                          <a className="dropdown-item" href="/">Something else here</a>
                                           <div className="dropdown-divider" />
-                                          <a className="dropdown-item" href="#">Separated link</a>
+                                          <a className="dropdown-item" href="/">Separated link</a>
                                         </div>
                                       </div>
                                     </div>
@@ -1517,7 +1517,7 @@ class Landing extends Component {
                           <footer className="footer">
                             <div className="container-fluid clearfix">
                               <span className="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018
-                                <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
+                                <a href="http://www.bootstrapdash.com/" target="_blank" rel="noopener noreferrer">Bootstrapdash</a>. All rights reserved.</span>
                               <span className="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted &amp; made with
                                 <i className="mdi mdi-heart text-danger" />
                               </span>

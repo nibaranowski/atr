@@ -22,13 +22,13 @@ class Login extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push(`/user-admin/${encodeURIComponent(this.state.email)}/main`);
+      this.props.history.push(`/admin-user/${encodeURIComponent(this.state.email)}/create-or-join`);
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push(`/user-admin/${encodeURIComponent(this.state.email)}/main`);//push to next page after login
+      this.props.history.push(`/admin-user/${encodeURIComponent(this.state.email)}/create-or-join`);//push to next page after login
     }
 
     if (nextProps.errors) {
@@ -101,7 +101,7 @@ class Login extends Component {
                     <input type="submit" value="SIGN IN" className="btn btn-primary submit-btn" />
                    </div>
                    <div className="wrapper mt-5 text-gray">
-                     <p className="footer-text">Copyright © 2018 ZipTrip, inc. All rights reserved.</p>
+                     <p className="footer-text">Copyright © 2018 ATSx, inc. All rights reserved.</p>
                      <ul className="auth-footer text-gray">
                        <li>
                          <a href="/#" disabled="disabled">Terms &amp; Conditions</a>

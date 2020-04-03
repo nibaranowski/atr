@@ -22,10 +22,11 @@ class CreateCompany extends Component {
   }
 
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
+
   }
 
   onSubmit(e) {
@@ -38,6 +39,10 @@ class CreateCompany extends Component {
     };
 
     this.props.createCompany(companyData, this.props.history);
+  }
+
+  handleSubmit = () => {
+
   }
 
   onChange(e) {
@@ -116,7 +121,7 @@ class CreateCompany extends Component {
               <div className="col-md-12 grid-margin stretch-card">
                 <div className="card">
                   <div className="card-body">
-                    {console.log('test3')}
+                    {console.log('test-inside create company')}
                     <h4 className="card-title">Create your Company</h4>
                     {/* <p className="card-description mb-1"> Let's get some information to make your company </p> */}
                     {/* <small className="text-muted">* required fields</small> */}
@@ -258,7 +263,7 @@ class CreateCompany extends Component {
   }
 }
 CreateCompany.propTypes = {
-  company: PropTypes.object.isRequired,
+  //company: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
