@@ -48,11 +48,11 @@ gulp.task('injectAssets', function () {
             '!css/horizontal-layouts-2.css', // <== !
             '!css/sidebar-layouts.css', // <== !
             './src/assets/css/*.css',
-            './src/assets/js/shared/off-canvas.js',
-            './src/assets/js/shared/hoverable-collapse.js',
-            './src/assets/js/shared/misc.js',
-            './src/assets/js/shared/settings.js',
-            './src/assets/js/shared/todolist.js'
+            './src/assets/js/demo_1/off-canvas.js',
+            './src/assets/js/demo_1/hoverable-collapse.js',
+            './src/assets/js/demo_1/misc.js',
+            './src/assets/js/demo_1/settings.js',
+            './src/assets/js/demo_1/todolist.js'
         ], {
             read: false
         }), {

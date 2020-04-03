@@ -117,8 +117,8 @@
   },
   "scripts": {
     "sass": "sass --watch src/assets/scss/:src/assets/css/",
-    "sass-build": "sass --watch src/assets/scss/demo_1/:src/assets/css/demo_1",
-    "sass-production": "sass src/assets/scss/demo_1:src/assets/css/demo_1",
+    "sass-build": "sass --watch src/assets/scss/demo_1/:src/assets/css/",
+    "sass-production": "sass src/assets/scss/demo_1:src/assets/css/",
     "start": "concurrently \"npm run sass-build\" \"react-scripts start\"",
     "build": "npm run sass-production && react-scripts build",
     "test": "react-scripts test --env=jsdom",
